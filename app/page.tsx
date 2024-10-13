@@ -3,7 +3,7 @@ import About from "../components/about";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { FaLinkedin } from "react-icons/fa";
-import { FaTwitterSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
           </div>
           <div className="flex gap-6">
             <FiGithub size={24} />
-            <FaTwitterSquare size={24} />
+            <FaSquareXTwitter size={24} />
             <FaLinkedin size={24} />
           </div>
         </div>
