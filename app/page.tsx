@@ -1,10 +1,12 @@
+import Profilephoto from "./../public/profile_photo.jpeg";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { TfiLocationPin } from "react-icons/tfi";
-import About from "../components/about";
+import { FaLinkedin } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
+import About from "../components/about";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,9 +30,11 @@ export default function Home() {
                 CSS, React e TypeScript.
               </p>
             </span>
-            <img
-              src="https://github.com/pierresouza.png"
+            <Image
+              src={Profilephoto}
               alt=""
+              width={384}
+              height={384}
               className="w-96 rounded-full"
             />
           </div>

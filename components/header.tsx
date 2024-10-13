@@ -1,5 +1,5 @@
 import { ModeToggle } from "../components/ModeToggle";
-import Stars from "../app/stars.svg";
+import Stars from "../public/stars.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
