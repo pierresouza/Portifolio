@@ -7,19 +7,20 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import About from "../components/about";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-8">
       <Header />
-      <div className="flex flex-col items-center justify-center gap-20">
-        <div className="flex flex-col gap-8">
+      <div className="flex h-[80vh] flex-col items-center justify-center">
+        <div className="flex flex-col">
           <div className="flex gap-12">
-            <span className="flex flex-col gap-8">
-              <p className="max-w-screen-sm text-5xl">
+            <span className="flex flex-col justify-center gap-8">
+              <p className="max-w-screen-sm text-[10px]">
                 Olá meu nome é pierre Souza e construo páginas web
               </p>
-              <p className="text-md max-w-screen-sm text-justify">
+              <p className="min-w max-w-screen-sm text-justify text-[10px]">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
@@ -35,7 +36,7 @@ export default function Home() {
               alt=""
               width={384}
               height={384}
-              className="w-96 rounded-full"
+              className="min-w-12 max-w-96 rounded-full"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -50,10 +51,28 @@ export default function Home() {
               Disponível para novas oportunidades
             </span>
           </div>
-          <div className="flex gap-6">
-            <FiGithub size={24} />
-            <FaSquareXTwitter size={24} />
-            <FaLinkedin size={24} />
+          <div className="flex h-12 items-center gap-4">
+            <Link
+              className="transition-all duration-500 ease-in-out hover:scale-125"
+              target="_blank"
+              href="https://github.com/pierresouza"
+            >
+              <FiGithub size={24} title="Github" />
+            </Link>
+            <Link
+              className="transition-all duration-500 ease-in-out hover:scale-125"
+              target="_blank"
+              href="https://x.com/Baronetee"
+            >
+              <FaSquareXTwitter size={24} title="Twitter" />
+            </Link>
+            <Link
+              className="transition-all duration-500 ease-in-out hover:scale-125"
+              target="_blank"
+              href="https://www.linkedin.com/in/pierre-souza/"
+            >
+              <FaLinkedin size={24} title="Linkedin" />
+            </Link>
           </div>
         </div>
         <About />
