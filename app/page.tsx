@@ -4,23 +4,20 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import Footer from "../components/footer";
-import Header from "../components/header";
-import About from "../components/about";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-8">
-      <Header />
       <div className="flex h-[80vh] flex-col items-center justify-center">
         <div className="flex flex-col">
           <div className="flex gap-12">
             <span className="flex flex-col justify-center gap-8">
-              <p className="max-w-screen-sm text-[10px]">
+              <p className="max-w-screen-sm text-[10px] sm:text-sm md:text-lg lg:text-4xl">
                 Olá meu nome é pierre Souza e construo páginas web
               </p>
-              <p className="min-w max-w-screen-sm text-justify text-[10px]">
+              <p className="min-w max-w-screen-sm text-justify text-[10px] sm:text-sm md:text-lg lg:text-xl">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
@@ -28,7 +25,7 @@ export default function Home() {
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
                 frameworks sofisticados e profissionais, como Axios, Tailwind
-                CSS, React e TypeScript.
+                CSS, React, Nextjs e TypeScript.
               </p>
             </span>
             <Image
@@ -75,7 +72,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <About />
         <Footer />
       </div>
     </div>
