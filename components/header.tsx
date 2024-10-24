@@ -4,12 +4,9 @@ import Stars from "../public/stars.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { useState } from "react";
 import { FaList } from "react-icons/fa6";
 
 const Header = () => {
-  const [isOpened, setIsOpened] = useState(false);
-
   return (
     <header className="flex items-center justify-around py-4">
       <Button className="md:hidden" variant={"outline"}>
