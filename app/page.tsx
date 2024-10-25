@@ -14,8 +14,8 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-8 px-4 md:flex-row">
             <span className="flex flex-col justify-center gap-6">
-              <p className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
-                Olá meu nome é pierre Souza
+              <p className="text-xs font-bold sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
+                Olá meu nome é Pierre Souza
               </p>
               <p className="max-w-screen-md text-justify font-serif text-xs italic sm:text-sm md:text-lg lg:text-xl">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
@@ -30,7 +30,7 @@ export default function Home() {
                 </strong>
               </p>
             </span>
-            <div className="flex w-full items-center justify-center">
+            <div className="flex items-center justify-center md:w-2/4">
               <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96">
                 <Image
                   src={Profilephoto}
