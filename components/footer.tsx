@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center p-4">
-      <p>
+    <footer className="absolute bottom-0">
+      <p className="flex items-center gap-2 p-4">
         <span>&copy;</span> Desenvolvido com ❤️ por Pierre Souza
       </p>
     </footer>

@@ -15,17 +15,19 @@ export default function Home() {
           <div className="flex gap-12">
             <span className="flex flex-col justify-center gap-8">
               <p className="max-w-screen-sm text-[10px] sm:text-sm md:text-lg lg:text-4xl">
-                Olá meu nome é pierre Souza e construo páginas web
+                Olá meu nome é pierre Souza
               </p>
-              <p className="min-w max-w-screen-sm text-justify text-[10px] sm:text-sm md:text-lg lg:text-xl">
+              <p className="min-w max-w-screen-sm text-justify font-serif text-[10px] italic sm:text-sm md:text-lg lg:text-xl">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
                 ferramentas do mercado. Atualmente, estou envolvido em um
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
-                frameworks sofisticados e profissionais, como Axios, Tailwind
-                CSS, React, Nextjs e TypeScript.
+                frameworks sofisticados e profissionais, como{" "}
+                <strong>
+                  Axios, Tailwind CSS, React, Nextjs e TypeScript.
+                </strong>
               </p>
             </span>
             <Image
