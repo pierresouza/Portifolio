@@ -28,15 +28,18 @@ const Header = () => {
         <ul className="flex items-center justify-center gap-4">
           <div className="hidden gap-8 md:flex">
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
+              <Link href="/">Home</Link> {/* Correção: usar Link do Next.js */}
+            </li>
+            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
               <Link href="/about">About</Link>{" "}
               {/* Correção: usar Link do Next.js */}
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/projects">Projetos</Link>{" "}
+              <Link href="/projects">Projects</Link>{" "}
               {/* Correção: usar Link do Next.js */}
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/experience">Experiência</Link>{" "}
+              <Link href="/experience">Experience</Link>{" "}
               {/* Correção: usar Link do Next.js */}
             </li>
           </div>

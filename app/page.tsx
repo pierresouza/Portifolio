@@ -9,15 +9,15 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex h-[80vh] flex-col items-center justify-center">
-        <div className="flex flex-col">
-          <div className="flex gap-12">
-            <span className="flex flex-col justify-center gap-8">
-              <p className="max-w-screen-sm text-[10px] sm:text-sm md:text-lg lg:text-4xl">
+    <div className="flex flex-col items-center">
+      <div className="flex h-[85vh] flex-col items-center justify-center px-12">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 px-4 md:flex-row">
+            <span className="flex flex-col justify-center gap-6">
+              <p className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
                 Olá meu nome é pierre Souza
               </p>
-              <p className="min-w max-w-screen-sm text-justify font-serif text-[10px] italic sm:text-sm md:text-lg lg:text-xl">
+              <p className="max-w-screen-md text-justify font-serif text-xs italic sm:text-sm md:text-lg lg:text-xl">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
@@ -25,18 +25,23 @@ export default function Home() {
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
                 frameworks sofisticados e profissionais, como{" "}
-                <strong>
+                <strong className="md:text-md max-w-screen-sm text-justify font-serif text-xs italic sm:text-sm">
                   Axios, Tailwind CSS, React, Nextjs e TypeScript.
                 </strong>
               </p>
             </span>
-            <Image
-              src={Profilephoto}
-              alt=""
-              width={384}
-              height={384}
-              className="min-w-12 max-w-96 rounded-full"
-            />
+            <div className="flex w-full items-center justify-center">
+              <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96">
+                <Image
+                  src={Profilephoto}
+                  alt="Profile photo"
+                  className="rounded-full"
+                  layout="fill"
+                  objectFit="cover"
+                  quality={100}
+                />
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-2">
             <span className="flex items-center gap-4">
@@ -74,8 +79,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -14,6 +14,20 @@ interface Experience {
 export const ExperenceMock: Experience = {
   Job: [
     {
+      Company: "SELO ESG PRO Brasil",
+      Role: "Desenvolvedor Front-End Jr. - Freelancer",
+      Period: "07/2024 - 08/2024",
+      Description:
+        "Atuei como desenvolvedor front-end, utilizando o framework Next.js, junto com Tailwind CSS e Material UI, para estruturar e arquitetar o projeto. Fui responsável por criar interfaces inovadoras e funcionais que proporcionam uma experiência de usuário envolvente e responsiva, sempre alinhado às diretrizes estabelecidas pelo designer.",
+      Technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Material UI",
+        "React Hooks",
+        "Axios",
+      ],
+    },
+    {
       Company: "PicPay Bu Investment",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -34,20 +48,6 @@ export const ExperenceMock: Experience = {
         "Capybara",
         "Gherkin",
         "Ruby",
-      ],
-    },
-    {
-      Company: "SELO ESG PRO Brasil",
-      Role: "Desenvolvedor Front-End Jr. - Freelancer",
-      Period: "07/2024 - 08/2023",
-      Description:
-        "Atuei como desenvolvedor front-end, utilizando o framework Next.js, junto com Tailwind CSS e Material UI, para estruturar e arquitetar o projeto. Fui responsável por criar interfaces inovadoras e funcionais que proporcionam uma experiência de usuário envolvente e responsiva, sempre alinhado às diretrizes estabelecidas pelo designer.",
-      Technologies: [
-        "Next.js",
-        "Tailwind CSS",
-        "Material UI",
-        "React Hooks",
-        "Axios",
       ],
     },
   ],
