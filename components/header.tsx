@@ -5,13 +5,41 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { FaList } from "react-icons/fa6";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const Header = () => {
   return (
     <header className="flex items-center justify-around py-4">
-      <Button className="md:hidden" variant={"outline"}>
-        <FaList size={24} />
-      </Button>
+      <nav className="md:hidden">
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <FaList className="cursor-pointer text-2xl" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Menu</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href="/">Home</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/about">About</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/projects">Projects</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/experience">Experience</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </nav>
       <Link href="/">
         <div className="flex cursor-pointer items-center gap-2 transition-all duration-300 ease-in-out hover:text-gray-500">
           <Image
@@ -28,19 +56,16 @@ const Header = () => {
         <ul className="flex items-center justify-center gap-4">
           <div className="hidden gap-8 md:flex">
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/">Home</Link> {/* Correção: usar Link do Next.js */}
+              <Link href="/">Home</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/about">About</Link>{" "}
-              {/* Correção: usar Link do Next.js */}
+              <Link href="/about">About</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/projects">Projects</Link>{" "}
-              {/* Correção: usar Link do Next.js */}
+              <Link href="/projects">Projects</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/experience">Experience</Link>{" "}
-              {/* Correção: usar Link do Next.js */}
+              <Link href="/experience">Experience</Link>
             </li>
           </div>
           <li className="hidden border-r border-black dark:border-white md:flex">

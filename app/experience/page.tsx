@@ -36,7 +36,7 @@ export default function Experience() {
                   {item.Technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="rounded-md bg-gray-200 p-1 text-xs md:px-2 md:py-1"
+                      className="dark: rounded-md bg-gray-200 p-1 text-xs text-black md:px-2 md:py-1"
                     >
                       {tech}
                     </span>
