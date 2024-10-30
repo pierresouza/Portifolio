@@ -26,16 +26,16 @@ const Header = () => {
             <DropdownMenuLabel>Menu</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Link href="/">Home</Link>
+              <Link href="/">Página Inicial</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/about">About</Link>
+              <Link href="/about">Sobre</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/projects">Projects</Link>
+              <Link href="/projects">Projetos</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/experience">Experience</Link>
+              <Link href="/experience">Experiência</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -56,16 +56,16 @@ const Header = () => {
         <ul className="flex items-center justify-center gap-4">
           <div className="hidden gap-8 md:flex">
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/">Home</Link>
+              <Link href="/">Página Inicial</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/about">About</Link>
+              <Link href="/about">Sobre</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/projects">Projects</Link>
+              <Link href="/projects">Projetos</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/experience">Experience</Link>
+              <Link href="/experience">Experiência</Link>
             </li>
           </div>
           <li className="hidden border-r border-black dark:border-white md:flex">
@@ -83,7 +83,7 @@ const Header = () => {
               download={true}
               className="text-sm text-white dark:text-black md:text-base"
             >
-              Download CV
+              Baixar CV
             </Link>
           </Button>
         </ul>
