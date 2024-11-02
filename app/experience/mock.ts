@@ -11,7 +11,7 @@ interface Experience {
   Job: Job[];
 }
 
-export const ExperenceMock: Experience = {
+export const ExperienceMock: Experience = {
   Job: [
     {
       Company: "Zanthus - Tecnologia de Resultados",
