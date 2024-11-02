@@ -14,10 +14,10 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-8 px-4 md:flex-row">
             <span className="flex flex-col justify-center gap-6">
-              <p className="text-xs font-bold sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
+              <p className="text-sm font-bold sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
                 Olá meu nome é Pierre Souza
               </p>
-              <p className="max-w-screen-md text-justify font-serif text-xs italic sm:text-sm md:text-lg lg:text-xl">
+              <p className="max-w-screen-md text-justify font-serif text-sm italic sm:text-sm md:text-lg lg:text-xl">
                 Como desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
@@ -25,9 +25,9 @@ export default function Home() {
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
                 frameworks sofisticados e profissionais, como{" "}
-                <strong className="md:text-md max-w-screen-sm text-justify font-serif text-xs italic sm:text-sm">
+                <span className="md:text-md text-justify font-serif text-sm font-semibold italic sm:text-sm">
                   Axios, Tailwind CSS, React, Nextjs e TypeScript.
-                </strong>
+                </span>
               </p>
             </span>
             <div className="flex items-center justify-center md:w-2/4">
