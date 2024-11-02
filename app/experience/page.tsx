@@ -4,7 +4,7 @@ import { ExperenceMock } from "./mock";
 export default function Experience() {
   return (
     <div className="flex justify-center">
-      <div className="flex h-[90vh] w-[70%] items-center gap-4">
+      <div className="flex h-full w-[70%] items-center gap-4">
         <div className="flex flex-col gap-4">
           <h1 className="text-sm font-bold md:text-base lg:text-lg xl:text-2xl">
             Experience
