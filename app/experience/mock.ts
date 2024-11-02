@@ -14,6 +14,13 @@ interface Experience {
 export const ExperenceMock: Experience = {
   Job: [
     {
+      Company: "Zanthus - Tecnologia de Resultados",
+      Role: "Estagiário de Desenvolvimento de Software",
+      Period: "11/2024 - atual",
+      Description: "", //TODO: Add description job
+      Technologies: ["PHP", "C", "Python"],
+    },
+    {
       Company: "SELO ESG PRO Brasil",
       Role: "Desenvolvedor Front-End Jr. - Freelancer",
       Period: "07/2024 - 08/2024",
