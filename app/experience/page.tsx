@@ -11,32 +11,30 @@ export default function Experience() {
           </h1>
           {ExperenceMock.Job.map((item, index) => (
             <div key={index} className="flex flex-col gap-2">
-              <h3 className="text-xs font-semibold sm:text-sm md:text-base lg:text-xl">
-                Empresa: {item.Company}
+              <h3 className="text-xs sm:text-sm md:text-base lg:text-xl">
+                <b>Empresa:</b> {item.Company}
               </h3>
-              <span className="flex justify-between">
-                <p className="lg:text text-xs font-bold sm:text-sm md:text-base">
-                  Cargo: {item.Role}
-                </p>
-                <p className="lg:text text-nowrap text-xs text-gray-500 sm:text-sm md:text-base">
-                  {item.Period}
-                </p>
-              </span>
+              <p className="lg:text text-xs sm:text-sm md:text-base">
+                <b>Cargo:</b> {item.Role}
+              </p>
+              <p className="lg:text text-nowrap text-xs text-gray-500 sm:text-sm md:text-base">
+                <b>Período:</b> {item.Period}
+              </p>
               <p className="lg:text text-justify text-xs sm:text-sm md:text-base">
-                {item.Description}
+                <b>Descrição</b> {item.Description}
               </p>
               <p className="lg:text text-justify text-xs sm:text-sm md:text-base">
                 {item.Description2}
               </p>
               {item.Technologies && (
                 <div className="flex flex-wrap gap-2">
-                  <span className="lg:text text-xs sm:text-sm md:text-base">
+                  <span className="lg:text text-xs font-bold sm:text-sm md:text-base">
                     Techs:
                   </span>
                   {item.Technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="dark: rounded-md bg-gray-200 p-1 text-xs text-black md:px-2 md:py-1"
+                      className="dark: rounded-md bg-gray-200 p-1 text-sm text-black shadow-sm shadow-black md:px-2 md:py-1"
                     >
                       {tech}
                     </span>
