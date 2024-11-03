@@ -5,10 +5,13 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <div className="flex max-h-fit justify-center">
-      <div className="flex h-screen w-4/5 flex-col justify-center gap-4">
+    <div className="flex justify-center">
+      <div className="flex h-full w-4/5 flex-col items-center justify-center gap-4">
         {ProjectsMock.Project.map((project, index) => (
-          <div key={index} className="flex w-full justify-center gap-2">
+          <div
+            key={index}
+            className="flex w-full flex-col items-center justify-center gap-2 md:flex-row"
+          >
             <div className="flex flex-col gap-2 p-2">
               <a href={project.repoURL} target="_blank" rel="noreferrer">
                 <Image
@@ -24,20 +27,21 @@ export default function Projects() {
               </p>
             </div>
             <div className="flex flex-col justify-center gap-2">
-              <p className="max-w-screen-md text-justify text-sm">
+              <p className="max-w-screen-sm text-justify text-sm sm:text-base md:text-lg">
                 {project.description}
               </p>
-              <span>
-                Repositório:{" "}
+              <span className="text-sm sm:text-base md:text-lg">
+                Repositório: &nbsp;
                 <Link
                   href={project.repoURL}
                   target="_blank"
                   rel="noreferrer"
-                  className="scale-110 text-blue-600 transition-all duration-500 ease-in-out"
+                  className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
                 >
                   {project.repoURL}
                 </Link>
               </span>
+              <hr className="border border-black dark:border-white" />
             </div>
           </div>
         ))}

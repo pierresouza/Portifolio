@@ -20,21 +20,21 @@ export const ProjectsMock: Projects = {
       repoURL: "https://github.com/DescoInvest",
       image: DescoInvestLogo,
       description:
-        "Desco Invest é uma plataforma de investimentos que tem como objetivo facilitar o acesso de investidores a projetos de infraestrutura, com foco em projetos de saneamento básico. A plataforma foi desenvolvida para a disciplina de Projeto de Software, do curso de Engenharia de Software da Universidade de Brasília.",
+        "A DescoInvest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
       name: "DesconInvest",
     },
     {
       repoURL: "https://github.com/Capivara-s-Team/CapSync-Front-End",
       image: CapSyncLogo,
       description:
-        "Capsync é uma plataforma de gerenciamento de projetos que tem como objetivo facilitar a comunicação e organização de equipes de trabalho. A plataforma foi desenvolvida para a disciplina de Projeto de Software, do curso de Engenharia de Software da Universidade de Brasília.",
+        "Capsync é uma plataforma de gerenciamento de projetos que tem como objetivo facilitar a comunicação e organização de equipes de trabalho. A plataforma foi desenvolvida Durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
       name: "CapSync",
     },
     {
       repoURL: "https://github.com/Projeto-Integrador-BioCidade",
       image: BiocidadeLogo,
       description:
-        "Biocidade é uma plataforma de mapeamento de áreas verdes e de preservação ambiental. A plataforma foi desenvolvida para a disciplina de Projeto de Software, do curso de Engenharia de Software da Universidade de Brasília.",
+        "Biocidade é uma plataforma de mapeamento de áreas verdes e de preservação ambiental. A plataforma foi desenvolvida como Projeto Integrador do curso de Desenvolvimento Fullstack javascript Da Generation Brasil.",
       name: "Biocidade",
     },
   ],
