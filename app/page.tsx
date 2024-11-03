@@ -3,14 +3,13 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { TfiLocationPin } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import Footer from "../components/footer";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-[85vh] flex-col items-center justify-center px-12">
+      <div className="flex h-[85vh] flex-col items-center justify-center gap-2 px-12">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-8 px-4 md:flex-row">
             <span className="flex flex-col justify-center gap-6">
@@ -24,7 +23,7 @@ export default function Home() {
                 ferramentas do mercado. Atualmente, estou envolvido em um
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
-                frameworks sofisticados e profissionais, como{" "}
+                frameworks sofisticados e profissionais, como&nbsp;
                 <span className="md:text-md text-justify font-serif text-sm font-semibold italic sm:text-sm">
                   Axios, Tailwind CSS, React, Nextjs e TypeScript.
                 </span>
@@ -43,7 +42,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex max-w-screen-sm flex-col gap-2 pl-5">
             <span className="flex items-center gap-4">
               <TfiLocationPin />
               São Paulo, Brasil
@@ -54,33 +53,32 @@ export default function Home() {
               </span>
               Disponível para novas oportunidades
             </span>
-          </div>
-          <div className="flex h-12 items-center gap-4">
-            <Link
-              className="transition-all duration-500 ease-in-out hover:scale-125"
-              target="_blank"
-              href="https://github.com/pierresouza"
-            >
-              <FiGithub size={24} title="Github" />
-            </Link>
-            <Link
-              className="transition-all duration-500 ease-in-out hover:scale-125"
-              target="_blank"
-              href="https://x.com/Baronetee"
-            >
-              <FaSquareXTwitter size={24} title="Twitter" />
-            </Link>
-            <Link
-              className="transition-all duration-500 ease-in-out hover:scale-125"
-              target="_blank"
-              href="https://www.linkedin.com/in/pierre-souza/"
-            >
-              <FaLinkedin size={24} title="Linkedin" />
-            </Link>
+            <div className="flex h-12 items-center gap-4">
+              <Link
+                className="transition-all duration-500 ease-in-out hover:scale-125"
+                target="_blank"
+                href="https://github.com/pierresouza"
+              >
+                <FiGithub size={24} title="Github" />
+              </Link>
+              <Link
+                className="transition-all duration-500 ease-in-out hover:scale-125"
+                target="_blank"
+                href="https://x.com/Baronetee"
+              >
+                <FaSquareXTwitter size={24} title="Twitter" />
+              </Link>
+              <Link
+                className="transition-all duration-500 ease-in-out hover:scale-125"
+                target="_blank"
+                href="https://www.linkedin.com/in/pierre-souza/"
+              >
+                <FaLinkedin size={24} title="Linkedin" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
