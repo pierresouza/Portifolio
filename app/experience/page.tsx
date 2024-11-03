@@ -41,6 +41,7 @@ export default function Experience() {
                   ))}
                 </div>
               )}
+              <hr className="mt-2 border-black dark:border-white" />
             </div>
           ))}
         </div>
