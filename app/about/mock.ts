@@ -19,6 +19,9 @@ import { SiInsomnia } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
+import { FaPython } from "react-icons/fa6";
+import { FaAws } from "react-icons/fa";
+import { FaPhp } from "react-icons/fa";
 
 interface aboutProps {
   title: string;
@@ -88,6 +91,18 @@ export const studying: aboutProps[] = [
   {
     title: "MySQL",
     aboutTechs: [SiMysql],
+  },
+  {
+    title: "Python",
+    aboutTechs: [FaPython],
+  },
+  {
+    title: "AWS",
+    aboutTechs: [FaAws],
+  },
+  {
+    title: "PHP",
+    aboutTechs: [FaPhp],
   },
   {
     title: "NestJS",
