@@ -4,6 +4,7 @@ import Stars from "../public/stars.svg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { FaList } from "react-icons/fa6";
+import { MdFileDownload } from "react-icons/md";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -38,9 +39,6 @@ const Header = () => {
               <Link href="/about">Sobre</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href="/projects">Projetos</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
               <Link href="/experience">Experiência</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -55,7 +53,7 @@ const Header = () => {
             width={22}
             height={22}
           />
-          <span className="text-sm md:text-lg">Pierre Souza</span>
+          <span className="text-md md:text-lg">Pierre Souza</span>
         </div>
       </Link>
       <div className="flex items-center gap-4">
@@ -68,9 +66,6 @@ const Header = () => {
               <Link href="/about">Sobre</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/projects">Projetos</Link>
-            </li>
-            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
               <Link href="/experience">Experiência</Link>
             </li>
           </div>
@@ -81,14 +76,15 @@ const Header = () => {
           <Button
             size={"sm"}
             variant="outline"
-            className="bg-black dark:bg-white"
+            className="bg-black p-2 text-white dark:bg-white dark:text-black"
           >
             <Link
               href="/Pierre_Souza_Resume.pdf"
               target="_blank"
               download={true}
-              className="text-sm text-white dark:text-black md:text-base"
+              className="flex items-center gap-2 text-sm text-white dark:text-black md:text-base"
             >
+              <MdFileDownload size={18} />
               Baixar CV
             </Link>
           </Button>

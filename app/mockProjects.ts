@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
-import DescoInvest from "../../public/DescoInvest.png";
-import CapSyncLogo from "../../public/CapSync.jpg";
-import BiocidadeLogo from "../../public/Biocidade.jpg";
+import DescoInvest from "../public/DescoInvest.png";
+import CapSyncLogo from "../public/CapSync.jpg";
+import BiocidadeLogo from "../public/Biocidade.jpg";
 
 interface ProjectsProps {
   repoURL: string;

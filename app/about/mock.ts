@@ -109,14 +109,6 @@ export const studying: aboutProps[] = [
     aboutTechs: [SiNestjs],
   },
   {
-    title: "Insomnia",
-    aboutTechs: [SiInsomnia],
-  },
-  {
-    title: "Postman",
-    aboutTechs: [SiPostman],
-  },
-  {
     title: "Axios",
     aboutTechs: [SiAxios],
   },
