@@ -17,29 +17,32 @@ import {
 const Header = () => {
   return (
     <header className="flex h-[10vh] items-center justify-around">
-      <nav className="md:hidden">
+      <div className="md:hidden">
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <FaList className="cursor-pointer text-2xl" />
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <FaList className="h-5 w-5" />
+              <span className="sr-only">Open menu</span>
+            </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent align="end">
             <DropdownMenuLabel>Menu</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/">Página Inicial</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/about">Sobre</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/projects">Projetos</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/experience">Experiência</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </nav>
+      </div>
       <Link href="/">
         <div className="flex cursor-pointer items-center gap-2 transition-all duration-300 ease-in-out hover:text-gray-500">
           <Image
