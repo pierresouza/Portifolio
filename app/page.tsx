@@ -2,6 +2,7 @@ import Profilephoto from "./../public/profile_photo.jpeg";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { TfiLocationPin } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa";
+
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";

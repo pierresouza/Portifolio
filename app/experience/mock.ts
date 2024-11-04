@@ -22,7 +22,7 @@ export const ExperienceMock: Experience = {
     },
     {
       Company: "SELO ESG PRO Brasil",
-      Role: "Desenvolvedor Front-End Jr. - Freelancer",
+      Role: "Desenvolvedor Front-End  - Freelancer",
       Period: "07/2024 - 08/2024",
       Description:
         "Atuei como desenvolvedor front-end, utilizando o framework Next.js, junto com Tailwind CSS e Material UI, para estruturar e arquitetar o projeto. Fui responsável por criar interfaces inovadoras e funcionais que proporcionam uma experiência de usuário envolvente e responsiva, sempre alinhado às diretrizes estabelecidas pelo designer.",
