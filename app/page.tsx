@@ -91,7 +91,7 @@ export default function Home() {
               <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96">
                 <Image
                   src={Profilephoto}
-                  alt="Profile photo"
+                  alt="foto de perfil"
                   className="rounded-full"
                   layout="fill"
                   objectFit="cover"
@@ -116,7 +116,7 @@ export default function Home() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-auto w-full max-w-[500px] rounded-xl border border-black"
+                    className="h-[500px] w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />
@@ -194,7 +194,7 @@ export default function Home() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-auto w-full max-w-[500px] rounded-xl border border-black p-1"
+                    className="h-auto w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />

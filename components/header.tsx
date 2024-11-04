@@ -17,7 +17,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex h-[10vh] items-center justify-evenly md:justify-around">
+    <header className="mb-4 flex h-[10vh] items-center justify-evenly border-b border-black/40 dark:border-white/40 md:justify-around">
       <div className="md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

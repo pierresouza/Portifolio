@@ -26,8 +26,8 @@ export const ProjectsMock: Projects = {
       name: "Biocidade",
     },
     {
-      repoURL: "https://github.com/Capivara-s-Team/CapSync-Front-End",
-      deployURL: "Deploy em andamento",
+      repoURL: "https://github.com/Capivara-s-Team",
+      deployURL: "",
       image: CapSyncLogo,
       description:
         "Capsync é uma plataforma de gerenciamento de projetos que tem como objetivo facilitar a comunicação e organização de equipes de trabalho. A plataforma foi desenvolvida Durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
@@ -35,7 +35,7 @@ export const ProjectsMock: Projects = {
     },
     {
       repoURL: "https://github.com/DescoInvest",
-      deployURL: "Deploy em andamento",
+      deployURL: "",
       image: DescoInvest,
       description:
         "A DescoInvest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
