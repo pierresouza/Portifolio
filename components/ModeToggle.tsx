@@ -14,8 +14,6 @@ import {
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
-  // TODO: trocar cor do modo escuro ou adicionar uma nova cor
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

@@ -53,12 +53,12 @@ export default function Home() {
                 frameworks sofisticados e profissionais.
               </p>
               <div className="flex flex-col gap-4">
-                <div className="flex gap-4">
+                <div className="flex flex-col gap-4 lg:flex-row">
                   <span className="flex items-center gap-2 text-xs sm:gap-4 sm:text-sm md:text-base">
                     <TfiLocationPin />
                     São Paulo, Brasil
                   </span>
-                  <span className="rounded-full border border-green-400 bg-green-400/25 px-3 text-xs text-green-500 dark:border-green-300 dark:bg-green-300/25 dark:text-green-300 sm:text-sm md:text-base">
+                  <span className="flex max-w-64 text-nowrap rounded-full border border-green-400 bg-green-400/25 px-3 py-1 text-xs text-green-500 dark:border-green-300 dark:bg-green-300/25 dark:text-green-300 sm:text-sm md:max-w-72 md:text-base">
                     Disponível para novas oportunidades
                   </span>
                 </div>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-4/5 flex-col items-center justify-center gap-8">
+      <div className="flex w-4/5 flex-col items-center justify-center gap-8 md:w-full">
         <p>&nbsp;</p>
         <p className="text-3xl font-bold">Projetos:</p>
         {ProjectsMock.Project.map((project, index) => (
@@ -116,7 +116,8 @@ export default function Home() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-[500px] w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    layout="responsive"
                     objectFit="cover"
                     quality={100}
                   />
