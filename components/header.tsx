@@ -16,7 +16,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-around py-4">
+    <header className="flex h-[10vh] items-center justify-around">
       <nav className="md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger>

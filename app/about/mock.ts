@@ -25,7 +25,7 @@ interface aboutProps {
   aboutTechs: IconType[];
 }
 
-export const aboutData: aboutProps[] = [
+export const knowledge: aboutProps[] = [
   {
     title: "HTML",
     aboutTechs: [RiHtml5Fill],
@@ -59,16 +59,35 @@ export const aboutData: aboutProps[] = [
     aboutTechs: [SiStyledcomponents],
   },
   {
+    title: "ShadcnUI",
+    aboutTechs: [SiShadcnui],
+  },
+  {
+    title: "PowerShell",
+    aboutTechs: [VscTerminalPowershell],
+  },
+  {
+    title: "Bash",
+    aboutTechs: [VscTerminalBash],
+  },
+  {
+    title: "GitHub",
+    aboutTechs: [VscGithubInverted],
+  },
+];
+
+export const studying: aboutProps[] = [
+  {
+    title: "React Hook Form",
+    aboutTechs: [SiReacthookform],
+  },
+  {
     title: "Tailwind CSS",
     aboutTechs: [RiTailwindCssFill],
   },
   {
     title: "MySQL",
     aboutTechs: [SiMysql],
-  },
-  {
-    title: "GraphQL",
-    aboutTechs: [TbBrandGraphql],
   },
   {
     title: "NestJS",
@@ -83,27 +102,11 @@ export const aboutData: aboutProps[] = [
     aboutTechs: [SiPostman],
   },
   {
-    title: "ShadcnUI",
-    aboutTechs: [SiShadcnui],
-  },
-  {
-    title: "React Hook Form",
-    aboutTechs: [SiReacthookform],
-  },
-  {
     title: "Axios",
     aboutTechs: [SiAxios],
   },
   {
-    title: "GitHub",
-    aboutTechs: [VscGithubInverted],
-  },
-  {
-    title: "PowerShell",
-    aboutTechs: [VscTerminalPowershell],
-  },
-  {
-    title: "Bash",
-    aboutTechs: [VscTerminalBash],
+    title: "GraphQL",
+    aboutTechs: [TbBrandGraphql],
   },
 ];
