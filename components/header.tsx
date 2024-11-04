@@ -16,13 +16,16 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex h-[10vh] items-center justify-around">
+    <header className="flex h-[10vh] items-center justify-evenly md:justify-around">
       <div className="md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="dar:hover:bg-gray-100 border border-black transition-all duration-500 ease-in-out hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
+            >
               <FaList className="h-5 w-5" />
-              <span className="sr-only">Open menu</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
