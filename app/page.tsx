@@ -25,7 +25,7 @@ export default function Home() {
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
                 frameworks sofisticados e profissionais, como&nbsp;
-                <span className="md:text-md text-justify font-serif text-sm font-semibold italic sm:text-sm">
+                <span className="text-justify font-serif text-sm font-semibold italic sm:text-sm md:text-lg lg:text-xl">
                   Axios, Tailwind CSS, React, Nextjs e TypeScript.
                 </span>
               </p>
