@@ -116,7 +116,7 @@ export default function Home() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-[500px] w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />
@@ -152,7 +152,6 @@ export default function Home() {
                       </Link>
                     </span>
                   </div>
-                  <hr className="border border-black dark:border-white" />
                 </div>
               </>
             ) : (
@@ -188,13 +187,12 @@ export default function Home() {
                       </Link>
                     </span>
                   </div>
-                  <hr className="border border-black dark:border-white" />
                 </div>
                 <div className="flex flex-col gap-4 p-2">
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-auto w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />
