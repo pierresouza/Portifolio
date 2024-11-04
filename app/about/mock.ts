@@ -15,8 +15,6 @@ import { SiAxios } from "react-icons/si";
 import { VscTerminalPowershell } from "react-icons/vsc";
 import { VscTerminalBash } from "react-icons/vsc";
 import { TbBrandGraphql } from "react-icons/tb";
-import { SiInsomnia } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
 import { FaPython } from "react-icons/fa6";
