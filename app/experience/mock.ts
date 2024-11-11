@@ -17,8 +17,9 @@ export const ExperienceMock: Experience = {
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
       Period: "11/2024 - atual",
-      Description: "", //TODO: Add description job
-      Technologies: ["PHP", "C", "Python"],
+      Description:
+        "Durante meu estágio, tive a oportunidade de trabalhar em diversas áreas do desenvolvimento de software. Participei ativamente na criação e manutenção de aplicações, colaborando com a equipe para resolver problemas e implementar novas funcionalidades. Aprendi a utilizar diferentes tecnologias e frameworks, aprimorando minhas habilidades técnicas e de trabalho em equipe.",
+      Technologies: ["PHP", "C", "Python", "Android Studio"],
     },
     {
       Company: "SELO ESG PRO Brasil",

@@ -36,6 +36,9 @@ const Header = () => {
               <Link href="/">Página Inicial</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
+              <Link href="/projects">Projetos</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/about">Sobre</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
@@ -61,6 +64,9 @@ const Header = () => {
           <div className="hidden gap-8 md:flex">
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
               <Link href="/">Página Inicial</Link>
+            </li>
+            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
+              <Link href="/projects">Projetos</Link>
             </li>
             <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
               <Link href="/about">Sobre</Link>

@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
-import DescoInvest from "../public/DescoInvest.png";
-import CapSyncLogo from "../public/CapSync.jpg";
-import BiocidadeLogo from "../public/Biocidade.jpg";
+import DescoInvest from "../../public/DescoInvest.png";
+import CapSyncLogo from "../../public/CapSync.jpg";
+import BiocidadeLogo from "../../public/Biocidade.jpg";
 
 interface ProjectsProps {
   repoURL: string;
@@ -38,8 +38,8 @@ export const ProjectsMock: Projects = {
       deployURL: "",
       image: DescoInvest,
       description:
-        "A DescoInvest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
-      name: "DesconInvest",
+        "A Desco Invest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
+      name: "Desco Invest",
     },
   ],
 };

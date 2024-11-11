@@ -7,35 +7,10 @@ import { FaLinkedin } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import { ProjectsMock } from "./mockProjects";
-import { useState, useEffect } from "react";
-
-const useMediaQuery = (width: number) => {
-  const [targetReached, setTargetReached] = useState(false);
-
-  useEffect(() => {
-    const updateTarget = (e: MediaQueryListEvent) => {
-      setTargetReached(e.matches);
-    };
-
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    media.addEventListener("change", updateTarget);
-
-    if (media.matches) {
-      setTargetReached(true);
-    }
-
-    return () => media.removeEventListener("change", updateTarget);
-  }, [width]);
-
-  return targetReached;
-};
 
 export default function Home() {
-  const isSmallScreen = useMediaQuery(1024);
-
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center gap-4">
       <div className="flex h-full flex-col items-center justify-center gap-2 px-12">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-10 md:flex-row">
@@ -44,7 +19,7 @@ export default function Home() {
                 Olá meu nome é Pierre Souza
               </p>
               <p className="max-w-screen-md text-justify text-sm sm:text-sm md:text-lg lg:text-xl">
-                Como desenvolvedor Front-End com 2 anos de experiência, meu
+                Sou desenvolvedor Front-End com 2 anos de experiência, meu
                 objetivo é criar interfaces que proporcionem uma experiência de
                 usuário incrível e funcional, utilizando as melhores práticas e
                 ferramentas do mercado. Atualmente, estou envolvido em um
@@ -101,106 +76,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex w-4/5 flex-col items-center justify-center gap-8">
-        <p>&nbsp;</p>
-        <p className="text-3xl font-bold">Projetos:</p>
-        {ProjectsMock.Project.map((project, index) => (
-          <div
-            key={index}
-            className="flex w-full flex-col items-center justify-center gap-8 md:flex-row"
-          >
-            {isSmallScreen || index % 2 === 0 ? (
-              <>
-                <div className="flex flex-col gap-4 p-2">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
-                    objectFit="cover"
-                    quality={100}
-                  />
-                </div>
-                <div className="flex flex-col justify-center gap-2">
-                  <p className="flex justify-center text-xl font-bold">
-                    {project.name}
-                  </p>
-                  <p className="max-w-screen-sm text-justify text-sm sm:text-base md:text-lg">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-col">
-                    <span className="text-sm sm:text-base md:text-lg">
-                      Repositório: &nbsp;
-                      <Link
-                        href={project.repoURL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
-                      >
-                        {project.repoURL}
-                      </Link>
-                    </span>
-                    <span className="text-sm sm:text-base md:text-lg">
-                      Deploy: &nbsp;
-                      <Link
-                        href={project.deployURL || "#"}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
-                      >
-                        {project.deployURL}
-                      </Link>
-                    </span>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="flex flex-col justify-center gap-2">
-                  <p className="flex justify-center text-xl font-bold">
-                    {project.name}
-                  </p>
-                  <p className="max-w-screen-sm text-justify text-sm sm:text-base md:text-lg">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-col">
-                    <span className="text-sm sm:text-base md:text-lg">
-                      Repositório: &nbsp;
-                      <Link
-                        href={project.repoURL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
-                      >
-                        {project.repoURL}
-                      </Link>
-                    </span>
-                    <span className="text-sm sm:text-base md:text-lg">
-                      Deploy: &nbsp;
-                      <Link
-                        href={project.deployURL || "#"}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
-                      >
-                        {project.deployURL}
-                      </Link>
-                    </span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4 p-2">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
-                    objectFit="cover"
-                    quality={100}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        ))}
       </div>
     </div>
   );
