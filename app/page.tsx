@@ -1,16 +1,15 @@
 "use client";
-import Profilephoto from "./../public/profile_photo.jpeg";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { TfiLocationPin } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa";
-
 import { FiGithub } from "react-icons/fi";
+import Profilephoto from "./../public/profile_photo.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex h-[85vh] flex-col items-center gap-4">
       <div className="flex h-full flex-col items-center justify-center gap-2 px-12">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-10 md:flex-row">
