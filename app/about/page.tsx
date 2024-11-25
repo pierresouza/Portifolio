@@ -1,5 +1,4 @@
 import React from "react";
-import { knowledge, studying } from "./mock";
 
 export default function About() {
   return (
