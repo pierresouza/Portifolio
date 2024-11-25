@@ -3,9 +3,9 @@ import { knowledge, studying } from "./mock";
 
 export default function About() {
   return (
-    <div className="flex w-full items-center justify-center gap-4">
-      <main className="flex h-full w-3/4 flex-col gap-10 lg:px-8">
-        <p className="text-lg">Tenho conhecimento sobre:</p>
+    <div className="flex h-[90vh] w-full items-center justify-center gap-4">
+      <main className="flex h-full w-3/4 flex-col items-center justify-center gap-10 lg:px-8">
+        {/* <p className="text-lg">Tenho conhecimento sobre:</p>
         <div className="grid grid-cols-2 gap-9 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {knowledge.map((tech, index) => (
             <div
@@ -32,7 +32,8 @@ export default function About() {
               ))}
             </div>
           ))}
-        </div>
+        </div> */}
+        <p className="text-5xl">Em Construção</p>
       </main>
     </div>
   );

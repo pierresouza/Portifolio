@@ -37,7 +37,7 @@ function Projects() {
         {ProjectsMock.Project.map((project, index) => (
           <div
             key={index}
-            className="flex w-full flex-col items-center justify-center gap-8 md:flex-row"
+            className="flex w-4/5 flex-col items-center justify-center gap-4 md:flex-row"
           >
             {isSmallScreen || index % 2 === 0 ? (
               <>
@@ -80,6 +80,7 @@ function Projects() {
                         {project.deployURL}
                       </Link>
                     </span>
+                    <hr className="mt-3 flex w-full items-center justify-center border border-black lg:hidden" />
                   </div>
                 </div>
               </>
