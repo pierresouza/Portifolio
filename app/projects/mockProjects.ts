@@ -5,7 +5,7 @@ import BiocidadeLogo from "../../public/Biocidade.jpg";
 
 interface ProjectsProps {
   repoURL: string;
-  deployURL?: string;
+  deployURL?: string | "Indisponível";
   name: string;
   description?: string;
   image: StaticImageData | string;
@@ -41,5 +41,8 @@ export const ProjectsMock: Projects = {
         "A Desco Invest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
       name: "Desco Invest",
     },
-  ],
+  ].map((project) => ({
+    ...project,
+    deployURL: project.deployURL || "Indisponível",
+  })),
 };

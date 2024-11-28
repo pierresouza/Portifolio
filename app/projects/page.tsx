@@ -45,7 +45,7 @@ function Projects() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="aspect-video w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />
@@ -54,22 +54,22 @@ function Projects() {
                   <p className="flex justify-center text-xl font-bold">
                     {project.name}
                   </p>
-                  <p className="max-w-screen-sm text-justify text-sm sm:text-base md:text-lg">
+                  <p className="max-w-screen-sm text-justify text-xs sm:text-sm md:text-base lg:text-lg">
                     {project.description}
                   </p>
                   <div className="flex flex-col">
-                    <span className="text-sm sm:text-base md:text-lg">
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg">
                       Repositório: &nbsp;
                       <Link
                         href={project.repoURL}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
+                        className="text-xs text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110 sm:text-sm md:text-base lg:text-lg"
                       >
                         {project.repoURL}
                       </Link>
                     </span>
-                    <span className="text-sm sm:text-base md:text-lg">
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg">
                       Deploy: &nbsp;
                       <Link
                         href={project.deployURL || "#"}
@@ -90,22 +90,22 @@ function Projects() {
                   <p className="flex justify-center text-xl font-bold">
                     {project.name}
                   </p>
-                  <p className="max-w-screen-sm text-justify text-sm sm:text-base md:text-lg">
+                  <p className="max-w-screen-sm text-xs sm:text-sm md:text-base lg:text-lg">
                     {project.description}
                   </p>
                   <div className="flex flex-col">
-                    <span className="text-sm sm:text-base md:text-lg">
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg">
                       Repositório: &nbsp;
                       <Link
                         href={project.repoURL}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110"
+                        className="text-xs text-blue-600 transition-transform duration-500 ease-in-out hover:scale-110 sm:text-sm md:text-base lg:text-lg"
                       >
                         {project.repoURL}
                       </Link>
                     </span>
-                    <span className="text-sm sm:text-base md:text-lg">
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg">
                       Deploy: &nbsp;
                       <Link
                         href={project.deployURL || "#"}

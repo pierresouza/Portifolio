@@ -18,9 +18,9 @@ export default function Home() {
                 Olá meu nome é Pierre Souza
               </p>
               <p className="max-w-screen-md text-justify text-sm sm:text-sm md:text-lg lg:text-xl">
-                Sou desenvolvedor Front-End com 2 anos de experiência, meu
-                objetivo é criar interfaces que proporcionem uma experiência de
-                usuário incrível e funcional, utilizando as melhores práticas e
+                Desenvolvedor Front-End com 2 anos de experiência, meu objetivo
+                é criar interfaces que proporcionem uma experiência de usuário
+                incrível e funcional, utilizando as melhores práticas e
                 ferramentas do mercado. Atualmente, estou envolvido em um
                 projeto voluntário que me permite aprimorar minhas habilidades
                 em desenvolvimento Front-End, incorporando tecnologias e
