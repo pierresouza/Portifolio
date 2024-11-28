@@ -45,7 +45,7 @@ function Projects() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
+                    className="aspect-video w-full max-w-[500px] rounded-xl border border-black p-1 dark:border-white"
                     objectFit="cover"
                     quality={100}
                   />

@@ -5,12 +5,12 @@ export default function Experience() {
   return (
     <div className="flex max-h-fit items-center justify-center">
       <div className="flex w-4/5 justify-center gap-4">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-8">
           <h1 className="text-sm font-bold md:text-base lg:text-lg xl:text-2xl">
             Experiencia
           </h1>
           {ExperienceMock.Job.map((item, index) => (
-            <div key={index} className="flex flex-col gap-2">
+            <div key={index} className="flex flex-col gap-3">
               <h3 className="text-md items-center sm:text-sm md:text-base lg:text-xl">
                 <b>Empresa:</b> {item.Company}
               </h3>
@@ -20,14 +20,14 @@ export default function Experience() {
               <p className="lg:text text-md items-center sm:text-sm md:text-base">
                 <b>Período:</b> {item.Period}
               </p>
-              <p className="lg:text text-md max-w-screen-xl items-center text-justify sm:text-sm md:text-base">
+              <p className="lg:text text-md max-w-screen-lg items-center text-justify sm:text-sm md:text-base">
                 <b>Descrição</b> {item.Description}
               </p>
-              <p className="lg:text text-md max-w-screen-xl items-center text-justify sm:text-sm md:text-base">
+              <p className="lg:text text-md max-w-screen-lg items-center text-justify sm:text-sm md:text-base">
                 {item.Description2}
               </p>
               {item.Technologies && (
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex max-w-screen-lg flex-wrap items-center gap-3">
                   <span className="lg:text text-md font-bold sm:text-sm md:text-base">
                     Techs:
                   </span>
@@ -41,7 +41,7 @@ export default function Experience() {
                   ))}
                 </div>
               )}
-              <hr className="mt-2 border-black dark:border-white" />
+              <hr className="mt-2 max-w-screen-lg border-black dark:border-white" />
             </div>
           ))}
         </div>
