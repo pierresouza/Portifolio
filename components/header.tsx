@@ -88,7 +88,7 @@ const Header = () => {
               href="/Pierre_Souza_Resume.pdf"
               target="_blank"
               download={true}
-              className="flex items-center gap-2 text-sm text-white dark:text-black md:text-base"
+              className="flex items-center justify-center gap-2 text-sm text-white dark:text-black md:text-base"
             >
               <MdFileDownload size={18} />
               Baixar CV

@@ -23,7 +23,6 @@ export const ExperienceMock: Experience = {
         "PHP",
         "C",
         "Laravel",
-        "Android Studio",
         "Reactjs",
         "React Hooks",
         "StoryBook",
@@ -48,7 +47,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      Company: "PicPay",
+      Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
         "Atuei como desenvolvedor front end, com ênfase em criação de interfaces produzindo uma experiência inovadora e funcional para usuários da plataforma. Durante este projeto trouxe responsividade ativa entre os usuários, seguindo as diretrizes profissionais do designer",
