@@ -38,7 +38,7 @@ export const ProjectsMock: Projects = {
       deployURL: "https://desco-invest-front.vercel.app/",
       image: DescoInvest,
       description:
-        "A Desco Invest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. Esse projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) no curso de Análise e Desenvolvimento de Sistemas da faculdade UniAmérica Descomplica.",
+        "A Desco Invest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. ",
       name: "Desco Invest",
     },
   ].map((project) => ({

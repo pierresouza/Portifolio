@@ -3,7 +3,7 @@ import { ExperienceMock } from "./mock";
 
 export default function Experience() {
   return (
-    <div className="flex max-h-fit items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="flex w-4/5 justify-center gap-4">
         <div className="flex flex-col gap-8">
           <h1 className="text-sm font-bold md:text-base lg:text-lg xl:text-2xl">
@@ -21,7 +21,7 @@ export default function Experience() {
                 <b>Período:</b> {item.Period}
               </p>
               <p className="lg:text text-md max-w-screen-lg items-center text-justify sm:text-sm md:text-base">
-                <b>Descrição</b> {item.Description}
+                <b>Descrição:</b> {item.Description}
               </p>
               {item.Description2 && (
                 <p className="lg:text text-md max-w-screen-lg items-center text-justify sm:text-sm md:text-base">
