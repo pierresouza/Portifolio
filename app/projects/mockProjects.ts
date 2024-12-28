@@ -22,7 +22,7 @@ export const ProjectsMock: Projects = {
       deployURL: "https://main--biocidade.netlify.app/",
       image: BiocidadeLogo,
       description:
-        "Biocidade é uma plataforma de mapeamento de áreas verdes e de preservação ambiental. A plataforma foi desenvolvida como Projeto Integrador do curso de Desenvolvimento Fullstack javascript Da Generation Brasil.",
+        "Biocidade é uma plataforma de mapeamento de áreas verdes e de preservação ambiental, desenvolvida como Projeto Integrador do curso de Desenvolvimento Fullstack javascript Da Generation Brasil.",
       name: "Biocidade",
     },
     {
@@ -30,7 +30,7 @@ export const ProjectsMock: Projects = {
       deployURL: "",
       image: CapSyncLogo,
       description:
-        "Capsync é uma plataforma de gerenciamento de projetos que tem como objetivo facilitar a comunicação e organização de equipes de trabalho. A plataforma foi desenvolvida Durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
+        "Capsync é uma plataforma de gerenciamento de projetos para facilitar a comunicação e organização de equipes, desenvolvida durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
       name: "CapSync",
     },
     {
@@ -38,7 +38,7 @@ export const ProjectsMock: Projects = {
       deployURL: "https://desco-invest-front.vercel.app/",
       image: DescoInvest,
       description:
-        "A Desco Invest é uma plataforma de investimentos criada para democratizar o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático. ",
+        "Desco Invest é uma plataforma de investimentos que democratiza o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático.",
       name: "Desco Invest",
     },
   ].map((project) => ({

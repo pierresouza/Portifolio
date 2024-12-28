@@ -9,7 +9,7 @@ function CardProject() {
       {ProjectsMock.Project.map((project, index) => (
         <div
           key={index}
-          className="group flex max-h-[500px] w-full max-w-xs flex-col justify-between rounded-lg border border-black/20 bg-white shadow-lg transition-shadow duration-300 hover:shadow-2xl sm:max-w-sm md:max-w-md lg:max-w-lg"
+          className="group flex max-h-[500px] w-full max-w-xs flex-col justify-between rounded-lg border border-black/20 bg-white shadow-lg transition-shadow duration-300 hover:shadow-2xl dark:border-white/20 dark:bg-gray-800 dark:shadow-gray-900 sm:max-w-sm md:max-w-md lg:max-w-lg"
         >
           <div className="w-full overflow-hidden rounded-t-lg sm:h-56 md:h-64 lg:h-72">
             <Image
@@ -19,10 +19,10 @@ function CardProject() {
             />
           </div>
           <div className="flex flex-col gap-4 p-4">
-            <h2 className="text-center text-lg font-bold sm:text-xl md:text-2xl">
+            <h2 className="text-center text-lg font-bold text-black dark:text-white sm:text-xl md:text-2xl">
               {project.name}
             </h2>
-            <p className="text-justify text-sm sm:text-base md:text-lg">
+            <p className="text-sm text-black dark:text-gray-300 sm:text-base md:text-lg">
               {project.description}
             </p>
             <div className="flex justify-center gap-4">
@@ -30,7 +30,7 @@ function CardProject() {
                 href={project.repoURL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-black/20 px-4 py-2 text-xs transition-all duration-500 hover:underline hover:underline-offset-4 sm:text-base md:text-lg"
+                className="flex items-center gap-2 rounded-lg border border-black/20 px-4 py-2 text-xs text-black transition-all duration-500 hover:underline hover:underline-offset-4 dark:border-white/20 dark:text-white sm:text-base md:text-lg"
               >
                 <FaGithub />
                 Repositório
@@ -39,7 +39,7 @@ function CardProject() {
                 href={project.deployURL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-lg border border-black/20 px-4 py-2 text-xs transition-all duration-500 hover:underline hover:underline-offset-4 sm:text-base md:text-lg"
+                className="flex items-center gap-2 rounded-lg border border-black/20 px-4 py-2 text-xs text-black transition-all duration-500 hover:underline hover:underline-offset-4 dark:border-white/20 dark:text-white sm:text-base md:text-lg"
               >
                 <FaGlobeEurope />
                 Acessar Projeto
