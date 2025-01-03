@@ -85,7 +85,7 @@ const Header = () => {
             className="bg-black p-2 text-white dark:bg-white dark:text-black"
           >
             <Link
-              href="/Pierre_Souza_Resume.pdf"
+              href="/Pierre Souza.pdf"
               target="_blank"
               download={true}
               className="flex items-center justify-center gap-2 text-sm text-white dark:text-black md:text-base"
