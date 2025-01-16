@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Pierre Souza",
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
           <Analytics />
           <Footer />
+          <SpeedInsights />
         </body>
       </ThemeProvider>
     </html>
