@@ -12,7 +12,7 @@ export default function Home() {
     <div className="flex h-[85vh] flex-col items-center gap-4">
       <div className="flex h-full flex-col items-center justify-center gap-2 px-12">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-10 md:flex-row">
+          <div className="flex flex-col-reverse gap-10 md:flex-row">
             <span className="flex flex-col justify-center gap-6">
               <p className="text-sm font-bold sm:text-sm md:text-lg lg:text-xl xl:text-3xl">
                 Olá meu nome é Pierre Souza
