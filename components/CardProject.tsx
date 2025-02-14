@@ -52,7 +52,7 @@ function CardProject() {
                     href={project.repoURL}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-slate-300 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
+                    className="flex items-center gap-2 rounded-lg border hover:dark:text-black border-slate-300 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
                   >
                     <FaGithub />
                     <span className="font-medium">Repositório</span>
@@ -61,7 +61,7 @@ function CardProject() {
                     href={project.deployURL === "Indisponível" ? "Em andamento" : project.deployURL}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
+                    className="flex items-center gap-2 rounded-lg border hover:dark:text-black border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
                   >
                     <FaGlobeEurope />
                     <span className="font-medium">Deploy</span>

@@ -4,8 +4,12 @@ import Stars from "../public/stars.svg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { FaList } from "react-icons/fa6";
-import { MdFileDownload } from "react-icons/md";
 import Link from "next/link";
+import Swal from "sweetalert2";
+import { MdFileDownload } from "react-icons/md";
+import "animate.css";
+
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -82,17 +86,51 @@ const Header = () => {
           <Button
             size={"sm"}
             variant="outline"
-            className="bg-black p-2 text-white dark:bg-white dark:text-black"
+            className="bg-black p-2 flex items-center justify-center text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
+            onClick={() => {
+              Swal.fire({
+                title: "Baixe meu currículo",
+                showCloseButton: true,
+                showClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `,
+                },
+
+                hideClass: {
+                  popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `,
+                },
+                html: `
+                  <div class="flex flex-col justify-center items-center space-y-4">
+                    <a
+                      href="/Pierre Souza.pdf"
+                      download="Pierre Souza.pdf"
+                      class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300"
+                    >
+                      CV Português
+                    </a>
+                    <a
+                      href="/Pierre Souza - resume.pdf"
+                      download="Pierre Souza English.pdf"
+                      class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300"
+                    >
+                      CV English
+                    </a>
+                  </div>
+                `,
+                showConfirmButton: false, // Remove o botão "OK"
+                allowOutsideClick: true, // Permite fechar clicando fora do modal
+              });
+            }}
           >
-            <Link
-              href="/Pierre Souza.pdf"
-              target="_blank"
-              download={true}
-              className="flex items-center justify-center gap-2 text-sm text-white dark:text-black md:text-base"
-            >
-              <MdFileDownload size={18} />
-              Baixar CV
-            </Link>
+            <MdFileDownload size={16} />
+            CV
           </Button>
         </ul>
       </div>
