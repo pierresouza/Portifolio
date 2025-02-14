@@ -6,7 +6,7 @@ import Portifolio from "../../public/portifolio.png";
 
 interface ProjectsProps {
   repoURL: string;
-  deployURL?: string | "Indisponível";
+  deployURL?: string;
   name: string;
   description?: string;
   image: StaticImageData | string;
@@ -35,7 +35,7 @@ export const ProjectsMock: Projects = {
       description:
         "Capsync é uma plataforma de gerenciamento de projetos para facilitar a comunicação e organização de equipes, desenvolvida durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
       name: "CapSync",
-      Techs: ["React", "Node.js", "MongoDB", "TypeScript", "Socket.io"],
+      Techs: ["React", "Node.js", "MongoDB", "TypeScript"],
     },
     {
       repoURL: "https://github.com/DescoInvest",

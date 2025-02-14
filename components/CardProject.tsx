@@ -19,8 +19,9 @@ function CardProject() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    width={500}
+                    height={300}
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
@@ -32,13 +33,13 @@ function CardProject() {
                   {project.description}
                 </p>
                 {project.Techs && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center lg:gap-2">
                     <span className="text-sm dark:text-white md:text-base lg:text-lg">
                       Techs:
                     </span>
                     {project.Techs.map((tech, index) => (
                       <span
-                        className="flex rounded-lg bg-slate-300 p-1 text-xs dark:bg-stone-50 dark:text-black md:text-sm lg:text-base"
+                        className="flex rounded-lg whitespace-nowrap bg-slate-300 p-1 text-xs dark:bg-stone-50 dark:text-black md:text-sm lg:text-base mr-1 "
                         key={index}
                       >
                         {tech}
@@ -57,7 +58,7 @@ function CardProject() {
                     <span className="font-medium">Repositório</span>
                   </a>
                   <a
-                    href={project.deployURL}
+                    href={project.deployURL === "Indisponível" ? "Em andamento" : project.deployURL}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 rounded-lg border border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
