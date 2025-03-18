@@ -2,17 +2,17 @@ import React from "react";
 import Image from "next/image";
 import { ProjectsMock } from "../app/projects/mockProjects";
 import { FaGithub, FaGlobeEurope } from "react-icons/fa";
+import { Badge } from "./ui/badge";
 
 function CardProject() {
   return (
-    <main className="flex h-full w-4/5 flex-col items-center gap-4">
-      <p className="text-lg lg:text-2xl">Projetos:</p>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+    <main className="flex h-full w-full flex-col items-center gap-4 p-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {ProjectsMock.Project.map((project, index) => {
           return (
             <section
               key={index}
-              className="group grid h-full max-w-screen-sm flex-col rounded-xl border border-black transition-all duration-300 hover:shadow-lg dark:border-white"
+              className="group grid h-full max-w-[500px] flex-col rounded-xl border border-black transition-all duration-300 hover:shadow-lg dark:border-white"
             >
               <div className="overflow-hidden rounded-t-xl">
                 <div className="overflow-hidden">
@@ -25,7 +25,7 @@ function CardProject() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-8 p-4">
+              <div className="flex flex-col gap-4 p-4">
                 <p className="text-base font-bold md:text-lg lg:text-xl">
                   {project.name}
                 </p>
@@ -33,21 +33,16 @@ function CardProject() {
                   {project.description}
                 </p>
                 {project.Techs && (
-                  <div className="flex items-center lg:gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="text-sm dark:text-white md:text-base lg:text-lg">
                       Techs:
                     </span>
                     {project.Techs.map((tech, index) => (
-                      <span
-                        className="flex rounded-lg whitespace-nowrap bg-slate-300 p-1 text-xs dark:bg-stone-50 dark:text-black md:text-sm lg:text-base mr-1 "
-                        key={index}
-                      >
-                        {tech}
-                      </span>
+                      <Badge key={index} variant={"secondary"}>{tech}</Badge>
                     ))}
                   </div>
                 )}
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                   <a
                     href={project.repoURL}
                     target="_blank"

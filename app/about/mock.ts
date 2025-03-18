@@ -23,95 +23,95 @@ import { FaPhp } from "react-icons/fa";
 
 interface aboutProps {
   title: string;
-  aboutTechs: IconType[];
+  aboutTechs: IconType;
 }
 
 export const knowledge: aboutProps[] = [
   {
     title: "HTML",
-    aboutTechs: [RiHtml5Fill],
+    aboutTechs: RiHtml5Fill,
   },
   {
     title: "JavaScript",
-    aboutTechs: [RiJavascriptFill],
+    aboutTechs: RiJavascriptFill,
   },
   {
     title: "React",
-    aboutTechs: [RiReactjsFill],
+    aboutTechs: RiReactjsFill,
   },
   {
     title: "Next.js",
-    aboutTechs: [RiNextjsFill],
+    aboutTechs: RiNextjsFill,
   },
   {
     title: "CSS",
-    aboutTechs: [RiCss3Fill],
+    aboutTechs: RiCss3Fill,
   },
   {
     title: "Sass",
-    aboutTechs: [FaSass],
+    aboutTechs: FaSass,
   },
   {
     title: "Less",
-    aboutTechs: [FaLess],
+    aboutTechs: FaLess,
   },
   {
     title: "Styled Components",
-    aboutTechs: [SiStyledcomponents],
+    aboutTechs: SiStyledcomponents,
   },
   {
     title: "ShadcnUI",
-    aboutTechs: [SiShadcnui],
+    aboutTechs: SiShadcnui,
   },
   {
     title: "PowerShell",
-    aboutTechs: [VscTerminalPowershell],
+    aboutTechs: VscTerminalPowershell,
   },
   {
     title: "Bash",
-    aboutTechs: [VscTerminalBash],
+    aboutTechs: VscTerminalBash,
   },
   {
     title: "GitHub",
-    aboutTechs: [VscGithubInverted],
+    aboutTechs: VscGithubInverted,
   },
 ];
 
 export const studying: aboutProps[] = [
   {
     title: "React Hook Form",
-    aboutTechs: [SiReacthookform],
+    aboutTechs: SiReacthookform,
   },
   {
     title: "Tailwind CSS",
-    aboutTechs: [RiTailwindCssFill],
+    aboutTechs: RiTailwindCssFill,
   },
   {
     title: "MySQL",
-    aboutTechs: [SiMysql],
+    aboutTechs: SiMysql,
   },
   {
     title: "Python",
-    aboutTechs: [FaPython],
+    aboutTechs: FaPython,
   },
   {
     title: "AWS",
-    aboutTechs: [FaAws],
+    aboutTechs: FaAws,
   },
   {
     title: "PHP",
-    aboutTechs: [FaPhp],
+    aboutTechs: FaPhp,
   },
   {
     title: "NestJS",
-    aboutTechs: [SiNestjs],
+    aboutTechs: SiNestjs,
   },
   {
     title: "Axios",
-    aboutTechs: [SiAxios],
+    aboutTechs: SiAxios,
   },
   {
     title: "GraphQL",
-    aboutTechs: [TbBrandGraphql],
+    aboutTechs: TbBrandGraphql,
   },
 ];

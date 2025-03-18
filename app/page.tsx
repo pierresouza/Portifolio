@@ -6,7 +6,7 @@ import { FiGithub } from "react-icons/fi";
 import Profilephoto from "./../public/profile_photo.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-
+import { Badge } from "../components/ui/badge";
 export default function Home() {
   return (
     <div className="flex h-[85vh] flex-col items-center gap-4">
@@ -32,9 +32,7 @@ export default function Home() {
                     <TfiLocationPin />
                     São Paulo, Brasil
                   </span>
-                  <span className="flex max-w-64 text-nowrap rounded-full border border-green-400 bg-green-400/25 px-3 py-1 text-xs text-green-500 dark:border-green-300 dark:bg-green-300/25 dark:text-green-300 sm:text-sm md:max-w-72 md:text-base">
-                    Disponível para novas oportunidades
-                  </span>
+                  <Badge variant={"primary"}> Disponível para novas oportunidades</Badge>
                 </div>
                 <div className="flex h-12 items-center gap-4">
                   <Link
