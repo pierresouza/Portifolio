@@ -55,8 +55,5 @@ export const ProjectsMock: Projects = {
       name: "Portfólio",
       Techs: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn"],
     },
-  ].map((project) => ({
-    ...project,
-    deployURL: project.deployURL || "Indisponível",
-  })),
+  ]
 };

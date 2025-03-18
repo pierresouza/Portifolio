@@ -7,7 +7,7 @@ import { Badge } from "./ui/badge";
 function CardProject() {
   return (
     <main className="flex h-full w-full flex-col items-center gap-4 p-4">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 ">
         {ProjectsMock.Project.map((project, index) => {
           return (
             <section
@@ -52,15 +52,22 @@ function CardProject() {
                     <FaGithub />
                     <span className="font-medium">Repositório</span>
                   </a>
-                  <a
-                    href={project.deployURL === "Indisponível" ? "Em andamento" : project.deployURL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 rounded-lg border hover:dark:text-black border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
-                  >
-                    <FaGlobeEurope />
-                    <span className="font-medium">Deploy</span>
-                  </a>
+                    {project.deployURL ? (
+                    <a
+                      href={project.deployURL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 rounded-lg border hover:dark:text-black border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out hover:bg-slate-200 dark:border-white md:text-sm lg:text-base"
+                    >
+                      <FaGlobeEurope />
+                      <span className="font-medium">Teste agora</span>
+                    </a>
+                    ) : (
+                    <span className="flex items-center gap-2 rounded-lg border border-slate-200 p-3 text-xs transition-all duration-500 ease-in-out dark:border-white md:text-sm lg:text-base">
+                      <FaGlobeEurope />
+                      <span className="font-medium">Indisponível</span>
+                    </span>
+                    )}
                 </div>
               </div>
             </section>
