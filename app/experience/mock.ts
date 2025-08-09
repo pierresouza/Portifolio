@@ -1,4 +1,5 @@
 interface Job {
+  id: string;
   Company: string;
   Role: string;
   Period: string;
@@ -14,24 +15,25 @@ interface Experience {
 export const ExperienceMock: Experience = {
   Job: [
     {
+      id: "zanthus",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
-      Period: "11/2024 - atual",
+      Period: "11/2024 - 08/2025",
       Description:
         "Durante meu estágio, tive a oportunidade de trabalhar em diversas áreas do desenvolvimento de software. Participei ativamente na criação e manutenção de aplicações, colaborando com a equipe para resolver problemas e implementar novas funcionalidades. Aprendi a utilizar diferentes tecnologias e frameworks, aprimorando minhas habilidades técnicas e de trabalho em equipe.",
       Technologies: [
-        "PHP",
-        "Laravel",
-        "Reactjs",
-        "StoryBook",
+        "React",
+        "TypeScript",
+        "Storybook",
         "Kotlin",
         "Git",
-        "Gitlab",
+        "GitLab",
       ],
     },
     {
+      id: "selo-esg",
       Company: "SELO ESG PRO Brasil",
-      Role: "Desenvolvedor Front-End  - Freelancer",
+      Role: "Desenvolvedor Front-End - Freelancer",
       Period: "07/2024 - 08/2024",
       Description:
         "Atuei como desenvolvedor front-end, utilizando o framework Next.js, junto com Tailwind CSS e Material UI, para estruturar e arquitetar o projeto. Fui responsável por criar interfaces inovadoras e funcionais que proporcionam uma experiência de usuário envolvente e responsiva, sempre alinhado às diretrizes estabelecidas pelo designer.",
@@ -42,10 +44,11 @@ export const ExperienceMock: Experience = {
         "React Hooks",
         "Axios",
         "Git",
-        "Github",
+        "GitHub",
       ],
     },
     {
+      id: "picpay",
       Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -56,20 +59,21 @@ export const ExperienceMock: Experience = {
       Technologies: [
         "React",
         "React Hooks",
-        "Typescript",
+        "TypeScript",
         "StyleSheet",
         "Sass",
-        "Styled Componentes",
+        "Styled Components",
         "Less",
         "Cypress",
         "Capybara",
         "Gherkin",
         "Ruby",
         "Git",
-        "Github",
+        "GitHub",
       ],
     },
     {
+      id: "lionx",
       Company: "LionX",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -84,11 +88,13 @@ export const ExperienceMock: Experience = {
         "Less",
         "Styled Components",
         "JavaScript",
-        "Reactjs",
-        "Typescript",
+        "React",
+        "TypeScript",
         "Git",
-        "Github",
+        "GitHub",
       ],
     },
   ],
 };
+
+

@@ -3,6 +3,7 @@ import DescoInvest from "../../public/DescoInvest.png";
 import CapSyncLogo from "../../public/CapSync.jpg";
 import BiocidadeLogo from "../../public/Biocidade.jpg";
 import Portifolio from "../../public/portifolio.png";
+import RocketVisuals from "../../public/RocketVisuals.png";
 
 interface ProjectsProps {
   repoURL: string;
@@ -55,5 +56,14 @@ export const ProjectsMock: Projects = {
       name: "Portfólio",
       Techs: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn"],
     },
+    {
+      repoURL: "https://github.com/pierresouza/rocketvisual",
+      deployURL: "https://visualrocket.vercel.app/",
+      image: RocketVisuals,
+      description:
+        "Rocket Visuals é uma plataforma de visualização de dados que utiliza inteligência artificial para gerar insights a partir de conjuntos de dados complexos.",
+      name: "Rocket Visuals",
+      Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
+    }
   ]
 };

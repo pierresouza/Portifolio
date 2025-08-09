@@ -7,14 +7,13 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { RiNextjsFill } from "react-icons/ri";
 import { RiReactjsFill } from "react-icons/ri";
 import { SiMysql } from "react-icons/si";
-import { SiNestjs } from "react-icons/si";
 import { SiShadcnui } from "react-icons/si";
 import { SiReacthookform } from "react-icons/si";
 import { VscGithubInverted } from "react-icons/vsc";
+import { SiGitlab } from "react-icons/si";
 import { SiAxios } from "react-icons/si";
 import { VscTerminalPowershell } from "react-icons/vsc";
 import { VscTerminalBash } from "react-icons/vsc";
-import { TbBrandGraphql } from "react-icons/tb";
 import { FaSass } from "react-icons/fa";
 import { FaLess } from "react-icons/fa";
 import { FaPython } from "react-icons/fa6";
@@ -88,6 +87,11 @@ export const knowledge: aboutProps[] = [
     aboutTechs: VscGithubInverted,
     color: "#181717",
   },
+  {
+    title: "GitLab",
+    aboutTechs: SiGitlab,
+    color: "#FCA121",
+  }
 ];
 
 export const studying: aboutProps[] = [
@@ -122,18 +126,8 @@ export const studying: aboutProps[] = [
     color: "#777BB4",
   },
   {
-    title: "NestJS",
-    aboutTechs: SiNestjs,
-    color: "#E0234E",
-  },
-  {
     title: "Axios",
     aboutTechs: SiAxios,
     color: "#5A29E4",
-  },
-  {
-    title: "GraphQL",
-    aboutTechs: TbBrandGraphql,
-    color: "#E10098",
   },
 ];
