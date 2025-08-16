@@ -8,8 +8,7 @@ import Link from "next/link";
 import Swal from "sweetalert2";
 import { MdFileDownload } from "react-icons/md";
 import "animate.css";
-
-
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,120 +18,139 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const Header = () => {
-  return (
-    <header className="mb-4 flex h-[10vh] items-center justify-evenly border-b border-black/40 dark:border-white/40 md:justify-around">
-      <div className="md:hidden">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="dar:hover:bg-gray-100 border border-black transition-all duration-500 ease-in-out hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
-            >
-              <FaList className="h-5 w-5" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Menu</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <Link href="/">Página Inicial</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/projects">Projetos</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/about">Sobre</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/experience">Experiência</Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-      <Link href="/">
-        <div className="flex cursor-pointer items-center gap-2 transition-all duration-300 ease-in-out hover:text-gray-500">
-          <Image
-            src={Stars}
-            className="fill-black dark:fill-white"
-            alt="Estrelas"
-            width={22}
-            height={22}
-          />
-          <span className="text-md md:text-lg">Pierre Souza</span>
-        </div>
-      </Link>
-      <div className="flex items-center gap-4">
-        <ul className="flex items-center justify-center gap-4">
-          <div className="hidden gap-8 md:flex">
-            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/">Página Inicial</Link>
-            </li>
-            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/projects">Projetos</Link>
-            </li>
-            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/about">Sobre</Link>
-            </li>
-            <li className="text-lg transition-all duration-300 ease-in-out hover:scale-105">
-              <Link href="/experience">Experiência</Link>
-            </li>
-          </div>
-          <li className="hidden border-r border-black dark:border-white md:flex">
-            &nbsp;
-          </li>
-          <ModeToggle />
-          <Button
-            size={"sm"}
-            variant="outline"
-            className="bg-black p-2 flex items-center justify-center text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
-            onClick={() => {
-              Swal.fire({
-                title: "Baixe meu currículo",
-                showCloseButton: true,
-                showClass: {
-                  popup: `
-                    animate__animated
-                    animate__fadeInUp
-                    animate__faster
-                  `,
-                },
+const navLinks = [
+  { href: "/", label: "Página Inicial" },
+  { href: "/projects", label: "Projetos" },
+  { href: "/about", label: "Sobre" },
+  { href: "/experience", label: "Experiência" },
+];
 
-                hideClass: {
-                  popup: `
-                    animate__animated
-                    animate__fadeOutDown
-                    animate__faster
-                  `,
-                },
-                html: `
-                  <div class="flex flex-col justify-center items-center space-y-4">
-                    <a
-                      href="/Pierre Souza.pdf"
-                      download="Pierre Souza.pdf"
-                      class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300"
-                    >
-                      CV Português
-                    </a>
-                    <a
-                      href="/Pierre Souza - resume.pdf"
-                      download="Pierre Souza English.pdf"
-                      class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300"
-                    >
-                      CV English
-                    </a>
-                  </div>
-                `,
-                showConfirmButton: false, // Remove o botão "OK"
-                allowOutsideClick: true, // Permite fechar clicando fora do modal
-              });
-            }}
+const Header = () => {
+  const pathname = usePathname();
+
+  const handleDownloadCV = () => {
+    Swal.fire({
+      title: "Baixe meu currículo",
+      showCloseButton: true,
+      showClass: {
+        popup: `animate__animated animate__fadeInUp animate__faster`,
+      },
+      hideClass: {
+        popup: `animate__animated animate__fadeOutDown animate__faster`,
+      },
+      html: `
+        <div class="flex flex-col justify-center items-center space-y-4">
+          <a
+            href="/Pierre Souza.pdf"
+            download="Pierre Souza.pdf"
+            class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+          >
+            CV Português
+          </a>
+          <a
+            href="/Pierre Souza - resume.pdf"
+            download="Pierre Souza English.pdf"
+            class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+          >
+            CV English
+          </a>
+        </div>
+      `,
+      showConfirmButton: false,
+      allowOutsideClick: true,
+    });
+  };
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Mobile menu */}
+        <div className="flex items-center gap-2 md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="border-border"
+                aria-label="Abrir menu"
+              >
+                <FaList className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-56">
+              <DropdownMenuLabel>Navegação</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {navLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>{link.label}</Link>
+                </DropdownMenuItem>
+              ))}
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={handleDownloadCV} className="cursor-pointer gap-2">
+                <MdFileDownload size={16} /> Baixar CV
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src={Stars}
+              alt="Logo estrelas"
+              width={20}
+              height={20}
+              className="opacity-80"
+            />
+            <span className="text-sm font-semibold leading-none">Pierre Souza</span>
+          </Link>
+        </div>
+
+        {/* Desktop brand */}
+        <Link
+          href="/"
+          className="hidden items-center gap-2 font-semibold transition-colors hover:text-foreground/80 md:flex"
+        >
+          <Image src={Stars} alt="Logo estrelas" width={22} height={22} />
+          <span className="text-base md:text-lg">Pierre Souza</span>
+        </Link>
+
+        {/* Desktop navigation */}
+        <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center">
+          <ul className="flex items-center gap-6 text-sm">
+            {navLinks.map((link) => {
+              const active =
+                link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`relative font-medium transition-colors hover:text-foreground/90 ${
+                      active
+                        ? "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        {/* Actions */}
+        <div className="flex items-center gap-3">
+          <ModeToggle />
+          <div className="hidden h-6 w-px bg-border md:block" />
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={handleDownloadCV}
+            className="gap-2"
           >
             <MdFileDownload size={16} />
-            CV
+            <span className="hidden sm:inline">CV</span>
           </Button>
-        </ul>
+        </div>
       </div>
     </header>
   );
