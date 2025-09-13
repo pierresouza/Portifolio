@@ -85,10 +85,6 @@ const Header = () => {
                   <Link href={link.href}>{link.label}</Link>
                 </DropdownMenuItem>
               ))}
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleDownloadCV} className="cursor-pointer gap-2">
-                <MdFileDownload size={16} /> Baixar CV
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="/" className="flex items-center gap-2">
