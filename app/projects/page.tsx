@@ -52,7 +52,7 @@ export default function Projects() {
             aria-label="Buscar projetos"
           />
         </div>
-        <div className="flex gap-2 overflow-x-auto pb-2 md:justify-end">
+        <div className="flex items-center  gap-2  md:justify-end">
           <Button
             variant={selectedTech === null ? "default" : "outline"}
             size="sm"
