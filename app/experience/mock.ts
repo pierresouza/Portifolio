@@ -15,6 +15,24 @@ interface Experience {
 export const ExperienceMock: Experience = {
   Job: [
     {
+      id: "freelancer",
+      Company: "Baloon consultoria de marketing",
+      Role: "Desenvolvedor wordpress",
+      Period: "11/2025 - Atual",
+      Description:
+        "Atuo como desenvolvedor WordPress, responsável pela criação e manutenção de sites utilizando temas personalizados e plugins para atender às necessidades dos clientes. Minhas responsabilidades incluem a implementação de funcionalidades específicas, otimização de desempenho e garantia de uma experiência de usuário fluida e responsiva. Trabalho em estreita colaboração com designers e outros desenvolvedores para garantir que os projetos sejam entregues dentro do prazo e atendam aos padrões de qualidade estabelecidos.",
+      Technologies: [
+        "WordPress",
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Elementor",
+        "Git",
+        "GitHub",
+      ],
+    },
+    {
       id: "zanthus",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
@@ -96,5 +114,3 @@ export const ExperienceMock: Experience = {
     },
   ],
 };
-
-
