@@ -15,7 +15,7 @@ interface Experience {
 export const ExperienceMock: Experience = {
   Job: [
     {
-      id: "freelancer",
+      id: "0",
       Company: "Baloon consultoria de marketing",
       Role: "Desenvolvedor wordpress",
       Period: "11/2025 - Atual",
@@ -33,7 +33,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "zanthus",
+      id: "1",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
       Period: "11/2024 - 08/2025",
@@ -49,7 +49,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "selo-esg",
+      id: "2",
       Company: "SELO ESG PRO Brasil",
       Role: "Desenvolvedor Front-End - Freelancer",
       Period: "07/2024 - 08/2024",
@@ -66,7 +66,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "picpay",
+      id: "3",
       Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -91,7 +91,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "lionx",
+      id: "4",
       Company: "LionX",
       Role: "Assistente de analista de sistemas",
       Description:

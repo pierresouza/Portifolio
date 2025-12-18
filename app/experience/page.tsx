@@ -5,43 +5,18 @@ import { EducationMock } from "./education.mock";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-function parseMonthYear(value: string): Date {
-  const match = value.match(/(0?[1-9]|1[0-2])\/(\d{4})/);
-  if (!match) return new Date(0);
-  const month = parseInt(match[1], 10) - 1;
-  const year = parseInt(match[2], 10);
-  return new Date(year, month, 1);
-}
-
-function getPeriodDate(period?: string, which: "start" | "end" = "end"): Date {
-  if (!period) return new Date(0);
-  const parts = period.split("-").map((p) => p.trim());
-  const target = which === "end" ? parts[1] ?? parts[0] : parts[0];
-  return parseMonthYear(target ?? "01/1970");
-}
-
 export default function Experience() {
   const [mode, setMode] = React.useState<"work" | "study">("work");
 
   const workItems = React.useMemo(() => {
     return [...ExperienceMock.Job].sort((a, b) => {
-      const endA = getPeriodDate(a.Period, "end").getTime();
-      const endB = getPeriodDate(b.Period, "end").getTime();
-      if (endA !== endB) return endB - endA; // mais recente primeiro
-      const startA = getPeriodDate(a.Period, "start").getTime();
-      const startB = getPeriodDate(b.Period, "start").getTime();
-      return startB - startA;
+      return parseInt(a.id) - parseInt(b.id);
     });
   }, []);
 
   const studyItems = React.useMemo(() => {
     return [...EducationMock.Studies].sort((a, b) => {
-      const endA = getPeriodDate(a.Period, "end").getTime();
-      const endB = getPeriodDate(b.Period, "end").getTime();
-      if (endA !== endB) return endB - endA; // mais recente primeiro
-      const startA = getPeriodDate(a.Period, "start").getTime();
-      const startB = getPeriodDate(b.Period, "start").getTime();
-      return startB - startA;
+      return parseInt(a.id) - parseInt(b.id);
     });
   }, []);
 
@@ -101,7 +76,7 @@ export default function Experience() {
                     </time>
                   </header>
 
-                  <p className="prose prose-sm max-w-none text-foreground dark:prose-invert">
+                  <p className="prose prose-sm dark:prose-invert max-w-none text-foreground">
                     <strong>Descrição: </strong>
                     {item.Description}
                   </p>
@@ -111,7 +86,7 @@ export default function Experience() {
                       <summary className="cursor-pointer select-none text-sm text-primary hover:underline">
                         Ver mais
                       </summary>
-                      <p className="prose prose-sm mt-2 max-w-none text-foreground dark:prose-invert">
+                      <p className="prose prose-sm dark:prose-invert mt-2 max-w-none text-foreground">
                         {item.Description2}
                       </p>
                     </details>
@@ -164,7 +139,7 @@ export default function Experience() {
                   </header>
 
                   {study.Description ? (
-                    <p className="prose prose-sm max-w-none text-foreground dark:prose-invert">
+                    <p className="prose prose-sm dark:prose-invert max-w-none text-foreground">
                       {study.Description}
                     </p>
                   ) : null}
