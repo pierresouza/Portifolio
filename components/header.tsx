@@ -41,15 +41,15 @@ const Header = () => {
       html: `
         <div class="flex flex-col justify-center items-center space-y-4">
           <a
-            href="/Pierre Souza.pdf"
-            download="Pierre Souza.pdf"
+            href="/Pierre_Souza.pdf"
+            download="Pierre_Souza.pdf"
             class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
           >
             CV Português
           </a>
           <a
-            href="/Pierre Souza - resume.pdf"
-            download="Pierre Souza English.pdf"
+            href="/Pierre_Souza - Resume.pdf"
+            download="Pierre_Souza - Resume.pdf"
             class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
           >
             CV English
@@ -95,7 +95,9 @@ const Header = () => {
               height={20}
               className="opacity-80"
             />
-            <span className="text-sm font-semibold leading-none">Pierre Souza</span>
+            <span className="text-sm font-semibold leading-none">
+              Pierre Souza
+            </span>
           </Link>
         </div>
 
@@ -113,7 +115,9 @@ const Header = () => {
           <ul className="flex items-center gap-6 text-sm">
             {navLinks.map((link) => {
               const active =
-                link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname?.startsWith(link.href);
               return (
                 <li key={link.href}>
                   <Link
