@@ -4,6 +4,8 @@ import CapSyncLogo from "../../public/CapSync.jpg";
 import BiocidadeLogo from "../../public/Biocidade.jpg";
 import Portifolio from "../../public/portifolio.png";
 import RocketVisuals from "../../public/RocketVisuals.png";
+import seikopartners from "../../public/seikopartners.png";
+import powermanutencao from "../../public/powermanutencao.png";
 
 interface ProjectsProps {
   repoURL: string;
@@ -30,8 +32,8 @@ export const ProjectsMock: Projects = {
       Techs: ["React", "Node.js", "MySQL", "TypeScript"],
     },
     {
-      repoURL: "https://github.com/Capivara-s-Team",
-      deployURL: "",
+      repoURL: "https://github.com/Capivara-s-Team/CapSync-Front-End",
+      deployURL: "https://capsync.netlify.app/",
       image: CapSyncLogo,
       description:
         "Capsync é uma plataforma de gerenciamento de projetos para facilitar a comunicação e organização de equipes, desenvolvida durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
@@ -39,8 +41,8 @@ export const ProjectsMock: Projects = {
       Techs: ["React", "Node.js", "MongoDB", "TypeScript"],
     },
     {
-      repoURL: "https://github.com/DescoInvest",
-      deployURL: "https://desco-invest-front.vercel.app/",
+      repoURL: "https://github.com/pierresouza/DescoInvest-front",
+      deployURL: "https://descoinvest.netlify.app/",
       image: DescoInvest,
       description:
         "Desco Invest é uma plataforma de investimentos que democratiza o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático.",
@@ -49,21 +51,42 @@ export const ProjectsMock: Projects = {
     },
     {
       repoURL: "https://github.com/pierresouza/Portifolio",
-      deployURL: "https://pierre-souza.vercel.app/",
+      deployURL: "https://pierresouza.software/",
       image: Portifolio,
       description:
         "Portfólio desenvolvido com Next.js, Tailwind CSS e Typescript, com o intuito de apresentar meus projetos e habilidades como desenvolvedor Front-End.",
       name: "Portfólio",
       Techs: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn"],
     },
-    {
-      repoURL: "https://github.com/pierresouza/rocketvisual",
-      deployURL: "https://visualrocket.vercel.app/",
-      image: RocketVisuals,
-      description:
-        "Rocket Visuals é uma plataforma de visualização de dados que utiliza inteligência artificial para gerar insights a partir de conjuntos de dados complexos.",
-      name: "Rocket Visuals",
-      Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
-    }
-  ]
+  ],
 };
+
+export const freelanceProject: ProjectsProps[] = [
+  {
+    repoURL: "",
+    deployURL: "https://rocket-visuals.netlify.app/",
+    image: RocketVisuals,
+    description:
+      "Rocket Visuals é uma plataforma de visualização de dados que utiliza inteligência artificial para gerar insights a partir de conjuntos de dados complexos.",
+    name: "Rocket Visuals",
+    Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
+  },
+  {
+    repoURL: "",
+    deployURL: "https://seikopartners.com.br/",
+    image: seikopartners,
+    description:
+      "Site institucional desenvolvido para a Seiko Partners, uma empresa de consultoria empresarial focada em soluções inovadoras para seus clientes.",
+    name: "Seiko Partners",
+    Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
+  },
+  {
+    repoURL: "",
+    deployURL: "https://powermanutencao.com.br/",
+    image: powermanutencao,
+    description:
+      "Site institucional desenvolvido para a Power Manutenção, empresa especializada em serviços de manutenção industrial e predial.",
+    name: "Power Manutenção",
+    Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
+  },
+];

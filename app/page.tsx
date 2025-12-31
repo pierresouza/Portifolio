@@ -14,12 +14,12 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { ProjectsMock } from "./projects/mockProjects";
+import { ProjectsMock, freelanceProject } from "./projects/mockProjects";
 import { SiMicrosoftoutlook } from "react-icons/si";
 
 export default function Home() {
   const featured = ProjectsMock.Project.slice(0, 3);
-  const totalProjects = ProjectsMock.Project.length;
+  const totalProjects = ProjectsMock.Project.length + freelanceProject.length;
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
