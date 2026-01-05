@@ -67,7 +67,7 @@ export const freelanceProject: ProjectsProps[] = [
     deployURL: "https://rocket-visuals.netlify.app/",
     image: RocketVisuals,
     description:
-      "Rocket Visuals é uma plataforma de visualização de dados que utiliza inteligência artificial para gerar insights a partir de conjuntos de dados complexos.",
+      "Rocket Visuals é uma produtora de vídeos especializada em VFX e motion design, transformando ideias em experiências visuais impactantes que elevam a comunicação e geram resultados reais para marcas e empresas.",
     name: "Rocket Visuals",
     Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
   },
@@ -85,7 +85,7 @@ export const freelanceProject: ProjectsProps[] = [
     deployURL: "https://powermanutencao.com.br/",
     image: powermanutencao,
     description:
-      "Site institucional desenvolvido para a Power Manutenção, empresa especializada em serviços de manutenção industrial e predial.",
+      "Site institucional desenvolvido para a Power Manutenção, empresa especializada em manutenção automotiva, oferecendo serviços de reprogramação eletrônica (Remap), mecânica de caminhões e agrícola, retífica de motores e ar condicionado.",
     name: "Power Manutenção",
     Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
   },
