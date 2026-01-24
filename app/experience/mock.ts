@@ -16,9 +16,26 @@ export const ExperienceMock: Experience = {
   Job: [
     {
       id: "0",
-      Company: "Baloon consultoria de marketing",
-      Role: "Desenvolvedor wordpress",
-      Period: "11/2025 - Atual",
+      Company: "Baloon Consultoria de Marketing",
+      Role: "Desenvolvedor Web Jr.",
+      Period: "01/2026 - Atual",
+      Description: `Desenvolvedor Web Júnior com experiência em Next.js, Tailwind CSS, Shadcn UI e Animate on Scroll, atuando na criação de landing pages modernas e responsivas. Responsável por manter e otimizar usabilidade e desempenho, além de conduzir processos de build, deploy e CI/CD.  <br> 
+      Também contribuo na reestruturação de projetos, garantindo escalabilidade e organização do código. Tenho foco em entregar soluções eficientes e bem estruturadas, sempre buscando aprimorar a experiência do usuário e evoluir continuamente como profissional.
+      `,
+      Technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Animate on Scroll",
+        "Git",
+        "GitHub",
+      ],
+    },
+    {
+      id: "1",
+      Company: "Baloon Consultoria de Marketing",
+      Role: "Desenvolvedor WordPress",
+      Period: "11/2025 - 12/2025",
       Description:
         "Atuo como desenvolvedor WordPress, responsável pela criação e manutenção de sites utilizando temas personalizados e plugins para atender às necessidades dos clientes. Minhas responsabilidades incluem a implementação de funcionalidades específicas, otimização de desempenho e garantia de uma experiência de usuário fluida e responsiva. Trabalho em estreita colaboração com designers e outros desenvolvedores para garantir que os projetos sejam entregues dentro do prazo e atendam aos padrões de qualidade estabelecidos.",
       Technologies: [
@@ -33,7 +50,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "1",
+      id: "2",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
       Period: "11/2024 - 08/2025",
@@ -49,7 +66,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "2",
+      id: "3",
       Company: "SELO ESG PRO Brasil",
       Role: "Desenvolvedor Front-End - Freelancer",
       Period: "07/2024 - 08/2024",
@@ -66,7 +83,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "3",
+      id: "4",
       Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -91,7 +108,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "4",
+      id: "5",
       Company: "LionX",
       Role: "Assistente de analista de sistemas",
       Description:
