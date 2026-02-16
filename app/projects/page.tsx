@@ -56,10 +56,10 @@ export default function Projects() {
       </header>
 
       {/* Tabs */}
-      <div className="mb-6 flex gap-2 border-b">
+      <div className="mb-6 flex w-full border-b">
         <button
           onClick={() => setActiveTab("estudos")}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
+          className={`flex-1 px-4 py-2 text-sm font-medium transition-colors sm:flex-none ${
             activeTab === "estudos"
               ? "border-b-2 border-primary text-primary"
               : "text-muted-foreground hover:text-foreground"
@@ -69,7 +69,7 @@ export default function Projects() {
         </button>
         <button
           onClick={() => setActiveTab("freelance")}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
+          className={`flex-1 px-4 py-2 text-sm font-medium transition-colors sm:flex-none ${
             activeTab === "freelance"
               ? "border-b-2 border-primary text-primary"
               : "text-muted-foreground hover:text-foreground"
@@ -80,8 +80,9 @@ export default function Projects() {
       </div>
 
       {/* Controls */}
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div className="relative w-full md:max-w-md">
+      <div className="flex flex-col gap-4">
+        {/* Search Input */}
+        <div className="relative w-full">
           <input
             type="text"
             value={query}
@@ -91,11 +92,14 @@ export default function Projects() {
             aria-label="Buscar projetos"
           />
         </div>
-        <div className="flex items-center gap-2 md:justify-end">
+
+        {/* Tech Filters */}
+        <div className="flex flex-wrap items-center gap-2">
           <Button
             variant={selectedTech === null ? "default" : "outline"}
             size="sm"
             onClick={() => setSelectedTech(null)}
+            className="h-8 text-xs sm:text-sm"
           >
             Todos
           </Button>
@@ -105,6 +109,7 @@ export default function Projects() {
               variant={selectedTech === tech ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedTech((t) => (t === tech ? null : tech))}
+              className="h-8 text-xs sm:text-sm"
             >
               {tech}
             </Button>
@@ -113,7 +118,7 @@ export default function Projects() {
       </div>
 
       {/* Grid */}
-      <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <article
             key={project.name}

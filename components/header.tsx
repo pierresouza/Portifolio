@@ -32,6 +32,12 @@ const Header = () => {
     Swal.fire({
       title: "Baixe meu currículo",
       showCloseButton: true,
+      customClass: {
+        popup:
+          "dark:bg-background dark:text-foreground border dark:border-border",
+        title: "dark:text-foreground",
+        closeButton: "dark:text-foreground hover:dark:text-primary",
+      },
       showClass: {
         popup: `animate__animated animate__fadeInUp animate__faster`,
       },
@@ -39,18 +45,18 @@ const Header = () => {
         popup: `animate__animated animate__fadeOutDown animate__faster`,
       },
       html: `
-        <div class="flex flex-col justify-center items-center space-y-4">
+        <div class="flex flex-col justify-center items-center space-y-4 p-4">
           <a
-            href="/Pierre_Souza.pdf"
-            download="Pierre_Souza.pdf"
-            class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+            href="/pierresouza_PTBR.pdf"
+            download="pierresouza_PTBR.pdf"
+            class="flex items-center justify-center w-[250px] h-[50px] bg-primary text-primary-foreground font-bold text-center rounded-md hover:bg-primary/90 transition-colors duration-300"
           >
             CV Português
           </a>
           <a
-            href="/Pierre_Souza - Resume.pdf"
-            download="Pierre_Souza - Resume.pdf"
-            class="block w-[250px] h-[50px] bg-black text-white font-bold text-center leading-[50px] rounded-md hover:bg-gray-800 transition-colors duration-300 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+            href="/pierresouza_EN.pdf"
+            download="pierresouza_EN.pdf"
+            class="flex items-center justify-center w-[250px] h-[50px] bg-secondary text-secondary-foreground font-bold text-center rounded-md hover:bg-secondary/80 transition-colors duration-300"
           >
             CV English
           </a>

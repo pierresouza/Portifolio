@@ -16,6 +16,48 @@ export const ExperienceMock: Experience = {
   Job: [
     {
       id: "0",
+      Company: "Secretaria Municipal de Urbanismo e Licenciamento",
+      Role: "Estagiário de desenvolvimento fullstack",
+      Period: "01/2026 - Atual",
+      Description: ` Atuo no desenvolvimento e evolução de aplicações web modernas e escaláveis, utilizando Next.js, TypeScript e Prisma. Minha responsabilidade central é desenvolver soluções eficientes, seguras e com foco total na experiência do usuário.Minhas principais atividades incluem:
+      Desenvolvimento Full Stack: Construção de interfaces responsivas com Tailwind CSS e integração de APIs seguras.    
+      Modelagem de Dados: Planejamento e manutenção de bancos de dados com Prisma, garantindo performance e integridade.
+      Versionamento e Agilidade: Utilização de Git para colaboração em equipe e atuação em ambiente ágil para entregas contínuas.
+      Otimização de Processos: Implementação de funcionalidades que apoiem e automatizem os processos internos da Secretaria. `,
+      Technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Animate on Scroll",
+        "Git",
+        "GitHub",
+      ],
+    },
+    {
+      id: "1",
+      Company: "Billink AI",
+      Role: "Desenvolvedor Web",
+      Period: "01/2026 - Atual",
+      Description: `Atuo no desenvolvimento de um SaaS voltado para auditoria de custos de infraestrutura de IA e cloud, com o objetivo de democratizar o acesso ao FinOps para startups. Minha missão é transformar regras de negócio complexas em uma interface funcional, escalável e de alta performance.
+      Dashboard de FinOps: Criação de painéis interativos para análise de economia potencial, detalhamento de gastos e tendências de custo, com foco em hierarquia visual clara e insights acionáveis.
+      Interface Neo-Brutalista: Implementação de um Design System exclusivo baseado no neo-brutalismo brasileiro, utilizando bordas sólidas, sombras pesadas e tipografia forte para uma estética crua e funcional.
+      Frontend e UX: Desenvolvimento de interfaces responsivas e de alta performance com Next.js e Tailwind CSS, garantindo usabilidade intuitiva, acessibilidade e consistência visual em toda a aplicação.
+      Integração com Backend: Conexão completa com Supabase para autenticação, gerenciamento de banco de dados PostgreSQL e armazenamento seguro de arquivos (CSV e PDFs).
+      Fluxo de Dados de IA: Desenvolvimento da interface de upload e monitoramento em tempo real do pipeline de agentes de IA, incluindo estados de processamento e extração de dados de billing.
+      Gestão de Planos e Monetização: Implementação de lógica de acesso baseada em planos (Free, Pro e Business), com integração ao Stripe para upgrades instantâneos e recorrência.
+`,
+      Technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Supabase",
+        "Stripe API",
+        "Git",
+        "GitHub",
+      ],
+    },
+    {
+      id: "2",
       Company: "Baloon Consultoria de Marketing",
       Role: "Desenvolvedor Web Jr.",
       Period: "01/2026 - Atual",
@@ -32,7 +74,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "1",
+      id: "3",
       Company: "Baloon Consultoria de Marketing",
       Role: "Desenvolvedor WordPress",
       Period: "11/2025 - 12/2025",
@@ -50,7 +92,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "2",
+      id: "4",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
       Period: "11/2024 - 08/2025",
@@ -66,7 +108,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "3",
+      id: "5",
       Company: "SELO ESG PRO Brasil",
       Role: "Desenvolvedor Front-End - Freelancer",
       Period: "07/2024 - 08/2024",
@@ -83,7 +125,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "4",
+      id: "6",
       Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -108,7 +150,7 @@ export const ExperienceMock: Experience = {
       ],
     },
     {
-      id: "5",
+      id: "7",
       Company: "LionX",
       Role: "Assistente de analista de sistemas",
       Description:
