@@ -4,6 +4,7 @@ import { ExperienceMock } from "./mock";
 import { EducationMock } from "./education.mock";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 
 export default function Experience() {
   const [mode, setMode] = React.useState<"work" | "study">("work");
@@ -79,7 +80,14 @@ export default function Experience() {
         {mode === "work" ? (
           <ol className="relative mt-8 border-s border-border/40 pl-6 dark:border-border">
             {groupedWorkItems.map((group, groupIndex) => (
-              <li key={`group-${groupIndex}`} className="mb-10 ms-6">
+              <motion.li
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: groupIndex * 0.2 }}
+                key={`group-${groupIndex}`}
+                className="mb-10 ms-6"
+              >
                 <span className="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full border bg-background ring-4 ring-background dark:border-neutral-700" />
 
                 <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
@@ -154,13 +162,20 @@ export default function Experience() {
                     ))}
                   </div>
                 </article>
-              </li>
+              </motion.li>
             ))}
           </ol>
         ) : (
           <ol className="relative mt-8 border-s border-border/40 pl-6 dark:border-border">
-            {studyItems.map((study) => (
-              <li key={study.id} className="mb-10 ms-6">
+            {studyItems.map((study, index) => (
+              <motion.li
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                key={study.id}
+                className="mb-10 ms-6"
+              >
                 <span className="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full border bg-background ring-4 ring-background dark:border-neutral-700" />
 
                 <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
@@ -195,14 +210,14 @@ export default function Experience() {
                           <li key={`${study.id}-${tech}`}>
                             <Badge variant="secondary" className="text-xs">
                               {tech}
-                            </Badge>
+                motion.            </Badge>
                           </li>
                         ))}
                       </ul>
                     </div>
                   ) : null}
                 </article>
-              </li>
+              </motion.li>
             ))}
           </ol>
         )}

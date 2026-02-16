@@ -5,6 +5,7 @@ import { FaGithub, FaGlobeEurope } from "react-icons/fa";
 import { ProjectsMock, freelanceProject } from "./mockProjects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "motion/react";
 
 type TabType = "estudos" | "freelance";
 
@@ -118,80 +119,89 @@ export default function Projects() {
       </div>
 
       {/* Grid */}
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <article
-            key={project.name}
-            className="group grid h-full max-w-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg"
-          >
-            <div className="overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={600}
-                height={360}
-                className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-1 flex-col gap-4 p-4">
-              <h2 className="text-base font-semibold md:text-lg">
-                {project.name}
-              </h2>
-              {project.description && (
-                <p className="text-sm text-foreground/90 md:text-base">
-                  {project.description}
-                </p>
-              )}
-
-              {project.Techs?.length ? (
-                <div className="mt-auto flex flex-wrap items-center gap-2">
-                  <span className="text-md font-semibold">Techs:</span>
-                  {project.Techs.map((tech) => (
-                    <Badge
-                      key={`${project.name}-${tech}`}
-                      variant="secondary"
-                      className="text-xs"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              ) : null}
-
-              <div className="mt-3 flex flex-wrap gap-3">
-                {project.repoURL && (
-                  <a
-                    href={project.repoURL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
-                  >
-                    <FaGithub />
-                    <span className="font-medium">Repositório</span>
-                  </a>
-                )}
-                {project.deployURL ? (
-                  <a
-                    href={project.deployURL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
-                  >
-                    <FaGlobeEurope />
-                    <span className="font-medium">Deploy</span>
-                  </a>
-                ) : (
-                  <span className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs dark:border-white">
-                    <FaGlobeEurope />
-                    <span className="font-medium">Indisponível</span>
-                  </span>
-                )}
+      <motion.div
+        layout
+        className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        <AnimatePresence mode="popLayout">
+          {projects.map((project) => (
+            <motion.article
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              key={project.name}
+              className="group grid h-full max-w-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={600}
+                  height={360}
+                  className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-            </div>
-          </article>
-        ))}
-      </div>
+              <div className="flex flex-1 flex-col gap-4 p-4">
+                <h2 className="text-base font-semibold md:text-lg">
+                  {project.name}
+                </h2>
+                {project.description && (
+                  <p className="text-sm text-foreground/90 md:text-base">
+                    {project.description}
+                  </p>
+                )}
 
+                {project.Techs?.length ? (
+                  <div className="mt-auto flex flex-wrap items-center gap-2">
+                    <span className="text-md font-semibold">Techs:</span>
+                    {project.Techs.map((tech) => (
+                      <Badge
+                        key={`${project.name}-${tech}`}
+                        variant="secondary"
+                        className="text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                ) : null}
+
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {project.repoURL && (
+                    <a
+                      href={project.repoURL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
+                    >
+                      <FaGithub />
+                      <span className="font-medium">Repositório</span>
+                    </a>
+                  )}
+                  {project.deployURL ? (
+                    <a
+                      href={project.deployURL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
+                    >
+                      <FaGlobeEurope />
+                      <span className="font-medium">Deploy</span>
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs dark:border-white">
+                      <FaGlobeEurope />
+                      <span className="font-medium">Indisponível</span>
+                    </span>
+                  )}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </AnimatePresence>
+      </motion.div>
       {projects.length === 0 && (
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Nenhum projeto encontrado.

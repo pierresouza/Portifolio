@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { ProjectsMock, freelanceProject } from "./projects/mockProjects";
 import { SiMicrosoftoutlook } from "react-icons/si";
+import FadeIn from "@/components/fade-in";
 
 export default function Home() {
   const featured = ProjectsMock.Project.slice(0, 3);
@@ -25,7 +26,7 @@ export default function Home() {
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       {/* Hero */}
       <section className="grid items-center gap-10 md:grid-cols-2">
-        <div className="flex flex-col gap-6">
+        <FadeIn className="flex flex-col gap-6" direction="right">
           <div>
             <p className="text-xs font-medium text-muted-foreground sm:text-sm">
               Olá, eu sou
@@ -49,9 +50,7 @@ export default function Home() {
             <span className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
               <TfiLocationPin /> São Paulo, Brasil
             </span>
-            <Badge variant="primary">
-              Disponível para novas oportunidades
-            </Badge>
+            <Badge variant="primary">Disponível para novas oportunidades</Badge>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -67,13 +66,13 @@ export default function Home() {
               >
                 <FiGithub size={20} />
               </Link>
-                <Link
+              <Link
                 className="rounded-xl border border-gray-500 p-2 transition-all duration-300 ease-in-out hover:scale-110 dark:border-white"
                 href="mailto:pierre.s3@hotmail.com"
                 aria-label="Outlook Email"
-                >
+              >
                 <SiMicrosoftoutlook size={20} />
-                </Link>
+              </Link>
               <Link
                 className="rounded-xl border border-gray-500 p-2 transition-all duration-300 ease-in-out hover:scale-110 dark:border-white"
                 target="_blank"
@@ -84,9 +83,9 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
-        <div className="flex items-center justify-center">
+        <FadeIn className="flex items-center justify-center" direction="left">
           <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96">
             <Image
               src={Profilephoto}
@@ -96,11 +95,14 @@ export default function Home() {
               className="rounded-full object-cover"
             />
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Highlights */}
-      <section className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <FadeIn
+        className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        delay={0.2}
+      >
         <Card>
           <CardHeader>
             <CardTitle className="text-base md:text-lg">Experiência</CardTitle>
@@ -132,77 +134,81 @@ export default function Home() {
             <Badge variant="outline">kotlin</Badge>
           </CardContent>
         </Card>
-      </section>
+      </FadeIn>
 
       {/* Featured Projects */}
       <section className="mt-14">
-        <header className="mb-6">
-          <h2 className="text-xl font-bold md:text-2xl lg:text-3xl">
-            Projetos em destaque
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground md:text-base">
-            Uma prévia de alguns trabalhos recentes. Veja todos na página de
-            projetos.
-          </p>
-        </header>
+        <FadeIn className="mb-6" delay={0.3}>
+          <header>
+            <h2 className="text-xl font-bold md:text-2xl lg:text-3xl">
+              Projetos em destaque
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              Uma prévia de alguns trabalhos recentes. Veja todos na página de
+              projetos.
+            </p>
+          </header>
+        </FadeIn>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project) => (
-            <article
+          {featured.map((project, index) => (
+            <FadeIn
               key={project.name}
+              delay={0.4 + index * 0.1}
               className="group overflow-hidden rounded-xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg"
             >
-              <div className="overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  width={600}
-                  height={360}
-                  className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-3 p-4">
-                <h3 className="text-base font-semibold md:text-lg">
-                  {project.name}
-                </h3>
-                {project.description && (
-                  <p className="text-sm text-foreground/90 md:text-base line-clamp-3">
-                    {project.description}
-                  </p>
-                )}
-                <div className="mt-1 flex flex-wrap gap-2">
-                  {project.Techs.slice(0, 3).map((tech) => (
-                    <Badge
-                      key={`${project.name}-${tech}`}
-                      variant="secondary"
-                      className="text-xs"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+              <article className="flex h-full flex-col">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <div className="mt-2 flex flex-wrap gap-3">
-                  <a
-                    href={project.repoURL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs underline-offset-4 hover:underline"
-                  >
-                    Repositório
-                  </a>
-                  {project.deployURL ? (
+                <div className="flex flex-1 flex-col gap-3 p-4">
+                  <h3 className="text-base font-semibold md:text-lg">
+                    {project.name}
+                  </h3>
+                  {project.description && (
+                    <p className="line-clamp-3 text-sm text-foreground/90 md:text-base">
+                      {project.description}
+                    </p>
+                  )}
+                  <div className="mt-1 flex flex-wrap gap-2">
+                    {project.Techs.slice(0, 3).map((tech) => (
+                      <Badge
+                        key={`${project.name}-${tech}`}
+                        variant="secondary"
+                        className="text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-3">
                     <a
-                      href={project.deployURL}
+                      href={project.repoURL}
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs underline-offset-4 hover:underline"
                     >
-                      Demo
+                      Repositório
                     </a>
-                  ) : null}
+                    {project.deployURL ? (
+                      <a
+                        href={project.deployURL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs underline-offset-4 hover:underline"
+                      >
+                        Demo
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </FadeIn>
           ))}
         </div>
 
