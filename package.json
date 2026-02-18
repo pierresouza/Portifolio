@@ -2,6 +2,11 @@
   "name": "portifolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@1.22.22",
+  "resolutions": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,6 +24,7 @@
     "clsx": "^2.1.1",
     "dropdown-menu": "^0.1.1",
     "embla-carousel-react": "^8.5.2",
+    "framer-motion": "^12.34.1",
     "lucide-react": "^0.445.0",
     "motion": "^12.34.0",
     "next": "^16.0.10",
