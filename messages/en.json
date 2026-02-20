@@ -1,0 +1,200 @@
+{
+  "common": {
+    "siteTitle": "Pierre Souza",
+    "location": "São Paulo, Brazil",
+    "availableBadge": "Available for new opportunities",
+    "viewProjects": "View projects",
+    "viewAllProjects": "View all projects",
+    "repository": "Repository",
+    "demo": "Demo",
+    "deploy": "Deploy",
+    "unavailable": "Unavailable",
+    "seeMore": "See more",
+    "techs": "Techs",
+    "focus": "Focus",
+    "description": "Description",
+    "all": "All"
+  },
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "experience": "Experience",
+    "navigation": "Navigation",
+    "openMenu": "Open menu",
+    "downloadCV": "CV",
+    "downloadTitle": "Download my resume",
+    "cvPortuguese": "CV Portuguese",
+    "cvEnglish": "CV English"
+  },
+  "footer": {
+    "developedBy": "Developed with ❤️ by Pierre Souza"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "name": "Pierre Souza",
+    "role": "Front-End Developer",
+    "bio": "I create modern, accessible, and performant interfaces, focused on the best user experience. I work with Next.js, React, TypeScript, and Tailwind, always applying best practices and attention to detail.",
+    "experienceTitle": "Experience",
+    "experienceDescription": "Years working with interfaces",
+    "experienceYears": "2+ years",
+    "projectsTitle": "Projects",
+    "projectsDescription": "Published and in development",
+    "stackTitle": "Stack",
+    "stackDescription": "Main technologies",
+    "featuredProjectsTitle": "Featured Projects",
+    "featuredProjectsDescription": "A preview of some recent work. See all on the projects page."
+  },
+  "about": {
+    "title": "About",
+    "role": "Front-end Developer",
+    "description": "Focused on creating accessible, performant interfaces with great user experience. Working with React/Next.js, TypeScript, and modern styling (Tailwind and Styled Components). Interest in design systems, testing, and UI best practices.",
+    "technologiesTitle": "Technologies I use",
+    "studyingTitle": "Currently studying"
+  },
+  "experience": {
+    "title": "Experience",
+    "studentTitle": "Academic Experience",
+    "work": "Work",
+    "studies": "Studies"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Some projects I've developed and maintain. Filter by technology or search by name.",
+    "studies": "Studies",
+    "freelance": "Freelance",
+    "searchPlaceholder": "Search projects...",
+    "searchLabel": "Search projects",
+    "noProjectsFound": "No projects found."
+  },
+  "language": {
+    "title": "Language",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "projectItems": {
+    "biocidade": {
+      "name": "Biocidade",
+      "description": "Biocidade is a platform for mapping green areas and environmental preservation, developed as an Integrative Project for the Fullstack JavaScript Development course at Generation Brasil."
+    },
+    "capsync": {
+      "name": "CapSync",
+      "description": "Capsync is a project management platform to facilitate team communication and organization, developed during the First Hackathon of the Bichinhos da TI Community."
+    },
+    "descoinvest": {
+      "name": "Desco Invest",
+      "description": "Desco Invest is an investment platform that democratizes access to financial knowledge, using artificial intelligence to make learning more accessible and practical."
+    },
+    "portfolio": {
+      "name": "Portfolio",
+      "description": "Portfolio developed with Next.js, Tailwind CSS and Typescript, with the purpose of presenting my projects and skills as a Front-End developer."
+    },
+    "rocketvisuals": {
+      "name": "Rocket Visuals",
+      "description": "Rocket Visuals is a video production company specialized in VFX and motion design, transforming ideas into impactful visual experiences that elevate communication and generate real results for brands and companies."
+    },
+    "seikopartners": {
+      "name": "Seiko Partners",
+      "description": "Institutional website developed for Seiko Partners, a business consulting company focused on innovative solutions for their clients."
+    },
+    "powermanutencao": {
+      "name": "Power Manutenção",
+      "description": "Institutional website developed for Power Manutenção, a company specialized in automotive maintenance, offering services such as electronic reprogramming (Remap), truck and agricultural mechanics, engine overhaul and air conditioning."
+    }
+  },
+  "experienceItems": {
+    "job0": {
+      "company": "Municipal Department of Urban Planning and Licensing",
+      "role": "Fullstack Development Intern",
+      "description": "I work on developing and evolving modern and scalable web applications using Next.js, TypeScript, and Prisma. My core responsibility is to develop efficient, secure solutions with total focus on user experience."
+    },
+    "job1": {
+      "company": "Billink AI",
+      "role": "Web Developer",
+      "description": "I work on developing a SaaS focused on auditing AI and cloud infrastructure costs, aiming to democratize access to FinOps for startups."
+    },
+    "job2": {
+      "company": "Baloon Marketing Consulting",
+      "role": "Junior Web Developer",
+      "description": "Junior Web Developer with experience in Next.js, Tailwind CSS, Shadcn UI, and Animate on Scroll, working on creating modern and responsive landing pages."
+    },
+    "job3": {
+      "company": "Baloon Marketing Consulting",
+      "role": "WordPress Developer",
+      "description": "I work as a WordPress developer, responsible for creating and maintaining websites using custom themes and plugins to meet client needs."
+    },
+    "job4": {
+      "company": "Zanthus - Results Technology",
+      "role": "Software Development Intern",
+      "description": "During my internship, I had the opportunity to work in various areas of software development. I actively participated in creating and maintaining applications, collaborating with the team to solve problems and implement new features."
+    },
+    "job5": {
+      "company": "SELO ESG PRO Brazil",
+      "role": "Front-End Developer - Freelancer",
+      "description": "I worked as a front-end developer using the Next.js framework along with Tailwind CSS and Material UI to structure and architect the project."
+    },
+    "job6": {
+      "company": "PicPay Invest",
+      "role": "Systems Analyst Assistant",
+      "description": "I worked as a front-end developer focusing on creating interfaces that produce an innovative and functional experience for platform users.",
+      "description2": "I took responsibility for executing backend tests using Cypress, as well as starting the implementation of frontend tests with Ruby and Capybara."
+    },
+    "job7": {
+      "company": "LionX",
+      "role": "Systems Analyst Assistant",
+      "description": "I worked as a Systems Analyst Assistant, focusing on component development and screen diagramming, contributing to the delivery of effective visual solutions.",
+      "description2": "I took responsibility for executing tests and validations of templates, ensuring proper functioning and visual consistency across all applications."
+    }
+  },
+  "educationItems": {
+    "edu0": {
+      "level": "Higher Education",
+      "course": "Information Technology (CST)",
+      "institution": "UNINTER International University Center",
+      "description": "IT CST with theoretical-practical base in development and infrastructure areas. Emphasis on HTML, CSS, JavaScript, Java (OOP), MySQL, version control with Git/GitHub and agile methodologies (Scrum/Kanban)."
+    },
+    "edu1": {
+      "level": "Technical Course",
+      "course": "English Language and English Literature",
+      "institution": "Education First",
+      "description": "Development of fluency and confidence for communication in English in professional contexts, access to content and immersion tools, and participation in mentoring and live sessions with executives."
+    },
+    "edu2": {
+      "level": "Higher Education",
+      "course": "Systems Analysis and Development",
+      "institution": "Descomplica Digital College",
+      "description": "Bachelor's degree in Systems Analysis and Development with a solid foundation in software and systems development."
+    },
+    "edu3": {
+      "level": "Higher Education",
+      "course": "Information Technology (CST)",
+      "institution": "Uniamérica Descomplica",
+      "description": "Higher education with foundations in computing, software development (web and mobile), databases, software engineering, and networks."
+    },
+    "edu4": {
+      "level": "Technical Education",
+      "course": "Fullstack Development",
+      "institution": "Generation Brazil",
+      "description": "Fullstack JavaScript Bootcamp with practical focus on front-end and back-end. Agile projects, version control with Git/GitHub and emphasis on soft skills."
+    },
+    "edu5": {
+      "level": "Program",
+      "course": "DIO Campus Expert Ambassador",
+      "institution": "DIO",
+      "description": "Program for university students to accelerate their careers and leadership in academic communities through mentoring with market reference professionals."
+    },
+    "edu6": {
+      "level": "Technical Education",
+      "course": "Java Web Development",
+      "institution": "Instituto Proa",
+      "description": "Intensive Pro Profession program focused on employability, with personal development tracks, technical competencies, and market preparation."
+    },
+    "edu7": {
+      "level": "Technical Education",
+      "course": "Systems Development",
+      "institution": "ETEC - State Technical School of São Paulo",
+      "description": "Technical training with foundations in computing, software development, databases, software engineering, and networks."
+    }
+  }
+}

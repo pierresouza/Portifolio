@@ -5,9 +5,14 @@ import { EducationMock } from "./education.mock";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
+import { useTranslations } from "@/lib/i18n";
 
 export default function Experience() {
   const [mode, setMode] = React.useState<"work" | "study">("work");
+  const t = useTranslations("experience");
+  const tc = useTranslations("common");
+  const te = useTranslations("experienceItems");
+  const ted = useTranslations("educationItems");
 
   // Agrupamento de itens por empresa
   const groupedWorkItems = React.useMemo(() => {
@@ -54,7 +59,7 @@ export default function Experience() {
             id="experiencia-heading"
             className="text-xl font-bold md:text-2xl lg:text-3xl"
           >
-            {mode === "work" ? "Experiência" : "Experiência Estudantil"}
+            {mode === "work" ? t("title") : t("studentTitle")}
           </h1>
           <div className="flex gap-2">
             <Button
@@ -63,7 +68,7 @@ export default function Experience() {
               aria-pressed={mode === "work"}
               onClick={() => setMode("work")}
             >
-              Trabalho
+              {t("work")}
             </Button>
             <Button
               variant={mode === "study" ? "default" : "outline"}
@@ -71,7 +76,7 @@ export default function Experience() {
               aria-pressed={mode === "study"}
               onClick={() => setMode("study")}
             >
-              Estudos
+              {t("studies")}
             </Button>
           </div>
         </div>
@@ -93,7 +98,7 @@ export default function Experience() {
                 <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
                   {/* Cabeçalho da Empresa (Aparece apenas uma vez por grupo) */}
                   <h2 className="mb-4 text-lg font-bold leading-snug md:text-xl">
-                    {group.company}
+                    {te(`${group.items[0].translationKey}.company`)}
                   </h2>
 
                   {/* Lista de Cargos dentro da Empresa */}
@@ -112,7 +117,7 @@ export default function Experience() {
 
                         <header className="mb-2">
                           <h3 className="text-base font-semibold leading-snug">
-                            {item.Role}
+                            {te(`${item.translationKey}.role`)}
                           </h3>
                           <time
                             className="block text-xs text-muted-foreground"
@@ -123,17 +128,17 @@ export default function Experience() {
                         </header>
 
                         <div className="prose prose-sm dark:prose-invert max-w-none text-sm text-foreground">
-                          <strong>Descrição: </strong>
-                          {item.Description}
+                          <strong>{tc("description")}: </strong>
+                          {te(`${item.translationKey}.description`)}
                         </div>
 
                         {item.Description2 && (
                           <details className="mt-2">
                             <summary className="cursor-pointer select-none text-sm text-primary hover:underline">
-                              Ver mais
+                              {tc("seeMore")}
                             </summary>
                             <p className="prose prose-sm dark:prose-invert mt-2 max-w-none text-sm text-foreground">
-                              {item.Description2}
+                              {te(`${item.translationKey}.description2`)}
                             </p>
                           </details>
                         )}
@@ -141,7 +146,7 @@ export default function Experience() {
                         {item.Technologies?.length ? (
                           <div className="mt-3 flex flex-wrap items-center gap-2">
                             <span className="text-xs font-semibold">
-                              Techs:
+                              {tc("techs")}:
                             </span>
                             <ul className="flex flex-wrap gap-1">
                               {item.Technologies.map((tech) => (
@@ -181,10 +186,11 @@ export default function Experience() {
                 <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
                   <header className="mb-2">
                     <h2 className="text-lg font-semibold leading-snug md:text-xl">
-                      {study.Level} - {study.Institution}
+                      {ted(`${study.translationKey}.level`)} -{" "}
+                      {study.Institution}
                     </h2>
                     <p className="text-sm text-muted-foreground md:text-base">
-                      {study.Course}
+                      {ted(`${study.translationKey}.course`)}
                     </p>
                     {study.Period ? (
                       <time
@@ -198,19 +204,21 @@ export default function Experience() {
 
                   {study.Description ? (
                     <p className="prose prose-sm dark:prose-invert max-w-none text-foreground">
-                      {study.Description}
+                      {ted(`${study.translationKey}.description`)}
                     </p>
                   ) : null}
 
                   {study.Technologies?.length ? (
                     <div className="mt-4 flex flex-wrap items-center gap-3">
-                      <span className="text-sm font-semibold">Foco:</span>
+                      <span className="text-sm font-semibold">
+                        {tc("focus")}:
+                      </span>
                       <ul className="flex flex-wrap gap-2">
                         {study.Technologies.map((tech) => (
                           <li key={`${study.id}-${tech}`}>
                             <Badge variant="secondary" className="text-xs">
                               {tech}
-                motion.            </Badge>
+                            </Badge>
                           </li>
                         ))}
                       </ul>

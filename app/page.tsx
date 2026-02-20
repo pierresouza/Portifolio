@@ -17,10 +17,14 @@ import {
 import { ProjectsMock, freelanceProject } from "./projects/mockProjects";
 import { SiMicrosoftoutlook } from "react-icons/si";
 import FadeIn from "@/components/fade-in";
+import { useTranslations } from "@/lib/i18n";
 
 export default function Home() {
   const featured = ProjectsMock.Project.slice(0, 3);
   const totalProjects = ProjectsMock.Project.length + freelanceProject.length;
+  const t = useTranslations("home");
+  const tc = useTranslations("common");
+  const tp = useTranslations("projectItems");
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
@@ -29,33 +33,30 @@ export default function Home() {
         <FadeIn className="flex flex-col gap-6" direction="right">
           <div>
             <p className="text-xs font-medium text-muted-foreground sm:text-sm">
-              Olá, eu sou
+              {t("greeting")}
             </p>
             <h1 className="mt-1 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-              Pierre Souza
+              {t("name")}
             </h1>
             <p className="mt-2 text-base font-semibold text-foreground/90 sm:text-lg md:text-xl">
-              Desenvolvedor Front-End
+              {t("role")}
             </p>
           </div>
 
           <p className="max-w-prose text-sm leading-relaxed text-foreground/90 sm:text-base">
-            Crio interfaces modernas, acessíveis e performáticas, focadas na
-            melhor experiência de usuário. Trabalho com Next.js, React,
-            TypeScript e Tailwind, sempre aplicando boas práticas e atenção aos
-            detalhes.
+            {t("bio")}
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <span className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
-              <TfiLocationPin /> São Paulo, Brasil
+              <TfiLocationPin /> {tc("location")}
             </span>
-            <Badge variant="primary">Disponível para novas oportunidades</Badge>
+            <Badge variant="primary">{tc("availableBadge")}</Badge>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <Button size="md" asChild>
-              <Link href="/projects">Ver projetos</Link>
+              <Link href="/projects">{tc("viewProjects")}</Link>
             </Button>
             <div className="ml-1 flex items-center gap-3">
               <Link
@@ -105,17 +106,23 @@ export default function Home() {
       >
         <Card>
           <CardHeader>
-            <CardTitle className="text-base md:text-lg">Experiência</CardTitle>
-            <CardDescription>Anos atuando com interfaces</CardDescription>
+            <CardTitle className="text-base md:text-lg">
+              {t("experienceTitle")}
+            </CardTitle>
+            <CardDescription>{t("experienceDescription")}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold md:text-3xl">2+ anos</p>
+            <p className="text-2xl font-bold md:text-3xl">
+              {t("experienceYears")}
+            </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle className="text-base md:text-lg">Projetos</CardTitle>
-            <CardDescription>Publicados e em desenvolvimento</CardDescription>
+            <CardTitle className="text-base md:text-lg">
+              {t("projectsTitle")}
+            </CardTitle>
+            <CardDescription>{t("projectsDescription")}</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-2xl font-bold md:text-3xl">{totalProjects}</p>
@@ -123,8 +130,10 @@ export default function Home() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle className="text-base md:text-lg">Stack</CardTitle>
-            <CardDescription>Principais tecnologias</CardDescription>
+            <CardTitle className="text-base md:text-lg">
+              {t("stackTitle")}
+            </CardTitle>
+            <CardDescription>{t("stackDescription")}</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
             <Badge variant="outline">Next.js</Badge>
@@ -141,11 +150,10 @@ export default function Home() {
         <FadeIn className="mb-6" delay={0.3}>
           <header>
             <h2 className="text-xl font-bold md:text-2xl lg:text-3xl">
-              Projetos em destaque
+              {t("featuredProjectsTitle")}
             </h2>
             <p className="mt-2 text-sm text-muted-foreground md:text-base">
-              Uma prévia de alguns trabalhos recentes. Veja todos na página de
-              projetos.
+              {t("featuredProjectsDescription")}
             </p>
           </header>
         </FadeIn>
@@ -168,11 +176,11 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-4">
                   <h3 className="text-base font-semibold md:text-lg">
-                    {project.name}
+                    {tp(`${project.translationKey}.name`)}
                   </h3>
                   {project.description && (
                     <p className="line-clamp-3 text-sm text-foreground/90 md:text-base">
-                      {project.description}
+                      {tp(`${project.translationKey}.description`)}
                     </p>
                   )}
                   <div className="mt-1 flex flex-wrap gap-2">
@@ -193,7 +201,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="text-xs underline-offset-4 hover:underline"
                     >
-                      Repositório
+                      {tc("repository")}
                     </a>
                     {project.deployURL ? (
                       <a
@@ -202,7 +210,7 @@ export default function Home() {
                         rel="noreferrer"
                         className="text-xs underline-offset-4 hover:underline"
                       >
-                        Demo
+                        {tc("demo")}
                       </a>
                     ) : null}
                   </div>
@@ -214,7 +222,7 @@ export default function Home() {
 
         <div className="mt-8">
           <Button variant="outline" asChild>
-            <Link href="/projects">Ver todos os projetos</Link>
+            <Link href="/projects">{tc("viewAllProjects")}</Link>
           </Button>
         </div>
       </section>

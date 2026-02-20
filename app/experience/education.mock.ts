@@ -1,5 +1,6 @@
 export interface EducationItem {
   id: string;
+  translationKey: string;
   Level: string; // Ex.: Ensino Superior, Ensino técnico, Curso técnico
   Course: string;
   Institution: string;
@@ -16,6 +17,7 @@ export const EducationMock: Education = {
   Studies: [
     {
       id: "0",
+      translationKey: "edu0",
       Level: "Ensino Superior",
       Course: "Tecnologia da Informação (CST)",
       Institution: "UNINTER Centro Universitário Internacional",
@@ -35,6 +37,7 @@ export const EducationMock: Education = {
     },
     {
       id: "1",
+      translationKey: "edu1",
       Level: "Curso técnico",
       Course: "Língua Inglesa e Literaturas de Língua Inglesa",
       Institution: "Education First",
@@ -45,6 +48,7 @@ export const EducationMock: Education = {
     },
     {
       id: "2",
+      translationKey: "edu2",
       Level: "Ensino Superior",
       Course: "Análise e Desenvolvimento de Sistemas",
       Institution: "Descomplica Faculdade Digital",
@@ -63,6 +67,7 @@ export const EducationMock: Education = {
     },
     {
       id: "3",
+      translationKey: "edu3",
       Level: "Ensino Superior",
       Course: "Tecnologia da Informação (CST)",
       Institution: "Uniamérica Descomplica",
@@ -80,6 +85,7 @@ export const EducationMock: Education = {
     },
     {
       id: "4",
+      translationKey: "edu4",
       Level: "Ensino técnico",
       Course: "Desenvolvimento Fullstack",
       Institution: "Generation Brasil",
@@ -101,6 +107,7 @@ export const EducationMock: Education = {
     },
     {
       id: "5",
+      translationKey: "edu5",
       Level: "Programa",
       Course: "Embaixador da DIO Campus Expert",
       Institution: "DIO",
@@ -110,6 +117,7 @@ export const EducationMock: Education = {
     },
     {
       id: "6",
+      translationKey: "edu6",
       Level: "Ensino técnico",
       Course: "Desenvolvimento Web Java",
       Institution: "Instituto Proa",
@@ -130,6 +138,7 @@ export const EducationMock: Education = {
     },
     {
       id: "7",
+      translationKey: "edu7",
       Level: "Ensino técnico",
       Course: "Desenvolvimento de sistemas",
       Institution: "ETEC - Escola Técnica Estadual de São Paulo",

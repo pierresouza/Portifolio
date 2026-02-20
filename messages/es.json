@@ -1,0 +1,200 @@
+{
+  "common": {
+    "siteTitle": "Pierre Souza",
+    "location": "São Paulo, Brasil",
+    "availableBadge": "Disponible para nuevas oportunidades",
+    "viewProjects": "Ver proyectos",
+    "viewAllProjects": "Ver todos los proyectos",
+    "repository": "Repositorio",
+    "demo": "Demo",
+    "deploy": "Deploy",
+    "unavailable": "No disponible",
+    "seeMore": "Ver más",
+    "techs": "Techs",
+    "focus": "Enfoque",
+    "description": "Descripción",
+    "all": "Todos"
+  },
+  "header": {
+    "home": "Página Principal",
+    "projects": "Proyectos",
+    "about": "Sobre",
+    "experience": "Experiencia",
+    "navigation": "Navegación",
+    "openMenu": "Abrir menú",
+    "downloadCV": "CV",
+    "downloadTitle": "Descarga mi currículum",
+    "cvPortuguese": "CV Portugués",
+    "cvEnglish": "CV English"
+  },
+  "footer": {
+    "developedBy": "Desarrollado con ❤️ por Pierre Souza"
+  },
+  "home": {
+    "greeting": "Hola, soy",
+    "name": "Pierre Souza",
+    "role": "Desarrollador Front-End",
+    "bio": "Creo interfaces modernas, accesibles y de alto rendimiento, enfocadas en la mejor experiencia de usuario. Trabajo con Next.js, React, TypeScript y Tailwind, siempre aplicando buenas prácticas y atención al detalle.",
+    "experienceTitle": "Experiencia",
+    "experienceDescription": "Años trabajando con interfaces",
+    "experienceYears": "2+ años",
+    "projectsTitle": "Proyectos",
+    "projectsDescription": "Publicados y en desarrollo",
+    "stackTitle": "Stack",
+    "stackDescription": "Principales tecnologías",
+    "featuredProjectsTitle": "Proyectos destacados",
+    "featuredProjectsDescription": "Una vista previa de algunos trabajos recientes. Ver todos en la página de proyectos."
+  },
+  "about": {
+    "title": "Sobre",
+    "role": "Desarrollador Front-end",
+    "description": "Enfocado en crear interfaces accesibles, de alto rendimiento y con buena experiencia de usuario. Trabajo con React/Next.js, TypeScript y estilos modernos (Tailwind y Styled Components). Interés en design systems, pruebas y buenas prácticas de UI.",
+    "technologiesTitle": "Tecnologías que uso",
+    "studyingTitle": "Estudiando ahora"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "studentTitle": "Experiencia Estudiantil",
+    "work": "Trabajo",
+    "studies": "Estudios"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Algunos proyectos que he desarrollado y mantengo. Filtra por tecnología o busca por nombre.",
+    "studies": "Estudios",
+    "freelance": "Freelance",
+    "searchPlaceholder": "Buscar proyectos...",
+    "searchLabel": "Buscar proyectos",
+    "noProjectsFound": "Ningún proyecto encontrado."
+  },
+  "language": {
+    "title": "Idioma",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "projectItems": {
+    "biocidade": {
+      "name": "Biocidade",
+      "description": "Biocidade es una plataforma de mapeo de áreas verdes y preservación ambiental, desarrollada como Proyecto Integrador del curso de Desarrollo Fullstack JavaScript de Generation Brasil."
+    },
+    "capsync": {
+      "name": "CapSync",
+      "description": "Capsync es una plataforma de gestión de proyectos para facilitar la comunicación y organización de equipos, desarrollada durante el Primer Hackathon de la Comunidad Bichinhos da TI."
+    },
+    "descoinvest": {
+      "name": "Desco Invest",
+      "description": "Desco Invest es una plataforma de inversiones que democratiza el acceso al conocimiento financiero, utilizando inteligencia artificial para hacer el aprendizaje más accesible y práctico."
+    },
+    "portfolio": {
+      "name": "Portafolio",
+      "description": "Portafolio desarrollado con Next.js, Tailwind CSS y Typescript, con el propósito de presentar mis proyectos y habilidades como desarrollador Front-End."
+    },
+    "rocketvisuals": {
+      "name": "Rocket Visuals",
+      "description": "Rocket Visuals es una productora de videos especializada en VFX y motion design, transformando ideas en experiencias visuales impactantes que elevan la comunicación y generan resultados reales para marcas y empresas."
+    },
+    "seikopartners": {
+      "name": "Seiko Partners",
+      "description": "Sitio web institucional desarrollado para Seiko Partners, una empresa de consultoría empresarial enfocada en soluciones innovadoras para sus clientes."
+    },
+    "powermanutencao": {
+      "name": "Power Manutenção",
+      "description": "Sitio web institucional desarrollado para Power Manutenção, empresa especializada en mantenimiento automotriz, ofreciendo servicios de reprogramación electrónica (Remap), mecánica de camiones y agrícola, rectificación de motores y aire acondicionado."
+    }
+  },
+  "experienceItems": {
+    "job0": {
+      "company": "Secretaría Municipal de Urbanismo y Licencias",
+      "role": "Pasante de desarrollo fullstack",
+      "description": "Trabajo en el desarrollo y evolución de aplicaciones web modernas y escalables, utilizando Next.js, TypeScript y Prisma. Mi responsabilidad central es desarrollar soluciones eficientes, seguras y con enfoque total en la experiencia del usuario."
+    },
+    "job1": {
+      "company": "Billink AI",
+      "role": "Desarrollador Web",
+      "description": "Trabajo en el desarrollo de un SaaS enfocado en auditoría de costos de infraestructura de IA y cloud, con el objetivo de democratizar el acceso a FinOps para startups."
+    },
+    "job2": {
+      "company": "Baloon Consultoría de Marketing",
+      "role": "Desarrollador Web Jr.",
+      "description": "Desarrollador Web Junior con experiencia en Next.js, Tailwind CSS, Shadcn UI y Animate on Scroll, trabajando en la creación de landing pages modernas y responsivas."
+    },
+    "job3": {
+      "company": "Baloon Consultoría de Marketing",
+      "role": "Desarrollador WordPress",
+      "description": "Trabajo como desarrollador WordPress, responsable de la creación y mantenimiento de sitios web utilizando temas personalizados y plugins para satisfacer las necesidades de los clientes."
+    },
+    "job4": {
+      "company": "Zanthus - Tecnología de Resultados",
+      "role": "Pasante de Desarrollo de Software",
+      "description": "Durante mi pasantía, tuve la oportunidad de trabajar en diversas áreas del desarrollo de software. Participé activamente en la creación y mantenimiento de aplicaciones, colaborando con el equipo para resolver problemas e implementar nuevas funcionalidades."
+    },
+    "job5": {
+      "company": "SELO ESG PRO Brasil",
+      "role": "Desarrollador Front-End - Freelancer",
+      "description": "Trabajé como desarrollador front-end, utilizando el framework Next.js, junto con Tailwind CSS y Material UI, para estructurar y arquitectar el proyecto."
+    },
+    "job6": {
+      "company": "PicPay Invest",
+      "role": "Asistente de analista de sistemas",
+      "description": "Trabajé como desarrollador front-end, con énfasis en creación de interfaces produciendo una experiencia innovadora y funcional para usuarios de la plataforma.",
+      "description2": "Asumí la responsabilidad de ejecutar pruebas en el back-end utilizando Cypress, además de iniciar la implementación de pruebas en el front-end con Ruby y Capybara."
+    },
+    "job7": {
+      "company": "LionX",
+      "role": "Asistente de analista de sistemas",
+      "description": "Trabajé como Asistente de Analista de Sistemas, con enfoque en desarrollo de componentes y diagramación de pantallas, contribuyendo a la entrega de soluciones visuales efectivas.",
+      "description2": "Asumí la responsabilidad de ejecutar pruebas y validaciones de templates, asegurando el funcionamiento adecuado y la consistencia visual en todas las aplicaciones."
+    }
+  },
+  "educationItems": {
+    "edu0": {
+      "level": "Educación Superior",
+      "course": "Tecnología de la Información (CST)",
+      "institution": "UNINTER Centro Universitario Internacional",
+      "description": "CST en TI con base teórico-práctica en las áreas de desarrollo e infraestructura. Énfasis en HTML, CSS, JavaScript, Java (POO), MySQL, control de versiones con Git/GitHub y metodologías ágiles (Scrum/Kanban)."
+    },
+    "edu1": {
+      "level": "Curso técnico",
+      "course": "Lengua Inglesa y Literaturas de Lengua Inglesa",
+      "institution": "Education First",
+      "description": "Desarrollo de fluidez y confianza para comunicación en inglés en contextos profesionales, acceso a contenidos y herramientas de inmersión y participación en mentorías y lives con ejecutivos."
+    },
+    "edu2": {
+      "level": "Educación Superior",
+      "course": "Análisis y Desarrollo de Sistemas",
+      "institution": "Descomplica Facultad Digital",
+      "description": "Graduación en ADS con base sólida en desarrollo de software y sistemas."
+    },
+    "edu3": {
+      "level": "Educación Superior",
+      "course": "Tecnología de la Información (CST)",
+      "institution": "Uniamérica Descomplica",
+      "description": "Formación superior con fundamentos de computación, desarrollo de software (web y móvil), bases de datos, ingeniería de software y redes."
+    },
+    "edu4": {
+      "level": "Educación técnica",
+      "course": "Desarrollo Fullstack",
+      "institution": "Generation Brasil",
+      "description": "Bootcamp Fullstack JavaScript con enfoque práctico en front-end y back-end. Proyectos ágiles, control de versiones con Git/GitHub y énfasis en soft skills."
+    },
+    "edu5": {
+      "level": "Programa",
+      "course": "Embajador DIO Campus Expert",
+      "institution": "DIO",
+      "description": "Programa para universitarios acelerar su carrera y liderazgo en comunidades académicas a través de mentorías con profesionales de referencia en el mercado."
+    },
+    "edu6": {
+      "level": "Educación técnica",
+      "course": "Desarrollo Web Java",
+      "institution": "Instituto Proa",
+      "description": "Programa intensivo Pro Profesión enfocado en empleabilidad, con senderos de desarrollo personal, competencias técnicas y preparación para el mercado."
+    },
+    "edu7": {
+      "level": "Educación técnica",
+      "course": "Desarrollo de sistemas",
+      "institution": "ETEC - Escuela Técnica Estatal de São Paulo",
+      "description": "Formación técnica con fundamentos de computación, desarrollo de software, bases de datos, ingeniería de software y redes."
+    }
+  }
+}

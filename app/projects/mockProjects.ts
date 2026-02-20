@@ -11,6 +11,7 @@ interface ProjectsProps {
   repoURL: string;
   deployURL?: string;
   name: string;
+  translationKey: string;
   description?: string;
   image: StaticImageData | string;
   Techs: string[];
@@ -26,6 +27,7 @@ export const ProjectsMock: Projects = {
       repoURL: "https://github.com/Projeto-Integrador-BioCidade",
       deployURL: "https://main--biocidade.netlify.app/",
       image: BiocidadeLogo,
+      translationKey: "biocidade",
       description:
         "Biocidade é uma plataforma de mapeamento de áreas verdes e de preservação ambiental, desenvolvida como Projeto Integrador do curso de Desenvolvimento Fullstack javascript Da Generation Brasil.",
       name: "Biocidade",
@@ -35,6 +37,7 @@ export const ProjectsMock: Projects = {
       repoURL: "https://github.com/Capivara-s-Team/CapSync-Front-End",
       deployURL: "https://capsync.netlify.app/",
       image: CapSyncLogo,
+      translationKey: "capsync",
       description:
         "Capsync é uma plataforma de gerenciamento de projetos para facilitar a comunicação e organização de equipes, desenvolvida durante o Primeiro Hackathon da Comunidade Bichinhos da TI.",
       name: "CapSync",
@@ -44,6 +47,7 @@ export const ProjectsMock: Projects = {
       repoURL: "https://github.com/pierresouza/DescoInvest-front",
       deployURL: "https://descoinvest.netlify.app/",
       image: DescoInvest,
+      translationKey: "descoinvest",
       description:
         "Desco Invest é uma plataforma de investimentos que democratiza o acesso ao conhecimento sobre finanças, utilizando inteligência artificial para tornar o aprendizado mais acessível e prático.",
       name: "Desco Invest",
@@ -51,8 +55,9 @@ export const ProjectsMock: Projects = {
     },
     {
       repoURL: "https://github.com/pierresouza/Portifolio",
-      deployURL: "https://pierresouza.software/",
+      deployURL: "https://pierresouza.netlify.app/",
       image: Portifolio,
+      translationKey: "portfolio",
       description:
         "Portfólio desenvolvido com Next.js, Tailwind CSS e Typescript, com o intuito de apresentar meus projetos e habilidades como desenvolvedor Front-End.",
       name: "Portfólio",
@@ -66,6 +71,7 @@ export const freelanceProject: ProjectsProps[] = [
     repoURL: "",
     deployURL: "https://rocket-visuals.netlify.app/",
     image: RocketVisuals,
+    translationKey: "rocketvisuals",
     description:
       "Rocket Visuals é uma produtora de vídeos especializada em VFX e motion design, transformando ideias em experiências visuais impactantes que elevam a comunicação e geram resultados reais para marcas e empresas.",
     name: "Rocket Visuals",
@@ -75,6 +81,7 @@ export const freelanceProject: ProjectsProps[] = [
     repoURL: "",
     deployURL: "https://seikopartners.com.br/",
     image: seikopartners,
+    translationKey: "seikopartners",
     description:
       "Site institucional desenvolvido para a Seiko Partners, uma empresa de consultoria empresarial focada em soluções inovadoras para seus clientes.",
     name: "Seiko Partners",
@@ -84,6 +91,7 @@ export const freelanceProject: ProjectsProps[] = [
     repoURL: "",
     deployURL: "https://powermanutencao.com.br/",
     image: powermanutencao,
+    translationKey: "powermanutencao",
     description:
       "Site institucional desenvolvido para a Power Manutenção, empresa especializada em manutenção automotiva, oferecendo serviços de reprogramação eletrônica (Remap), mecânica de caminhões e agrícola, retífica de motores e ar condicionado.",
     name: "Power Manutenção",

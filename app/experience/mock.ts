@@ -1,5 +1,6 @@
 interface Job {
   id: string;
+  translationKey: string;
   Company: string;
   Role: string;
   Period: string;
@@ -16,6 +17,7 @@ export const ExperienceMock: Experience = {
   Job: [
     {
       id: "0",
+      translationKey: "job0",
       Company: "Secretaria Municipal de Urbanismo e Licenciamento",
       Role: "Estagiário de desenvolvimento fullstack",
       Period: "01/2026 - Atual",
@@ -35,6 +37,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "1",
+      translationKey: "job1",
       Company: "Billink AI",
       Role: "Desenvolvedor Web",
       Period: "01/2026 - Atual",
@@ -58,6 +61,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "2",
+      translationKey: "job2",
       Company: "Baloon Consultoria de Marketing",
       Role: "Desenvolvedor Web Jr.",
       Period: "01/2026 - Atual",
@@ -75,6 +79,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "3",
+      translationKey: "job3",
       Company: "Baloon Consultoria de Marketing",
       Role: "Desenvolvedor WordPress",
       Period: "11/2025 - 12/2025",
@@ -93,6 +98,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "4",
+      translationKey: "job4",
       Company: "Zanthus - Tecnologia de Resultados",
       Role: "Estagiário de Desenvolvimento de Software",
       Period: "11/2024 - 08/2025",
@@ -109,6 +115,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "5",
+      translationKey: "job5",
       Company: "SELO ESG PRO Brasil",
       Role: "Desenvolvedor Front-End - Freelancer",
       Period: "07/2024 - 08/2024",
@@ -126,6 +133,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "6",
+      translationKey: "job6",
       Company: "PicPay Invest",
       Role: "Assistente de analista de sistemas",
       Description:
@@ -151,6 +159,7 @@ export const ExperienceMock: Experience = {
     },
     {
       id: "7",
+      translationKey: "job7",
       Company: "LionX",
       Role: "Assistente de analista de sistemas",
       Description:

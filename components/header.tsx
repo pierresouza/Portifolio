@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 import { MdFileDownload } from "react-icons/md";
 import "animate.css";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "@/lib/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,19 +20,20 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const navLinks = [
-  { href: "/", label: "Página Inicial" },
-  { href: "/projects", label: "Projetos" },
-  { href: "/about", label: "Sobre" },
-  { href: "/experience", label: "Experiência" },
-];
-
 const Header = () => {
   const pathname = usePathname();
+  const t = useTranslations("header");
+
+  const navLinks = [
+    { href: "/", label: t("home") },
+    { href: "/projects", label: t("projects") },
+    { href: "/about", label: t("about") },
+    { href: "/experience", label: t("experience") },
+  ];
 
   const handleDownloadCV = () => {
     Swal.fire({
-      title: "Baixe meu currículo",
+      title: t("downloadTitle"),
       showCloseButton: true,
       customClass: {
         popup:
@@ -51,14 +54,14 @@ const Header = () => {
             download="pierresouza_PTBR.pdf"
             class="flex items-center justify-center w-[250px] h-[50px] bg-primary text-primary-foreground font-bold text-center rounded-md hover:bg-primary/90 transition-colors duration-300"
           >
-            CV Português
+            ${t("cvPortuguese")}
           </a>
           <a
             href="/pierresouza_EN.pdf"
             download="pierresouza_EN.pdf"
             class="flex items-center justify-center w-[250px] h-[50px] bg-secondary text-secondary-foreground font-bold text-center rounded-md hover:bg-secondary/80 transition-colors duration-300"
           >
-            CV English
+            ${t("cvEnglish")}
           </a>
         </div>
       `,
@@ -78,13 +81,13 @@ const Header = () => {
                 variant="outline"
                 size="icon"
                 className="border-border"
-                aria-label="Abrir menu"
+                aria-label={t("openMenu")}
               >
                 <FaList className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-56">
-              <DropdownMenuLabel>Navegação</DropdownMenuLabel>
+              <DropdownMenuLabel>{t("navigation")}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               {navLinks.map((link) => (
                 <DropdownMenuItem key={link.href} asChild>
@@ -144,7 +147,7 @@ const Header = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <ModeToggle />
           <div className="hidden h-6 w-px bg-border md:block" />
           <Button
@@ -154,8 +157,9 @@ const Header = () => {
             className="gap-2"
           >
             <MdFileDownload size={16} />
-            <span className="hidden sm:inline">CV</span>
+            <span className="hidden sm:inline">{t("downloadCV")}</span>
           </Button>
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

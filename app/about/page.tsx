@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +14,12 @@ import {
 } from "@/components/ui/carousel";
 import { knowledge, studying } from "./mock";
 import FadeIn from "@/components/fade-in";
+import { useTranslations } from "@/lib/i18n";
 
 export default function About() {
+  const t = useTranslations("about");
+  const tc = useTranslations("common");
+
   return (
     <section
       aria-labelledby="sobre-heading"
@@ -23,24 +29,19 @@ export default function About() {
         id="sobre-heading"
         className="text-xl font-bold md:text-2xl lg:text-3xl"
       >
-        Sobre
+        {t("title")}
       </h1>
 
       {/* Hero */}
       <div className="mt-8 grid items-center gap-8 md:grid-cols-2">
         <FadeIn direction="right">
-          <h2 className="text-lg font-semibold md:text-xl">
-            Desenvolvedor Front-end
-          </h2>
+          <h2 className="text-lg font-semibold md:text-xl">{t("role")}</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-            Foco em criar interfaces acessíveis, performáticas e com boa
-            experiência de uso. Atuação com React/Next.js, TypeScript e
-            estilização moderna (Tailwind e Styled Components). Interesse por
-            design systems, testes e boas práticas de UI.
+            {t("description")}
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button asChild variant="outline">
-              <Link href="/projects">Ver projetos</Link>
+              <Link href="/projects">{tc("viewProjects")}</Link>
             </Button>
           </div>
         </FadeIn>
@@ -59,7 +60,7 @@ export default function About() {
       {/* Skills - Já trabalhei */}
       <FadeIn className="mt-12" delay={0.2}>
         <h3 className="mb-3 text-base font-semibold md:text-lg">
-          Tecnologias que uso
+          {t("technologiesTitle")}
         </h3>
         <Carousel
           opts={{ align: "start", slidesToScroll: 2 }}
@@ -90,7 +91,7 @@ export default function About() {
       {/* Skills - Estudando */}
       <FadeIn className="mt-10" delay={0.4}>
         <h3 className="mb-3 text-base font-semibold md:text-lg">
-          Estudando agora
+          {t("studyingTitle")}
         </h3>
         <Carousel
           opts={{ align: "start", slidesToScroll: 2 }}

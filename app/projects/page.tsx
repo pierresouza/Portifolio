@@ -6,6 +6,7 @@ import { ProjectsMock, freelanceProject } from "./mockProjects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "motion/react";
+import { useTranslations } from "@/lib/i18n";
 
 type TabType = "estudos" | "freelance";
 
@@ -13,6 +14,9 @@ export default function Projects() {
   const [query, setQuery] = React.useState("");
   const [selectedTech, setSelectedTech] = React.useState<string | null>(null);
   const [activeTab, setActiveTab] = React.useState<TabType>("estudos");
+  const t = useTranslations("projects");
+  const tc = useTranslations("common");
+  const tp = useTranslations("projectItems");
 
   const currentProjects = React.useMemo(() => {
     return activeTab === "estudos" ? ProjectsMock.Project : freelanceProject;
@@ -48,11 +52,10 @@ export default function Projects() {
           id="projects-heading"
           className="text-xl font-bold md:text-2xl lg:text-3xl"
         >
-          Projetos
+          {t("title")}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground md:text-base">
-          Alguns projetos que desenvolvi e mantenho. Filtre por tecnologia ou
-          pesquise pelo nome.
+          {t("description")}
         </p>
       </header>
 
@@ -66,7 +69,7 @@ export default function Projects() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          Estudos
+          {t("studies")}
         </button>
         <button
           onClick={() => setActiveTab("freelance")}
@@ -76,7 +79,7 @@ export default function Projects() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          Freelance
+          {t("freelance")}
         </button>
       </div>
 
@@ -88,9 +91,9 @@ export default function Projects() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Buscar projetos..."
+            placeholder={t("searchPlaceholder")}
             className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
-            aria-label="Buscar projetos"
+            aria-label={t("searchLabel")}
           />
         </div>
 
@@ -102,7 +105,7 @@ export default function Projects() {
             onClick={() => setSelectedTech(null)}
             className="h-8 text-xs sm:text-sm"
           >
-            Todos
+            {tc("all")}
           </Button>
           {allTechs.map((tech) => (
             <Button
@@ -145,17 +148,19 @@ export default function Projects() {
               </div>
               <div className="flex flex-1 flex-col gap-4 p-4">
                 <h2 className="text-base font-semibold md:text-lg">
-                  {project.name}
+                  {tp(`${project.translationKey}.name`)}
                 </h2>
                 {project.description && (
                   <p className="text-sm text-foreground/90 md:text-base">
-                    {project.description}
+                    {tp(`${project.translationKey}.description`)}
                   </p>
                 )}
 
                 {project.Techs?.length ? (
                   <div className="mt-auto flex flex-wrap items-center gap-2">
-                    <span className="text-md font-semibold">Techs:</span>
+                    <span className="text-md font-semibold">
+                      {tc("techs")}:
+                    </span>
                     {project.Techs.map((tech) => (
                       <Badge
                         key={`${project.name}-${tech}`}
@@ -177,7 +182,7 @@ export default function Projects() {
                       className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                     >
                       <FaGithub />
-                      <span className="font-medium">Repositório</span>
+                      <span className="font-medium">{tc("repository")}</span>
                     </a>
                   )}
                   {project.deployURL ? (
@@ -188,12 +193,12 @@ export default function Projects() {
                       className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                     >
                       <FaGlobeEurope />
-                      <span className="font-medium">Deploy</span>
+                      <span className="font-medium">{tc("deploy")}</span>
                     </a>
                   ) : (
                     <span className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs dark:border-white">
                       <FaGlobeEurope />
-                      <span className="font-medium">Indisponível</span>
+                      <span className="font-medium">{tc("unavailable")}</span>
                     </span>
                   )}
                 </div>
@@ -204,7 +209,7 @@ export default function Projects() {
       </motion.div>
       {projects.length === 0 && (
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Nenhum projeto encontrado.
+          {t("noProjectsFound")}
         </p>
       )}
     </section>
