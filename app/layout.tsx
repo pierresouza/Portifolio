@@ -32,6 +32,11 @@ export default function RootLayout({
               data-api-key="hm_c4dcdbeefbdce2039aa0d02327677c405ed03fcc7fba1bbd"
               strategy="afterInteractive"
             />
+            <Script
+              src="https://cdn.himetrica.com/vitals.js"
+              data-api-key="hm_c4dcdbeefbdce2039aa0d02327677c405ed03fcc7fba1bbd"
+              strategy="afterInteractive"
+            />
             <Footer />
           </LocaleProvider>
         </ThemeProvider>
