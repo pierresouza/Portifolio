@@ -6,9 +6,10 @@ import Portifolio from "../../public/portifolio.png";
 import RocketVisuals from "../../public/RocketVisuals.png";
 import seikopartners from "../../public/seikopartners.png";
 import powermanutencao from "../../public/powermanutencao.png";
+import cinesefilmes from "../../public/cineseFilmes.png";
 
 interface ProjectsProps {
-  repoURL: string;
+  repoURL?: string;
   deployURL?: string;
   name: string;
   translationKey: string;
@@ -68,7 +69,6 @@ export const ProjectsMock: Projects = {
 
 export const freelanceProject: ProjectsProps[] = [
   {
-    repoURL: "",
     deployURL: "https://rocket-visuals.netlify.app/",
     image: RocketVisuals,
     translationKey: "rocketvisuals",
@@ -78,17 +78,15 @@ export const freelanceProject: ProjectsProps[] = [
     Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
   },
   {
-    repoURL: "",
     deployURL: "https://seikopartners.com.br/",
     image: seikopartners,
     translationKey: "seikopartners",
     description:
       "Site institucional desenvolvido para a Seiko Partners, uma empresa de consultoria empresarial focada em soluções inovadoras para seus clientes.",
     name: "Seiko Partners",
-    Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
+    Techs: ["11ty", "Nunjucks", "CSS", "JavaScript", "WordPress"],
   },
   {
-    repoURL: "",
     deployURL: "https://powermanutencao.com.br/",
     image: powermanutencao,
     translationKey: "powermanutencao",
@@ -96,5 +94,14 @@ export const freelanceProject: ProjectsProps[] = [
       "Site institucional desenvolvido para a Power Manutenção, empresa especializada em manutenção automotiva, oferecendo serviços de reprogramação eletrônica (Remap), mecânica de caminhões e agrícola, retífica de motores e ar condicionado.",
     name: "Power Manutenção",
     Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
+  },
+  {
+    deployURL: "https://www.cinesefilmes.com/",
+    image: cinesefilmes,
+    translationKey: "cinesefilmes",
+    description:
+      "Site institucional desenvolvido para a Cinese Filmes, uma empresa de produção de conteúdo audiovisual.",
+    name: "Cinese Filmes",
+    Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
   },
 ];

@@ -98,6 +98,15 @@
       "name": "Seiko Partners",
       "description": "Sitio web institucional desarrollado para Seiko Partners, una empresa de consultoría empresarial enfocada en soluciones innovadoras para sus clientes."
     },
+    "cinesefilmes": {
+      "name": "Cinese Filmes",
+      "description": "Sitio web institucional desarrollado para Cinese Filmes, una empresa de producción de contenido audiovisual."
+    },
+    "powermanutencao": {
+      "name": "Power Manutenção",
+      "description": "Sitio web institucional desarrollado para Power Manutenção, una empresa especializada en mantenimiento automotriz, ofreciendo servicios de reprogramación electrónica (Remap), mecánica de camiones y agrícola, rectificación de motores y aire acondicionado."
+    }
+  },
     "powermanutencao": {
       "name": "Power Manutenção",
       "description": "Sitio web institucional desarrollado para Power Manutenção, empresa especializada en mantenimiento automotriz, ofreciendo servicios de reprogramación electrónica (Remap), mecánica de camiones y agrícola, rectificación de motores y aire acondicionado."
