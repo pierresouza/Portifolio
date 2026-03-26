@@ -105,6 +105,10 @@
     "powermanutencao": {
       "name": "Power Manutenção",
       "description": "Sitio web institucional desarrollado para Power Manutenção, una empresa especializada en mantenimiento automotriz, ofreciendo servicios de reprogramación electrónica (Remap), mecánica de camiones y agrícola, rectificación de motores y aire acondicionado."
+    },
+    "levitacare": {
+      "name": "Levita Care",
+      "description": "Sitio web institucional desarrollado para Levita Care, una empresa de servicios de salud y bienestar."
     }
   },
   "experienceItems": {

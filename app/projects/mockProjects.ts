@@ -6,7 +6,7 @@ import Portifolio from "../../public/portifolio.png";
 import RocketVisuals from "../../public/RocketVisuals.png";
 import seikopartners from "../../public/seikopartners.png";
 import powermanutencao from "../../public/powermanutencao.png";
-import cinesefilmes from "../../public/cineseFilmes.png";
+import levitacare from "../../public/levite.png";
 
 interface ProjectsProps {
   repoURL?: string;
@@ -96,12 +96,12 @@ export const freelanceProject: ProjectsProps[] = [
     Techs: ["HTML", "CSS", "JavaScript", "WordPress"],
   },
   {
-    deployURL: "https://www.cinesefilmes.com/",
-    image: cinesefilmes,
-    translationKey: "cinesefilmes",
+    deployURL: "https://levitacare.com.br/",
+    image: levitacare,
+    translationKey: "levitacare",
     description:
-      "Site institucional desenvolvido para a Cinese Filmes, uma empresa de produção de conteúdo audiovisual.",
-    name: "Cinese Filmes",
+      "Site institucional desenvolvido para a Levita Care, uma empresa de serviços de saúde e bem-estar.",
+    name: "Levita Care",
     Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
   },
 ];
