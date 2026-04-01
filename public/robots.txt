@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://pierresouza.dev/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Específico para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
