@@ -1,6 +1,7 @@
 // app/opengraph-image.tsx
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
 export const runtime = "nodejs";
 export const alt = "Pierre Souza - Desenvolvedor Full Stack";
 export const size = {
