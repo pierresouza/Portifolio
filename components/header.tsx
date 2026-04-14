@@ -7,7 +7,6 @@ import { FaList } from "react-icons/fa6";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { MdFileDownload } from "react-icons/md";
-import "animate.css";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -29,6 +28,7 @@ const Header = () => {
     { href: "/projects", label: t("projects") },
     { href: "/about", label: t("about") },
     { href: "/experience", label: t("experience") },
+    { href: "/contact", label: t("contact") },
   ];
 
   const handleDownloadCV = () => {

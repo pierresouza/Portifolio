@@ -1,6 +1,11 @@
 "use client";
 import { TfiLocationPin } from "react-icons/tfi";
-import { FaGithub, FaGlobeEurope, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaGlobeEurope,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,6 +78,14 @@ export default function Home() {
                 aria-label="Outlook Email"
               >
                 <SiMicrosoftoutlook size={20} />
+              </Link>
+              <Link
+                className="rounded-xl border border-gray-500 p-2 transition-all duration-300 ease-in-out hover:scale-110 dark:border-white"
+                target="_blank"
+                href="https://wa.me/5511975310001"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp size={20} />
               </Link>
               <Link
                 className="rounded-xl border border-gray-500 p-2 transition-all duration-300 ease-in-out hover:scale-110 dark:border-white"

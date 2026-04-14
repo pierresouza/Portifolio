@@ -25,7 +25,8 @@
     "downloadCV": "CV",
     "downloadTitle": "Download my resume",
     "cvPortuguese": "CV Portuguese",
-    "cvEnglish": "CV English"
+    "cvEnglish": "CV English",
+    "contact": "Contact"
   },
   "footer": {
     "developedBy": "Developed with ❤️ by Pierre Souza"
