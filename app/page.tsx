@@ -1,6 +1,6 @@
 "use client";
 import { TfiLocationPin } from "react-icons/tfi";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaGlobeEurope, FaLinkedin } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
@@ -194,25 +194,34 @@ export default function Home() {
                       </Badge>
                     ))}
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-3">
-                    <a
-                      href={project.repoURL}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-xs underline-offset-4 hover:underline"
-                    >
-                      {tc("repository")}
-                    </a>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    {project.repoURL && (
+                      <a
+                        href={project.repoURL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
+                      >
+                        <FaGithub />
+                        <span className="font-medium">{tc("repository")}</span>
+                      </a>
+                    )}
                     {project.deployURL ? (
                       <a
                         href={project.deployURL}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs underline-offset-4 hover:underline"
+                        className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                       >
-                        {tc("demo")}
+                        <FaGlobeEurope />
+                        <span className="font-medium">{tc("deploy")}</span>
                       </a>
-                    ) : null}
+                    ) : (
+                      <span className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs dark:border-white">
+                        <FaGlobeEurope />
+                        <span className="font-medium">{tc("unavailable")}</span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </article>
