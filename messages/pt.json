@@ -68,6 +68,33 @@
     "searchLabel": "Buscar projetos",
     "noProjectsFound": "Nenhum projeto encontrado."
   },
+  "contact": {
+    "back": "← Voltar",
+    "title": "Entre em Contato",
+    "description": "Tem uma proposta, feedback ou quer conversar? Envie uma mensagem e entrarei em contato em breve!",
+    "otherContactMethods": "Outras formas de contato",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "linkedinLabel": "LinkedIn",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "seu.email@exemplo.com",
+    "phoneLabel": "Telefone / WhatsApp",
+    "phonePlaceholder": "(11) 99999-9999",
+    "subjectLabel": "Assunto",
+    "subjectOptions": {
+      "proposal": "Proposta de Trabalho",
+      "partnership": "Parceria",
+      "other": "Outro"
+    },
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Conte-me mais sobre sua proposta...",
+    "optional": "opcional",
+    "successMessage": "Mensagem enviada com sucesso! Você receberá uma resposta em breve.",
+    "errorMessage": "Erro ao enviar. Tente novamente ou entre em contato via WhatsApp.",
+    "sending": "Enviando...",
+    "submit": "Enviar Mensagem"
+  },
   "language": {
     "title": "Idioma",
     "portuguese": "Português",

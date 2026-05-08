@@ -2,16 +2,24 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "@/lib/i18n";
 
 export default function ContactForm() {
+  const t = useTranslations("contact");
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim();
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim();
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "Proposta de Trabalho",
+    phone: "",
+    subject: "proposal",
     message: "",
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -26,34 +34,51 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
     setStatus("idle");
+    setErrorMessage("");
 
     try {
-      // Inicializar EmailJS com sua chave pública
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+      const sentAt = new Date().toLocaleString("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short",
+      });
+
+      if (!publicKey || !serviceId || !templateId) {
+        throw new Error(
+          "Configuração do EmailJS ausente. Defina NEXT_PUBLIC_EMAILJS_PUBLIC_KEY, NEXT_PUBLIC_EMAILJS_SERVICE_ID e NEXT_PUBLIC_EMAILJS_TEMPLATE_ID.",
+        );
+      }
+
+      // Inicializar EmailJS com a chave pública configurada
+      emailjs.init(publicKey);
 
       // Enviar email
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        {
-          to_email: "pierre.s3@hotmail.com",
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-      );
+      await emailjs.send(serviceId, templateId, {
+        to_email: "pierre.s3@hotmail.com",
+        title: t(`subjectOptions.${formData.subject}`),
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        source: "Formulário de Contato do Portfólio",
+        time: sentAt,
+      });
 
       setStatus("success");
       setFormData({
         name: "",
         email: "",
-        subject: "Proposta de Trabalho",
+        phone: "",
+        subject: "proposal",
         message: "",
       });
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Não foi possível enviar a mensagem agora.",
+      );
       console.error("Erro ao enviar:", error);
     } finally {
       setLoading(false);
@@ -63,7 +88,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-semibold">Nome</label>
+        <label className="block text-sm font-semibold">{t("nameLabel")}</label>
         <input
           type="text"
           name="name"
@@ -71,12 +96,12 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder="Seu nome"
+          placeholder={t("namePlaceholder")}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">Email</label>
+        <label className="block text-sm font-semibold">{t("emailLabel")}</label>
         <input
           type="email"
           name="email"
@@ -84,27 +109,40 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder="seu.email@exemplo.com"
+          placeholder={t("emailPlaceholder")}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">Assunto</label>
+        <label className="block text-sm font-semibold">
+          {t("phoneLabel")} <span className="text-xs font-normal text-muted-foreground">({t("optional")})</span>
+        </label>
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+          placeholder={t("phonePlaceholder")}
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-semibold">{t("subjectLabel")}</label>
         <select
           name="subject"
           value={formData.subject}
           onChange={handleChange}
           className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
         >
-          <option>Proposta de Trabalho</option>
-          <option>Feedback/Sugestões</option>
-          <option>Parceria</option>
-          <option>Outro</option>
+          <option value="proposal">{t("subjectOptions.proposal")}</option>
+          <option value="partnership">{t("subjectOptions.partnership")}</option>
+          <option value="other">{t("subjectOptions.other")}</option>
         </select>
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">Mensagem</label>
+        <label className="block text-sm font-semibold">{t("messageLabel")}</label>
         <textarea
           name="message"
           value={formData.message}
@@ -112,24 +150,24 @@ export default function ContactForm() {
           required
           rows={5}
           className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder="Conte-me mais sobre sua proposta..."
+          placeholder={t("messagePlaceholder")}
         />
       </div>
 
       {status === "success" && (
         <div className="rounded-lg bg-green-100 p-4 text-sm text-green-800 dark:bg-green-900 dark:text-green-200">
-          ✓ Mensagem enviada com sucesso! Você receberá uma resposta em breve.
+          ✓ {t("successMessage")}
         </div>
       )}
 
       {status === "error" && (
         <div className="rounded-lg bg-red-100 p-4 text-sm text-red-800 dark:bg-red-900 dark:text-red-200">
-          ✗ Erro ao enviar. Tente novamente ou entre em contato via WhatsApp.
+          ✗ {errorMessage || t("errorMessage")}
         </div>
       )}
 
       <Button type="submit" disabled={loading} className="w-full">
-        {loading ? "Enviando..." : "Enviar Mensagem"}
+        {loading ? t("sending") : t("submit")}
       </Button>
     </form>
   );
