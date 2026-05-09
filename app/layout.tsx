@@ -85,6 +85,10 @@ export default function RootLayout({
     <html lang="pt-br" suppressHydrationWarning>
       <head>
         <StructuredData />
+        <meta
+          name="google-site-verification"
+          content="HPUM3_16vhQ3HIMDB60TXf8P1hR6zZyBExGrCN7Fh88"
+        />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`antialiased`}>
