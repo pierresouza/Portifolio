@@ -4,6 +4,7 @@ import CapSyncLogo from "../../public/CapSync.jpg";
 import BiocidadeLogo from "../../public/Biocidade.jpg";
 import Portifolio from "../../public/portifolio.png";
 import RocketVisuals from "../../public/RocketVisuals.png";
+import CineseFilmes from "../../public/cineseFilmes.png";
 import seikopartners from "../../public/seikopartners.png";
 import powermanutencao from "../../public/powermanutencao.png";
 import levitacare from "../../public/levite.png";
@@ -56,7 +57,7 @@ export const ProjectsMock: Projects = {
     },
     {
       repoURL: "https://github.com/pierresouza/Portifolio",
-      deployURL: "https://pierresouza.netlify.app/",
+      deployURL: "https://pierresouza.dev.br/",
       image: Portifolio,
       translationKey: "portfolio",
       description:
@@ -76,6 +77,15 @@ export const freelanceProject: ProjectsProps[] = [
       "Rocket Visuals é uma produtora de vídeos especializada em VFX e motion design, transformando ideias em experiências visuais impactantes que elevam a comunicação e geram resultados reais para marcas e empresas.",
     name: "Rocket Visuals",
     Techs: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn", "Radix UI"],
+  },
+  {
+    deployURL: "https://www.cinesefilmes.com/",
+    image: CineseFilmes,
+    translationKey: "cinesefilmes",
+    description:
+      "Site institucional desenvolvido para a Cinese Filmes, uma produtora de conteúdo audiovisual focada em histórias, campanhas e experiências visuais.",
+    name: "Cinese Filmes",
+    Techs: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     deployURL: "https://seikopartners.com.br/",

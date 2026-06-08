@@ -8,13 +8,18 @@ import Script from "next/script";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pierresouza.netlify.app"),
-  title: "Pierre Souza - Desenvolvedor Full Stack | Portfólio",
+  metadataBase: new URL("https://pierresouza.dev.br"),
+  title: "Pierre Souza | Front-End, Freelance e Produto Digital",
   description:
-    "Desenvolvedor Full Stack especializado em React, Next.js e Node.js. Veja meus projetos, experiência e entre em contato para oportunidades de desenvolvimento.",
+    "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas. Experiência com Next.js, React, TypeScript e SEO.",
   keywords: [
     "desenvolvedor web",
     "full stack",
+    "freelance front-end",
+    "landing page",
+    "site institucional",
+    "desenvolvedor para empresas",
+    "contratar desenvolvedor",
     "React",
     "Next.js",
     "Node.js",
@@ -23,8 +28,10 @@ export const metadata: Metadata = {
     "frontend",
     "backend",
     "portfólio de desenvolvedor",
+    "SEO",
+    "UX",
   ],
-  authors: [{ name: "Pierre Souza", url: "https://pierresouza.netlify.app" }],
+  authors: [{ name: "Pierre Souza", url: "https://pierresouza.dev.br" }],
   creator: "Pierre Souza",
   formatDetection: {
     email: false,
@@ -39,26 +46,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://pierresouza.netlify.app",
-    title: "Pierre Souza - Desenvolvedor Full Stack | Portfólio",
+    url: "https://pierresouza.dev.br",
+    title: "Pierre Souza | Front-End, Freelance e Produto Digital",
     description:
-      "Desenvolvedor Full Stack especializado em React, Next.js e Node.js. Veja meus projetos, experiência e entre em contato.",
+      "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas.",
     siteName: "Pierre Souza",
     images: [
       {
-        url: "https://pierresouza.netlify.app/og-image.png",
+        url: "https://pierresouza.dev.br/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Pierre Souza - Desenvolvedor Full Stack",
+        alt: "Pierre Souza - Front-End, Freelance e Produto Digital",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pierre Souza - Desenvolvedor Full Stack",
+    title: "Pierre Souza | Front-End, Freelance e Produto Digital",
     description:
-      "Desenvolvedor Full Stack especializado em React, Next.js e Node.js",
-    images: ["https://pierresouza.netlify.app/og-image.png"],
+      "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas.",
+    images: ["https://pierresouza.dev.br/og-image.png"],
   },
   robots: {
     index: true,
@@ -72,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://pierresouza.netlify.app",
+    canonical: "https://pierresouza.dev.br",
   },
 };
 

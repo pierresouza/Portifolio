@@ -6,12 +6,12 @@ export default function StructuredData() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://pierresouza.dev/#person",
+        "@id": "https://pierresouza.dev.br/#person",
         name: "Pierre Souza",
         image: {
           "@type": "ImageObject",
           inLanguage: "pt-BR",
-          url: "https://pierresouza.dev/profile_photo.jpeg",
+          url: "https://pierresouza.dev.br/profile_photo.jpeg",
           caption: "Pierre Souza",
         },
         description:
@@ -20,7 +20,7 @@ export default function StructuredData() {
           "https://www.linkedin.com/in/pierre-souza/",
           "https://github.com/pierresouza",
         ],
-        url: "https://pierresouza.dev",
+        url: "https://pierresouza.dev.br",
         jobTitle: "Desenvolvedor Full Stack",
         knowsAbout: [
           "React",
@@ -37,26 +37,26 @@ export default function StructuredData() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://pierresouza.dev/#website",
-        url: "https://pierresouza.dev",
+        "@id": "https://pierresouza.dev.br/#website",
+        url: "https://pierresouza.dev.br",
         name: "Pierre Souza - Desenvolvedor Full Stack",
         description:
           "Portfólio de Pierre Souza, desenvolvedor Full Stack especializado em React, Next.js e Node.js",
         publisher: {
-          "@id": "https://pierresouza.dev/#person",
+          "@id": "https://pierresouza.dev.br/#person",
         },
         inLanguage: "pt-BR",
       },
       {
         "@type": "WebPage",
-        "@id": "https://pierresouza.dev/#webpage",
-        url: "https://pierresouza.dev",
+        "@id": "https://pierresouza.dev.br/#webpage",
+        url: "https://pierresouza.dev.br",
         name: "Pierre Souza - Desenvolvedor Full Stack",
         isPartOf: {
-          "@id": "https://pierresouza.dev/#website",
+          "@id": "https://pierresouza.dev.br/#website",
         },
         about: {
-          "@id": "https://pierresouza.dev/#person",
+          "@id": "https://pierresouza.dev.br/#person",
         },
         datePublished: "2024-01-01",
         inLanguage: "pt-BR",

@@ -4,7 +4,7 @@ Disallow: /_next/
 Disallow: /api/
 
 # Sitemaps
-Sitemap: https://pierresouza.dev/sitemap.xml
+Sitemap: https://pierresouza.dev.br/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
