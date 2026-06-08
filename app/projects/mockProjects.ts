@@ -63,7 +63,7 @@ export const ProjectsMock: Projects = {
       description:
         "Portfólio desenvolvido com Next.js, Tailwind CSS e Typescript, com o intuito de apresentar meus projetos e habilidades como desenvolvedor Front-End.",
       name: "Portfólio",
-      Techs: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn"],
+      Techs: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn", "i18n-next"],
     },
   ],
 };
@@ -94,7 +94,7 @@ export const freelanceProject: ProjectsProps[] = [
     description:
       "Site institucional desenvolvido para a Seiko Partners, uma empresa de consultoria empresarial focada em soluções inovadoras para seus clientes.",
     name: "Seiko Partners",
-    Techs: ["11ty", "Nunjucks", "CSS", "JavaScript", "WordPress"],
+    Techs: ["11ty", "Nunjucks", "CSS", "JavaScript"],
   },
   {
     deployURL: "https://powermanutencao.com.br/",
