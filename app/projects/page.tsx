@@ -43,7 +43,7 @@ export default function Projects() {
   }, [activeTab]);
 
   return (
-    <section
+    <main
       aria-labelledby="projects-heading"
       className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
     >
@@ -140,7 +140,7 @@ export default function Projects() {
               <div className="overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={project.name}
+                  alt={`Captura do projeto ${tp(`${project.translationKey}.name`)}`}
                   width={600}
                   height={360}
                   className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
@@ -178,7 +178,7 @@ export default function Projects() {
                     <a
                       href={project.repoURL}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                     >
                       <FaGithub />
@@ -189,7 +189,7 @@ export default function Projects() {
                     <a
                       href={project.deployURL}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                     >
                       <FaGlobeEurope />
@@ -212,6 +212,6 @@ export default function Projects() {
           {t("noProjectsFound")}
         </p>
       )}
-    </section>
+    </main>
   );
 }

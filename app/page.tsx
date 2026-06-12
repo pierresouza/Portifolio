@@ -182,7 +182,7 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.name}
+                    alt={`Captura do projeto ${tp(`${project.translationKey}.name`)}`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
@@ -212,7 +212,7 @@ export default function Home() {
                       <a
                         href={project.repoURL}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-2 rounded-lg border border-slate-300 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                       >
                         <FaGithub />
@@ -223,7 +223,7 @@ export default function Home() {
                       <a
                         href={project.deployURL}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-2 rounded-lg border border-slate-200 p-2 text-xs transition-all duration-200 hover:bg-slate-200 dark:border-white dark:hover:text-black dark:hover:duration-500"
                       >
                         <FaGlobeEurope />

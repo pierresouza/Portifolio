@@ -1,87 +1,43 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LocaleProvider } from "@/lib/i18n";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Script from "next/script";
-import StructuredData from "@/components/StructuredData";
+import JsonLd from "@/components/JsonLd";
+import { rootMetadata } from "@/lib/seo/metadata";
+import {
+  buildSchemaGraph,
+  getPersonSchema,
+  getProfessionalServiceSchema,
+  getWebPageSchema,
+  getWebSiteSchema,
+} from "@/lib/seo/json-ld";
+import { siteConfig } from "@/lib/seo/site";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://pierresouza.dev.br"),
-  title: "Pierre Souza | Front-End, Freelance e Produto Digital",
-  description:
-    "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas. Experiência com Next.js, React, TypeScript e SEO.",
-  keywords: [
-    "desenvolvedor web",
-    "full stack",
-    "freelance front-end",
-    "landing page",
-    "site institucional",
-    "desenvolvedor para empresas",
-    "contratar desenvolvedor",
-    "React",
-    "Next.js",
-    "Node.js",
-    "JavaScript",
-    "TypeScript",
-    "frontend",
-    "backend",
-    "portfólio de desenvolvedor",
-    "SEO",
-    "UX",
+export const metadata: Metadata = rootMetadata;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
-  authors: [{ name: "Pierre Souza", url: "https://pierresouza.dev.br" }],
-  creator: "Pierre Souza",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: "https://pierresouza.dev.br",
-    title: "Pierre Souza | Front-End, Freelance e Produto Digital",
-    description:
-      "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas.",
-    siteName: "Pierre Souza",
-    images: [
-      {
-        url: "https://pierresouza.dev.br/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Pierre Souza - Front-End, Freelance e Produto Digital",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pierre Souza | Front-End, Freelance e Produto Digital",
-    description:
-      "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas.",
-    images: ["https://pierresouza.dev.br/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://pierresouza.dev.br",
-  },
 };
+
+const homeSchema = buildSchemaGraph([
+  getPersonSchema(),
+  getWebSiteSchema(),
+  getProfessionalServiceSchema(),
+  getWebPageSchema({
+    path: "/",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  }),
+]);
 
 export default function RootLayout({
   children,
@@ -89,16 +45,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html lang={siteConfig.language} suppressHydrationWarning>
       <head>
-        <StructuredData />
+        <JsonLd data={homeSchema} />
         <meta
           name="google-site-verification"
-          content="HPUM3_16vhQ3HIMDB60TXf8P1hR6zZyBExGrCN7Fh88"
+          content={siteConfig.googleSiteVerification}
         />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`antialiased`}>
+      <body className="antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+        >
+          Pular para o conteúdo principal
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -107,7 +69,7 @@ export default function RootLayout({
         >
           <LocaleProvider>
             <Header />
-            {children}
+            <div id="main-content">{children}</div>
             <Script
               src="https://cdn.himetrica.com/tracker.js"
               data-api-key="hm_c4dcdbeefbdce2039aa0d02327677c405ed03fcc7fba1bbd"

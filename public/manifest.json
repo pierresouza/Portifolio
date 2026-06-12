@@ -1,13 +1,14 @@
 {
-  "name": "Pierre Souza - Portfólio de Desenvolvedor Full Stack",
+  "name": "Pierre Souza | Front-End, Freelance e Produto Digital",
   "short_name": "Pierre Souza",
-  "description": "Desenvolvedor Full Stack especializado em React, Next.js e Node.js. Portfólio profissional com projetos.",
+  "description": "Desenvolvedor front-end focado em freelas, sites institucionais, landing pages e interfaces para empresas.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "/profile_photo.jpeg",
@@ -19,22 +20,8 @@
       "src": "/profile_photo.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity"],
-  "screenshots": [
-    {
-      "src": "/og-image.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/og-image.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
-  ]
+  "categories": ["business", "productivity", "portfolio"]
 }

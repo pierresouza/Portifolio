@@ -1,31 +1,44 @@
 import type { Metadata } from "next";
+import PageJsonLd from "@/components/PageJsonLd";
+import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Sobre Mim - Pierre Souza | Desenvolvedor Full Stack",
-  description:
-    "Conheça minha jornada como desenvolvedor, minhas habilidades técnicas em React, Next.js, Node.js, e como posso ajudar seu projeto.",
+const title = "Sobre Mim";
+const description =
+  "Conheça Pierre Souza: desenvolvedor front-end em São Paulo, especializado em React, Next.js, TypeScript e interfaces acessíveis para empresas e freelas.";
+
+export const metadata: Metadata = createPageMetadata({
+  title,
+  description,
+  path: "/about",
   keywords: [
     "sobre",
-    "desenvolvedor",
+    "desenvolvedor front-end",
     "programador",
     "React",
     "Next.js",
-    "Node.js",
-    "skills",
+    "habilidades",
     "experiência",
   ],
-  openGraph: {
-    title: "Sobre Mim - Pierre Souza | Desenvolvedor Full Stack",
-    description:
-      "Conheça minha jornada como desenvolvedor, minhas habilidades técnicas e experiência.",
-    type: "profile",
-  },
-};
+  openGraphType: "profile",
+});
 
 export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <PageJsonLd
+        path="/about"
+        title={`${title} | Pierre Souza`}
+        description={description}
+        breadcrumbs={[
+          { name: "Início", path: "/" },
+          { name: "Sobre", path: "/about" },
+        ]}
+      />
+      {children}
+    </>
+  );
 }

@@ -49,7 +49,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section
+    <main
       aria-labelledby="experiencia-heading"
       className="mx-auto flex w-full max-w-5xl justify-center px-4 sm:px-6 lg:px-8"
     >
@@ -230,6 +230,6 @@ export default function Experience() {
           </ol>
         )}
       </div>
-    </section>
+    </main>
   );
 }

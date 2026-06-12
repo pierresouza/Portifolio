@@ -21,7 +21,7 @@ export default function About() {
   const tc = useTranslations("common");
 
   return (
-    <section
+    <main
       aria-labelledby="sobre-heading"
       className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
     >
@@ -48,7 +48,7 @@ export default function About() {
         <FadeIn className="flex justify-center md:justify-end" direction="left">
           <Image
             src="/profile_photo.jpeg"
-            alt="Foto de perfil"
+            alt="Foto de perfil de Pierre Souza, desenvolvedor front-end"
             width={280}
             height={280}
             className="h-48 w-48 rounded-full object-cover shadow md:h-60 md:w-60 lg:h-72 lg:w-72"
@@ -118,6 +118,6 @@ export default function About() {
           <CarouselNext />
         </Carousel>
       </FadeIn>
-    </section>
+    </main>
   );
 }
