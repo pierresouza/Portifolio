@@ -59,43 +59,7 @@ export const ExperienceMock: Experience = {
         "GitHub",
       ],
     },
-    {
-      id: "2",
-      translationKey: "job2",
-      Company: "Baloon Consultoria de Marketing",
-      Role: "Desenvolvedor Web Jr.",
-      Period: "01/2026 - Atual",
-      Description: `Desenvolvedor Web Júnior com experiência em Next.js, Tailwind CSS, Shadcn UI e Animate on Scroll, atuando na criação de landing pages modernas e responsivas. Responsável por manter e otimizar usabilidade e desempenho, além de conduzir processos de build, deploy e CI/CD.  <br> 
-      Também contribuo na reestruturação de projetos, garantindo escalabilidade e organização do código. Tenho foco em entregar soluções eficientes e bem estruturadas, sempre buscando aprimorar a experiência do usuário e evoluir continuamente como profissional.
-      `,
-      Technologies: [
-        "Next.js",
-        "Tailwind CSS",
-        "Shadcn UI",
-        "Animate on Scroll",
-        "Git",
-        "GitHub",
-      ],
-    },
-    {
-      id: "3",
-      translationKey: "job3",
-      Company: "Baloon Consultoria de Marketing",
-      Role: "Desenvolvedor WordPress",
-      Period: "11/2025 - 12/2025",
-      Description:
-        "Atuo como desenvolvedor WordPress, responsável pela criação e manutenção de sites utilizando temas personalizados e plugins para atender às necessidades dos clientes. Minhas responsabilidades incluem a implementação de funcionalidades específicas, otimização de desempenho e garantia de uma experiência de usuário fluida e responsiva. Trabalho em estreita colaboração com designers e outros desenvolvedores para garantir que os projetos sejam entregues dentro do prazo e atendam aos padrões de qualidade estabelecidos.",
-      Technologies: [
-        "WordPress",
-        "PHP",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Elementor",
-        "Git",
-        "GitHub",
-      ],
-    },
+
     {
       id: "4",
       translationKey: "job4",
