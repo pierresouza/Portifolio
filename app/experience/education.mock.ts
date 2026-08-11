@@ -46,43 +46,7 @@ export const EducationMock: Education = {
         "Desenvolvimento de fluência e confiança para comunicação em inglês em contextos profissionais, acesso a conteúdos e ferramentas de imersão e participação em mentorias e lives com executivos.",
       Technologies: ["Comunicação", "ESL (Inglês como segunda língua)"],
     },
-    {
-      id: "2",
-      translationKey: "edu2",
-      Level: "Ensino Superior",
-      Course: "Análise e Desenvolvimento de Sistemas",
-      Institution: "Descomplica Faculdade Digital",
-      Period: "08/2023 - 12/2025",
-      Description:
-        "Graduação em ADS com base sólida em desenvolvimento de software e sistemas. Conteúdos: lógica de programação, algoritmos e estrutura de dados; desenvolvimento web e mobile; modelagem e SQL; metodologias ágeis, análise de requisitos e testes; redes de computadores.",
-      Technologies: [
-        "Resolução de problemas",
-        "CSS",
-        "Metodologias ágeis e em cascata",
-        "Banco de dados",
-        "Comunicação",
-        "HTML5",
-        "JavaScript",
-      ],
-    },
-    {
-      id: "3",
-      translationKey: "edu3",
-      Level: "Ensino Superior",
-      Course: "Tecnologia da Informação (CST)",
-      Institution: "Uniamérica Descomplica",
-      Period: "08/2023 - 07/2025",
-      Description:
-        "Formação superior com fundamentos de computação, desenvolvimento de software (web e mobile), bancos de dados, engenharia de software e redes. Foco em resolução de problemas e práticas ágeis.",
-      Technologies: [
-        "Resolução de problemas",
-        "CSS",
-        "Metodologias ágeis e em cascata",
-        "Banco de dados",
-        "HTML5",
-        "JavaScript",
-      ],
-    },
+
     {
       id: "4",
       translationKey: "edu4",

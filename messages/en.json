@@ -198,18 +198,6 @@
       "institution": "Education First",
       "description": "Development of fluency and confidence for communication in English in professional contexts, access to content and immersion tools, and participation in mentoring and live sessions with executives."
     },
-    "edu2": {
-      "level": "Higher Education",
-      "course": "Systems Analysis and Development",
-      "institution": "Descomplica Digital College",
-      "description": "Bachelor's degree in Systems Analysis and Development with a solid foundation in software and systems development."
-    },
-    "edu3": {
-      "level": "Higher Education",
-      "course": "Information Technology (CST)",
-      "institution": "Uniamérica Descomplica",
-      "description": "Higher education with foundations in computing, software development (web and mobile), databases, software engineering, and networks."
-    },
     "edu4": {
       "level": "Technical Education",
       "course": "Fullstack Development",

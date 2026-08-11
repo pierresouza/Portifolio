@@ -198,18 +198,6 @@
       "institution": "Education First",
       "description": "Desarrollo de fluidez y confianza para comunicación en inglés en contextos profesionales, acceso a contenidos y herramientas de inmersión y participación en mentorías y lives con ejecutivos."
     },
-    "edu2": {
-      "level": "Educación Superior",
-      "course": "Análisis y Desarrollo de Sistemas",
-      "institution": "Descomplica Facultad Digital",
-      "description": "Graduación en ADS con base sólida en desarrollo de software y sistemas."
-    },
-    "edu3": {
-      "level": "Educación Superior",
-      "course": "Tecnología de la Información (CST)",
-      "institution": "Uniamérica Descomplica",
-      "description": "Formación superior con fundamentos de computación, desarrollo de software (web y móvil), bases de datos, ingeniería de software y redes."
-    },
     "edu4": {
       "level": "Educación técnica",
       "course": "Desarrollo Fullstack",
