@@ -54,9 +54,11 @@
     "studyingTitle": "Estudando agora"
   },
   "experience": {
-    "title": "Experiência",
+    "title": "Experiência Corporativa",
+    "freelanceTitle": "Projetos & Freelance",
     "studentTitle": "Experiência Estudantil",
     "work": "Trabalho",
+    "freelance": "Projetos & Freelance",
     "studies": "Estudos"
   },
   "projects": {
@@ -149,6 +151,16 @@
       "company": "Billink AI",
       "role": "Desenvolvedor Web",
       "description": "Atuo no desenvolvimento de um SaaS voltado para auditoria de custos de infraestrutura de IA e cloud, com o objetivo de democratizar o acesso ao FinOps para startups."
+    },
+    "job2": {
+      "company": "Baloon Consultoria de Marketing",
+      "role": "Desenvolvedor Web Jr.",
+      "description": "Desenvolvedor Web Júnior com experiência em Next.js, Tailwind CSS, Shadcn UI e Animate on Scroll, atuando na criação de landing pages modernas e responsivas."
+    },
+    "job3": {
+      "company": "Baloon Consultoria de Marketing",
+      "role": "Desenvolvedor WordPress",
+      "description": "Atuo como desenvolvedor WordPress, responsável pela criação e manutenção de sites utilizando temas personalizados e plugins para atender às necessidades dos clientes."
     },
     "job4": {
       "company": "Zanthus - Tecnologia de Resultados",

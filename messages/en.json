@@ -54,9 +54,11 @@
     "studyingTitle": "Currently studying"
   },
   "experience": {
-    "title": "Experience",
+    "title": "Corporate Experience",
+    "freelanceTitle": "Projects & Freelance",
     "studentTitle": "Academic Experience",
     "work": "Work",
+    "freelance": "Projects & Freelance",
     "studies": "Studies"
   },
   "projects": {
@@ -149,6 +151,16 @@
       "company": "Billink AI",
       "role": "Web Developer",
       "description": "I work on developing a SaaS focused on auditing AI and cloud infrastructure costs, aiming to democratize access to FinOps for startups."
+    },
+    "job2": {
+      "company": "Baloon Marketing Consulting",
+      "role": "Junior Web Developer",
+      "description": "Junior Web Developer with experience in Next.js, Tailwind CSS, Shadcn UI, and Animate on Scroll, working on creating modern and responsive landing pages."
+    },
+    "job3": {
+      "company": "Baloon Marketing Consulting",
+      "role": "WordPress Developer",
+      "description": "I work as a WordPress developer, responsible for creating and maintaining websites using custom themes and plugins to meet client needs."
     },
     "job4": {
       "company": "Zanthus - Results Technology",

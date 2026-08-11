@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "@/lib/i18n";
 
 export default function Experience() {
-  const [mode, setMode] = React.useState<"work" | "study">("work");
+  const [mode, setMode] = React.useState<"work" | "freelance" | "study">("work");
   const t = useTranslations("experience");
   const tc = useTranslations("common");
   const te = useTranslations("experienceItems");
@@ -16,8 +16,16 @@ export default function Experience() {
 
   // Agrupamento de itens por empresa
   const groupedWorkItems = React.useMemo(() => {
-    // Primeiro ordena pelo ID para manter a ordem cronológica/lógica original
-    const sorted = [...ExperienceMock.Job].sort(
+    // Filtra pelo tipo selecionado (corporativo ou projetos/freelance)
+    const filtered = ExperienceMock.Job.filter((item) => {
+      if (mode === "freelance") {
+        return item.type === "freelance_startup";
+      }
+      return item.type !== "freelance_startup";
+    });
+
+    // Ordena pelo ID para manter a ordem cronológica/lógica original
+    const sorted = [...filtered].sort(
       (a, b) => parseInt(a.id) - parseInt(b.id),
     );
 
@@ -40,7 +48,7 @@ export default function Experience() {
     });
 
     return grouped;
-  }, []);
+  }, [mode]);
 
   const studyItems = React.useMemo(() => {
     return [...EducationMock.Studies].sort((a, b) => {
@@ -54,14 +62,18 @@ export default function Experience() {
       className="mx-auto flex w-full max-w-5xl justify-center px-4 sm:px-6 lg:px-8"
     >
       <div className="w-full py-8">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <h1
             id="experiencia-heading"
             className="text-xl font-bold md:text-2xl lg:text-3xl"
           >
-            {mode === "work" ? t("title") : t("studentTitle")}
+            {mode === "work"
+              ? t("title")
+              : mode === "freelance"
+                ? t("freelanceTitle")
+                : t("studentTitle")}
           </h1>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button
               variant={mode === "work" ? "default" : "outline"}
               size="sm"
@@ -69,6 +81,14 @@ export default function Experience() {
               onClick={() => setMode("work")}
             >
               {t("work")}
+            </Button>
+            <Button
+              variant={mode === "freelance" ? "default" : "outline"}
+              size="sm"
+              aria-pressed={mode === "freelance"}
+              onClick={() => setMode("freelance")}
+            >
+              {t("freelance")}
             </Button>
             <Button
               variant={mode === "study" ? "default" : "outline"}
@@ -82,7 +102,7 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        {mode === "work" ? (
+        {mode === "work" || mode === "freelance" ? (
           <ol className="relative mt-8 border-s border-border/40 pl-6 dark:border-border">
             {groupedWorkItems.map((group, groupIndex) => (
               <motion.li
