@@ -82,7 +82,11 @@
     "namePlaceholder": "Tu nombre",
     "emailPlaceholder": "tu.email@ejemplo.com",
     "phoneLabel": "Teléfono / WhatsApp",
-    "phonePlaceholder": "+34 600 123 456",
+    "phonePlaceholder": "612 34 56 78",
+    "phoneCountryLabel": "País",
+    "phoneInvalid": "Formato de teléfono no válido para el país seleccionado.",
+    "phoneTooShort": "El número de teléfono está incompleto.",
+    "phoneTooLong": "El número de teléfono excede el límite del país.",
     "subjectLabel": "Asunto",
     "subjectOptions": {
       "proposal": "Propuesta de trabajo",

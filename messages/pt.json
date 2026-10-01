@@ -83,6 +83,10 @@
     "emailPlaceholder": "seu.email@exemplo.com",
     "phoneLabel": "Telefone / WhatsApp",
     "phonePlaceholder": "(11) 99999-9999",
+    "phoneCountryLabel": "País",
+    "phoneInvalid": "Número de telefone inválido para o país selecionado.",
+    "phoneTooShort": "Número de telefone incompleto.",
+    "phoneTooLong": "Número de telefone excede o limite do país.",
     "subjectLabel": "Assunto",
     "subjectOptions": {
       "proposal": "Proposta de Trabalho",

@@ -3,6 +3,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/lib/i18n";
+import PhoneInput from "@/components/PhoneInput";
 
 export default function ContactForm() {
   const t = useTranslations("contact");
@@ -17,6 +18,12 @@ export default function ContactForm() {
     subject: "proposal",
     message: "",
   });
+  const [phoneState, setPhoneState] = useState({
+    formatted: "",
+    fullWithDdi: "",
+    isValid: true,
+  });
+  const [phoneHasError, setPhoneHasError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,6 +42,14 @@ export default function ContactForm() {
     setLoading(true);
     setStatus("idle");
     setErrorMessage("");
+
+    // Validação do telefone se preenchido
+    if (phoneHasError || (!phoneState.isValid && phoneState.formatted)) {
+      setStatus("error");
+      setErrorMessage(t("phoneInvalid"));
+      setLoading(false);
+      return;
+    }
 
     try {
       const sentAt = new Date().toLocaleString("pt-BR", {
@@ -57,7 +72,7 @@ export default function ContactForm() {
         title: t(`subjectOptions.${formData.subject}`),
         name: formData.name,
         email: formData.email,
-        phone: formData.phone,
+        phone: phoneState.fullWithDdi || "Não informado",
         message: formData.message,
         source: "Formulário de Contato do Portfólio",
         time: sentAt,
@@ -71,6 +86,12 @@ export default function ContactForm() {
         subject: "proposal",
         message: "",
       });
+      setPhoneState({
+        formatted: "",
+        fullWithDdi: "",
+        isValid: true,
+      });
+      setPhoneHasError(false);
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       setStatus("error");
@@ -114,16 +135,20 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">
+        <label htmlFor="phone" className="block text-sm font-semibold">
           {t("phoneLabel")} <span className="text-xs font-normal text-muted-foreground">({t("optional")})</span>
         </label>
-        <input
-          type="tel"
+        <PhoneInput
+          id="phone"
           name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder={t("phonePlaceholder")}
+          value={phoneState.formatted}
+          defaultCountryCode="BR"
+          disabled={loading}
+          onChange={({ formatted, fullWithDdi, isValid }) => {
+            setPhoneState({ formatted, fullWithDdi, isValid });
+            setFormData((prev) => ({ ...prev, phone: fullWithDdi }));
+          }}
+          onErrorChange={(hasError) => setPhoneHasError(hasError)}
         />
       </div>
 

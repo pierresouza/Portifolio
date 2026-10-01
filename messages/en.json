@@ -82,7 +82,11 @@
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your.email@example.com",
     "phoneLabel": "Phone / WhatsApp",
-    "phonePlaceholder": "+1 (555) 123-4567",
+    "phonePlaceholder": "(555) 000-0000",
+    "phoneCountryLabel": "Country",
+    "phoneInvalid": "Invalid phone number format for selected country.",
+    "phoneTooShort": "Phone number is incomplete.",
+    "phoneTooLong": "Phone number exceeds country limit.",
     "subjectLabel": "Subject",
     "subjectOptions": {
       "proposal": "Job Proposal",
