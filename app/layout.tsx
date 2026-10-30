@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LocaleProvider } from "@/lib/i18n";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Script from "next/script";
 import JsonLd from "@/components/JsonLd";
 import { rootMetadata } from "@/lib/seo/metadata";
@@ -86,6 +87,7 @@ export default function RootLayout({
               strategy="afterInteractive"
             />
             <Footer />
+            <WhatsAppButton />
           </LocaleProvider>
         </ThemeProvider>
       </body>

@@ -132,32 +132,32 @@ export default function PhoneInput({
   return (
     <div className="w-full">
       <div
-        className={`mt-1 flex items-stretch rounded-lg border transition-all ${
+        className={`mt-1.5 flex items-stretch rounded-xl border transition-all ${
           errorMessage
-            ? "border-red-500 focus-within:ring-2 focus-within:ring-red-500/30"
-            : "border-gray-300 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20 dark:border-gray-600 dark:focus-within:border-blue-400"
-        } bg-white dark:bg-gray-800`}
+            ? "border-destructive focus-within:ring-2 focus-within:ring-destructive/30"
+            : "border-input focus-within:ring-2 focus-within:ring-ring"
+        } bg-background`}
       >
         {/* Seletor de País com DDI e Bandeira */}
-        <div className="relative flex items-center border-r border-gray-300 dark:border-gray-600">
+        <div className="relative flex items-center border-r border-input">
           <select
             value={selectedCountry.code}
             onChange={handleCountryChange}
             disabled={disabled}
             aria-label={t("phoneCountryLabel") || "País"}
-            className="h-full cursor-pointer appearance-none bg-transparent py-2.5 pl-3 pr-8 text-sm font-medium text-gray-800 outline-none transition-colors hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-700/50"
+            className="h-full cursor-pointer appearance-none rounded-l-xl bg-transparent py-2.5 pl-3 pr-8 text-sm font-medium text-foreground outline-none transition-colors hover:bg-muted/50"
           >
             {COUNTRIES.map((c) => (
               <option
                 key={c.code}
                 value={c.code}
-                className="bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100"
+                className="bg-background text-foreground"
               >
                 {c.flag} {c.dialCode} - {c.name}
               </option>
             ))}
           </select>
-          <ChevronDown className="pointer-events-none absolute right-2.5 h-4 w-4 text-gray-400" />
+          <ChevronDown className="pointer-events-none absolute right-2.5 h-4 w-4 text-muted-foreground" />
         </div>
 
         {/* Input do Telefone com Máscara Dinâmica */}
@@ -171,7 +171,7 @@ export default function PhoneInput({
             onBlur={handleBlur}
             disabled={disabled}
             placeholder={selectedCountry.placeholder}
-            className="w-full min-w-0 bg-transparent px-4 py-2.5 text-gray-900 outline-none placeholder:text-gray-400 dark:text-gray-100 dark:placeholder:text-gray-500"
+            className="w-full min-w-0 bg-transparent px-4 py-2.5 text-sm text-foreground outline-none placeholder:text-muted-foreground"
           />
 
           {isCompleteAndValid && (

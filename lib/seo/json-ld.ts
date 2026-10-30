@@ -21,21 +21,24 @@ export function getPersonSchema() {
     url: siteConfig.url,
     jobTitle: siteConfig.jobTitle,
     email: siteConfig.email,
+    telephone: "+5511975310001",
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.location.city,
+      addressRegion: "SP",
       addressCountry: siteConfig.location.countryCode,
     },
     knowsAbout: [
+      "Criação de Sites",
+      "Landing Pages",
+      "Sites Institucionais",
       "React",
       "Next.js",
       "TypeScript",
       "JavaScript",
       "Tailwind CSS",
       "SEO",
-      "UX",
-      "Landing Pages",
-      "Sites Institucionais",
+      "UX/UI",
     ],
   };
 }
@@ -106,23 +109,71 @@ export function getProfessionalServiceSchema() {
   return {
     "@type": "ProfessionalService",
     "@id": `${siteConfig.url}/#service`,
-    name: `${siteConfig.author.name} - Desenvolvimento Front-End`,
+    name: `${siteConfig.author.name} - Criação de Sites e Landing Pages`,
     description: siteConfig.shortDescription,
     url: siteConfig.url,
     image: `${siteConfig.url}/profile_photo.jpeg`,
-    areaServed: {
-      "@type": "Country",
-      name: siteConfig.location.country,
+    telephone: "+5511975310001",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.location.city,
+      addressRegion: "SP",
+      addressCountry: siteConfig.location.countryCode,
     },
+    areaServed: [
+      {
+        "@type": "City",
+        name: siteConfig.location.city,
+      },
+      {
+        "@type": "Country",
+        name: siteConfig.location.country,
+      },
+    ],
     provider: {
       "@id": `${siteConfig.url}/#person`,
     },
     serviceType: [
-      "Desenvolvimento Front-End",
-      "Landing Pages",
+      "Criação de Sites",
+      "Criação de Landing Pages",
       "Sites Institucionais",
-      "Interfaces Web",
+      "Desenvolvimento Front-End",
+      "Otimização de SEO e Performance",
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços de Desenvolvimento Web",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Criação de Landing Pages de Alta Conversão",
+            description:
+              "Landing pages modernas, responsivas e focadas em conversão de leads e vendas para tráfego pago e orgânico.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Desenvolvimento de Sites Institucionais",
+            description:
+              "Sites empresariais completos com arquitetura moderna, autoridade de marca e otimização para celular.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Otimização de Performance e SEO",
+            description:
+              "Auditoria e aceleração de carregamento para atingir nota máxima no Google PageSpeed e melhorar o ranqueamento orgânico.",
+          },
+        },
+      ],
+    },
     knowsLanguage: ["pt-BR", "en", "es"],
   };
 }

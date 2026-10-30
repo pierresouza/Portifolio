@@ -2,22 +2,20 @@ import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-const title = "Sobre Mim";
+const title = "Sobre Pierre Souza";
 const description =
-  "Conheça Pierre Souza: desenvolvedor front-end em São Paulo, especializado em React, Next.js, TypeScript e interfaces acessíveis para empresas e freelas.";
+  "Conheça Pierre Souza: desenvolvedor front-end e especialista em criação de sites e landing pages em São Paulo, atuando com Next.js, React, TypeScript e SEO.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
   description,
   path: "/about",
   keywords: [
-    "sobre",
-    "desenvolvedor front-end",
-    "programador",
-    "React",
-    "Next.js",
-    "habilidades",
-    "experiência",
+    "sobre Pierre Souza",
+    "desenvolvedor front-end São Paulo",
+    "especialista em criação de sites",
+    "programador React Next.js",
+    "freelancer web",
   ],
   openGraphType: "profile",
 });

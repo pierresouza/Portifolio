@@ -13,7 +13,11 @@
     "techs": "Techs",
     "focus": "Enfoque",
     "description": "Descripción",
-    "all": "Todos"
+    "all": "Todos",
+    "visitSite": "Visitar Sitio",
+    "requestQuote": "Solicitar Cotización",
+    "clearFilter": "Limpiar filtros",
+    "step": "Etapa"
   },
   "header": {
     "home": "Página Principal",
@@ -30,13 +34,21 @@
     "contact": "Contacto"
   },
   "footer": {
-    "developedBy": "Desarrollado con ❤️ por Pierre Souza"
+    "developedBy": "Desarrollado con ❤️ por Pierre Souza",
+    "tagline": "Creación de sitios web profesionales, landing pages de alta conversión y aplicaciones web modernas a medida para empresas.",
+    "navigationTitle": "Navegación",
+    "contactTitle": "Contacto Directo",
+    "rights": "Todos los derechos reservados.",
+    "whatsappAction": "Hablar por WhatsApp"
   },
   "home": {
     "greeting": "Hola, soy",
     "name": "Pierre Souza",
-    "role": "Desarrollador Front-End",
-    "bio": "Creo interfaces modernas, accesibles y de alto rendimiento, enfocadas en la mejor experiencia de usuario. Trabajo con Next.js, React, TypeScript y Tailwind, siempre aplicando buenas prácticas y atención al detalle.",
+    "role": "Creación de Sitios Web, Landing Pages y Front-End",
+    "bio": "Ayudo a empresas, startups y profesionales a transformar visitantes en clientes con sitios web modernos, ultra-rápidos y optimizados para Google. Desde el diseño hasta la publicación en su propio dominio.",
+    "quoteButton": "Solicitar Cotización",
+    "whatsappCta": "Cotización por WhatsApp",
+    "availableBadge": "Disponible para nuevos proyectos",
     "experienceTitle": "Experiencia",
     "experienceDescription": "Años trabajando con interfaces",
     "experienceYears": "2+ años",
@@ -44,15 +56,61 @@
     "projectsDescription": "Publicados y en desarrollo",
     "stackTitle": "Stack",
     "stackDescription": "Principales tecnologías",
-    "featuredProjectsTitle": "Proyectos destacados",
-    "featuredProjectsDescription": "Una vista previa de algunos trabajos recientes. Ver todos en la página de proyectos."
+    "metricsYears": "2+ Años",
+    "metricsYearsLabel": "Creando interfaces modernas y de alta conversión",
+    "metricsSpeed": "100% Rápido",
+    "metricsSpeedLabel": "Carga instantánea enfocada en Google PageSpeed",
+    "metricsProjects": "Proyectos Reales",
+    "metricsProjectsLabel": "Sitios corporativos y plataformas activas para empresas",
+    "servicesTitle": "Servicios Especializados para su Negocio",
+    "servicesDescription": "Soluciones completas a medida para posicionar su marca con autoridad y generar nuevos clientes todos los días.",
+    "serviceLandingTitle": "Landing Pages de Alta Conversión",
+    "serviceLandingDesc": "Páginas estratégicas diseñadas para campañas de Google Ads y redes sociales, enfocadas en convertir clics en ventas.",
+    "serviceInstitutionalTitle": "Sitios Web Corporativos e Institucionales",
+    "serviceInstitutionalDesc": "Presencia digital profesional con diseño exclusivo, arquitectura limpia y autoridad para cerrar contratos.",
+    "servicePerformanceTitle": "SEO y Velocidad Máxima",
+    "servicePerformanceDesc": "Optimización técnica para que Google encuentre su sitio en búsquedas orgánicas y carga rápida para no perder clientes.",
+    "serviceCustomTitle": "Aplicaciones Web y Paneles a Medida",
+    "serviceCustomDesc": "Desarrollo moderno con Next.js, React y TypeScript, integraciones de API y herramientas personalizadas.",
+    "processTitle": "Cómo Funciona el Proceso de Creación",
+    "processDescription": "Un flujo transparente, directo y sin burocracia desde el primer contacto hasta el lanzamiento.",
+    "processStep1Title": "1. Alineación y Diagnóstico",
+    "processStep1Desc": "Entiendo las metas de su empresa, su público objetivo y los requisitos para generar resultados.",
+    "processStep2Title": "2. Estructura y Diseño UI/UX",
+    "processStep2Desc": "Planificación visual moderna e intuitiva con enfoque total en la experiencia móvil.",
+    "processStep3Title": "3. Desarrollo y SEO",
+    "processStep3Desc": "Construcción con tecnologías de vanguardia (Next.js/React), código limpio, ultra-rápido y optimizado para Google.",
+    "processStep4Title": "4. Publicación y Soporte",
+    "processStep4Desc": "Configuración de dominio, pruebas finales, lanzamiento oficial y soporte para su crecimiento.",
+    "featuredProjectsTitle": "Proyectos Comerciales Destacados",
+    "featuredProjectsDescription": "Sitios reales entregados a empresas y marcas, con enfoque en resultados y velocidad.",
+    "clientBadge": "Cliente Real",
+    "ctaBannerTitle": "¿Listo para tener un sitio web que realmente traiga resultados?",
+    "ctaBannerDescription": "¡Hablemos de su proyecto! Envíe un mensaje por WhatsApp o formulario y reciba una propuesta personalizada sin compromiso.",
+    "ctaWhatsAppButton": "Hablar por WhatsApp",
+    "ctaContactButton": "Enviar mensaje por formulario"
   },
   "about": {
-    "title": "Sobre",
-    "role": "Desarrollador Front-end",
-    "description": "Enfocado en crear interfaces accesibles, de alto rendimiento y con buena experiencia de usuario. Trabajo con React/Next.js, TypeScript y estilos modernos (Tailwind y Styled Components). Interés en design systems, pruebas y buenas prácticas de UI.",
-    "technologiesTitle": "Tecnologías que uso",
-    "studyingTitle": "Estudiando ahora"
+    "title": "Quién está detrás de cada proyecto",
+    "role": "Desarrollador Front-End y Especialista en Sitios Web",
+    "description": "Desarrollo interfaces accesibles, ultra-rápidas y orientadas a la conversión. Con experiencia práctica en React, Next.js, TypeScript y Design Systems, ayudo a empresas, agencias y startups a construir una presencia digital memorable y eficiente.",
+    "technologiesTitle": "Stack Principal y Herramientas",
+    "studyingTitle": "Perfeccionando y Explorando",
+    "badge": "Sobre Mí",
+    "description2": "Combino visión de producto, atención minuciosa a los detalles visuales y buenas prácticas de SEO técnico para entregar soluciones rápidas que generan resultados reales en cualquier dispositivo.",
+    "pillarsTitle": "Mis Pilares de Trabajo",
+    "pillar1Title": "Enfoque en Conversión y Negocio",
+    "pillar1Desc": "Interfaces diseñadas estratégicamente para guiar al visitante hacia la cotización o el contacto.",
+    "pillar2Title": "Alto Rendimiento y SEO",
+    "pillar2Desc": "Código limpio y optimizado para carga instantánea y mejor posicionamiento orgánico en Google.",
+    "pillar3Title": "Diseño Responsivo y Accesible",
+    "pillar3Desc": "Experiencia fluida e impecable en smartphones, tablets y pantallas de alta resolución.",
+    "pillar4Title": "Comunicación Directa y Ágil",
+    "pillar4Desc": "Alineación transparente en cada etapa, cumplimiento de plazos y soporte dedicado.",
+    "technologiesDesc": "Tecnologías que domino y aplico a diario en proyectos comerciales y corporativos.",
+    "studyingDesc": "Herramientas, lenguajes y arquitecturas en evolución continua dentro de mi repertorio.",
+    "viewExperience": "Ver Experiencia",
+    "viewCertificates": "Ver Certificados"
   },
   "experience": {
     "title": "Experiencia Corporativa",
@@ -60,16 +118,26 @@
     "studentTitle": "Experiencia Estudiantil",
     "work": "Trabajo",
     "freelance": "Proyectos y Freelance",
-    "studies": "Estudios"
+    "studies": "Estudios",
+    "badge": "Carrera y Formación",
+    "subtitle": "Mi trayectoria desarrollando interfaces corporativas, plataformas SaaS, sitios comerciales para empresas y formación académica en Tecnología de la Información.",
+    "viewCertificatesCta": "Ver certificados de eventos y congresos",
+    "currentBadge": "Actual"
   },
   "projects": {
-    "title": "Proyectos",
-    "description": "Algunos proyectos que he desarrollado y mantengo. Filtra por tecnología o busca por nombre.",
-    "studies": "Estudios",
-    "freelance": "Freelance",
+    "title": "Proyectos de Clientes y Personales",
+    "description": "Explora sitios corporativos y landing pages entregados a clientes reales, además de proyectos técnicos personales. Filtra por tecnología o busca por nombre.",
+    "studies": "Personales y Estudios",
+    "freelance": "Clientes y Empresas",
     "searchPlaceholder": "Buscar proyectos...",
     "searchLabel": "Buscar proyectos",
-    "noProjectsFound": "Ningún proyecto encontrado."
+    "noProjectsFound": "Ningún proyecto encontrado.",
+    "badge": "Portafolio y Casos Reales",
+    "clientBadge": "Cliente Real",
+    "studyBadge": "Proyecto Personal",
+    "ctaTitle": "¿Quieres un sitio web profesional como estos para tu empresa?",
+    "ctaDescription": "Háblame por WhatsApp ahora mismo y recibe una cotización personalizada sin compromiso.",
+    "ctaButton": "Solicitar cotización por WhatsApp"
   },
   "certificates": {
     "title": "Certificados y Participaciones",
@@ -82,7 +150,12 @@
     "downloadFile": "Descargar",
     "closePreview": "Cerrar vista previa",
     "previous": "Certificado anterior",
-    "next": "Siguiente certificado"
+    "next": "Siguiente certificado",
+    "badge": "Aprendizaje Continuo",
+    "statsTotal": "Certificados",
+    "statsHours": "Horas Totales",
+    "statsFocus": "Áreas de Enfoque",
+    "statsFocusValue": "IA, Cloud y Gobernanza"
   },
   "certificateItems": {
     "buildwithaiUsp": {
@@ -139,7 +212,20 @@
     "successMessage": "¡Mensaje enviado con éxito! Recibirás una respuesta pronto.",
     "errorMessage": "Error al enviar el mensaje. Inténtalo de nuevo o contáctame por WhatsApp.",
     "sending": "Enviando...",
-    "submit": "Enviar mensaje"
+    "submit": "Enviar mensaje",
+    "badge": "Contacto y Cotizaciones",
+    "subtitle": "¿Tienes un proyecto en mente, necesitas crear o rediseñar el sitio de tu empresa o conversar sobre una alianza? Elige el canal que prefieras.",
+    "whatsappDesc": "Respuesta rápida para cotizaciones y dudas",
+    "emailDesc": "Ideal para alcances detallados y propuestas",
+    "linkedinDesc": "Networking y conexiones profesionales",
+    "locationLabel": "Ubicación",
+    "locationDesc": "São Paulo, Brasil • Atención remota internacional",
+    "formTitle": "Envía un mensaje directo",
+    "formSubtitle": "Completa los campos a continuación y te responderé pronto.",
+    "trustTitle": "¿Por qué solicitar una propuesta?",
+    "trust1": "Cotización transparente y sin compromiso",
+    "trust2": "Trato directo conmigo, sin intermediarios",
+    "trust3": "Sitios rápidos, responsivos y listos para Google"
   },
   "language": {
     "title": "Idioma",
@@ -187,84 +273,84 @@
   },
   "experienceItems": {
     "job0": {
-      "company": "Secretaría Municipal de Urbanismo y Licencias",
+      "company": "Secretaría Municipal de Urbanismo y Licencias (SMUL)",
       "role": "Pasante de desarrollo fullstack",
-      "description": "Trabajo en el desarrollo y evolución de aplicaciones web modernas y escalables, utilizando Next.js, TypeScript y Prisma. Mi responsabilidad central es desarrollar soluciones eficientes, seguras y con enfoque total en la experiencia del usuario."
+      "description": "Trabajo como Desarrollador en la SMUL, creando aplicaciones web escalables para automatizar procesos internos. Ambiente ágil con Next.js, TypeScript, Node.js y Prisma con NestJS.",
+      "description2": "Digitalización de Sistemas: modernización del sistema Subvenção 2026 y reestructuración del sistema CAF. Creación del Design System de la SMUL y biblioteca de componentes (React, Next.js, Storybook, shadcn/ui). Desarrollo de la nueva Intranet y rediseño del portal CIPA. Arquitectura CMS con Payload CMS y Next.js."
     },
     "job1": {
       "company": "Billink AI",
-      "role": "Desarrollador Web",
-      "description": "Trabajo en el desarrollo de un SaaS enfocado en auditoría de costos de infraestructura de IA y cloud, con el objetivo de democratizar el acceso a FinOps para startups."
-    },
-    "job2": {
-      "company": "Baloon Consultoría de Marketing",
-      "role": "Desarrollador Web Jr.",
-      "description": "Desarrollador Web Junior con experiencia en Next.js, Tailwind CSS, Shadcn UI y Animate on Scroll, trabajando en la creación de landing pages modernas y responsivas."
-    },
-    "job3": {
-      "company": "Baloon Consultoría de Marketing",
-      "role": "Desarrollador WordPress",
-      "description": "Trabajo como desarrollador WordPress, responsable de la creación y mantenimiento de sitios web utilizando temas personalizados y plugins para satisfacer las necesidades de los clientes."
+      "role": "Desarrollador web",
+      "description": "Desarrollo de un SaaS de FinOps para auditoría de costos de infraestructura de IA y nube, democratizando el acceso a FinOps para startups y convirtiendo reglas complejas en interfaces de alto rendimiento.",
+      "description2": "Paneles interactivos de FinOps para análisis de ahorros y tendencias de costos. Design System neo-brutalista con Next.js y Tailwind CSS. Conexión completa con Supabase (PostgreSQL, Auth y Storage). Interfaz de monitoreo del flujo de agentes de IA. Gestión de planes y monetización con Stripe y AbacatePay."
     },
     "job4": {
       "company": "Zanthus - Tecnología de Resultados",
-      "role": "Pasante de Desarrollo de Software",
-      "description": "Durante mi pasantía, tuve la oportunidad de trabajar en diversas áreas del desarrollo de software. Participé activamente en la creación y mantenimiento de aplicaciones, colaborando con el equipo para resolver problemas e implementar nuevas funcionalidades."
+      "role": "Pasante de desarrollo de software",
+      "description": "Desarrollo de interfaces modernas, dinámicas y responsivas con React.js y CSS, garantizando experiencia de usuario intuitiva y componentes reutilizables.",
+      "description2": "Mantenimiento y creación de stories en Storybook para documentación y estandarización. Control de versiones con GitLab y metodología Kanban en Jira. Estudio y práctica de Kotlin."
     },
     "job5": {
       "company": "SELO ESG PRO Brasil",
-      "role": "Desarrollador Front-End - Freelancer",
-      "description": "Trabajé como desarrollador front-end, utilizando el framework Next.js, junto con Tailwind CSS y Material UI, para estructurar y arquitectar el proyecto."
+      "role": "Desarrollador web front end",
+      "description": "Desarrollo front-end con Next.js, Tailwind CSS y Material UI, creando interfaces funcionales, responsivas y alineadas al diseño.",
+      "description2": "Estilización con Tailwind CSS y Material UI. Manejo de estado con React Hooks. Peticiones HTTP con Axios y tipado estricto de componentes."
     },
     "job6": {
-      "company": "PicPay Invest",
-      "role": "Asistente de analista de sistemas",
-      "description": "Trabajé como desarrollador front-end, con énfasis en creación de interfaces produciendo una experiencia innovadora y funcional para usuarios de la plataforma.",
-      "description2": "Asumí la responsabilidad de ejecutar pruebas en el back-end utilizando Cypress, además de iniciar la implementación de pruebas en el front-end con Ruby y Capybara."
+      "company": "PicPay",
+      "role": "Desarrollador web front end - PicPay Invest",
+      "description": "Desarrollo front-end en PicPay Invest, creando interfaces innovadoras y responsivas para los usuarios de la plataforma financiera.",
+      "description2": "Automatización de pruebas en el backend con Cypress y en el frontend con Ruby y Capybara. Navegación con React Router Dom, estilos con StyleSheet, Styled Components y Less, y pruebas unitarias."
     },
     "job7": {
       "company": "LionX",
       "role": "Asistente de analista de sistemas",
-      "description": "Trabajé como Asistente de Analista de Sistemas, con enfoque en desarrollo de componentes y diagramación de pantallas, contribuyendo a la entrega de soluciones visuales efectivas.",
-      "description2": "Asumí la responsabilidad de ejecutar pruebas y validaciones de templates, asegurando el funcionamiento adecuado y la consistencia visual en todas las aplicaciones."
+      "description": "Desarrollo de componentes, maquetación de pantallas y creación de plantillas de email marketing responsivas y compatibles.",
+      "description2": "Ejecución de pruebas y validaciones multiplataforma de plantillas, asegurando coherencia visual y calidad técnica."
     }
   },
   "educationItems": {
+    "eduUtfpr": {
+      "level": "Formación Complementaria",
+      "course": "Web Programming Course, Computer Programming, Specific Applications",
+      "institution": "Universidad Tecnológica Federal de Paraná (UTFPR)",
+      "description": "Curso de programación web enfocado en el desarrollo de software y aplicaciones específicas."
+    },
     "edu0": {
       "level": "Educación Superior",
-      "course": "Tecnología de la Información (CST)",
+      "course": "Curso Superior de Tecnología (CST), Tecnología de la Información",
       "institution": "UNINTER Centro Universitario Internacional",
-      "description": "CST en TI con base teórico-práctica en las áreas de desarrollo e infraestructura. Énfasis en HTML, CSS, JavaScript, Java (POO), MySQL, control de versiones con Git/GitHub y metodologías ágiles (Scrum/Kanban)."
+      "description": "CST en TI con base teórico-práctica en desarrollo e infraestructura. Énfasis en HTML, CSS, JavaScript, Java (POO), MySQL, Git/GitHub y metodologías ágiles."
+    },
+    "eduSerasa": {
+      "level": "Programa de Formación",
+      "course": "Desarrollo de Software",
+      "institution": "Serasa Experian",
+      "description": "Programa de inmersión y capacitación práctica enfocado en ingeniería y desarrollo de software corporativo."
     },
     "edu1": {
-      "level": "Curso técnico",
+      "level": "Curso Técnico Integrado",
       "course": "Lengua Inglesa y Literaturas de Lengua Inglesa",
-      "institution": "Education First",
-      "description": "Desarrollo de fluidez y confianza para comunicación en inglés en contextos profesionales, acceso a contenidos y herramientas de inmersión y participación en mentorías y lives con ejecutivos."
+      "institution": "EF International Language Campuses",
+      "description": "Desarrollo de fluidez y confianza para comunicación en inglés profesional con herramientas de inmersión."
     },
     "edu4": {
-      "level": "Educación técnica",
-      "course": "Desarrollo Fullstack",
+      "level": "Bootcamp / Educación Técnica",
+      "course": "Persona Desarrolladora Fullstack – JavaScript, Tecnología de la Información",
       "institution": "Generation Brasil",
-      "description": "Bootcamp Fullstack JavaScript con enfoque práctico en front-end y back-end. Proyectos ágiles, control de versiones con Git/GitHub y énfasis en soft skills."
-    },
-    "edu5": {
-      "level": "Programa",
-      "course": "Embajador DIO Campus Expert",
-      "institution": "DIO",
-      "description": "Programa para universitarios acelerar su carrera y liderazgo en comunidades académicas a través de mentorías con profesionales de referencia en el mercado."
+      "description": "Bootcamp intensivo Fullstack JavaScript enfocado en front-end, back-end, Git y habilidades interpersonales."
     },
     "edu6": {
-      "level": "Educación técnica",
+      "level": "Educación Técnica",
       "course": "Desarrollo Web Java",
       "institution": "Instituto Proa",
-      "description": "Programa intensivo Pro Profesión enfocado en empleabilidad, con senderos de desarrollo personal, competencias técnicas y preparación para el mercado."
+      "description": "Programa intensivo enfocado en desarrollo web, competencias técnicas y preparación laboral."
     },
     "edu7": {
-      "level": "Educación técnica",
-      "course": "Desarrollo de sistemas",
+      "level": "Educación Técnica",
+      "course": "Desarrollo de Sistemas",
       "institution": "ETEC - Escuela Técnica Estatal de São Paulo",
-      "description": "Formación técnica con fundamentos de computación, desarrollo de software, bases de datos, ingeniería de software y redes."
+      "description": "Formación técnica con fundamentos de computación, desarrollo de software, bases de dados y redes."
     }
   }
 }

@@ -1,22 +1,33 @@
 "use client";
+
 import React from "react";
+import Link from "next/link";
+import { motion } from "motion/react";
+import {
+  FiAward,
+  FiBookOpen,
+  FiBriefcase,
+  FiCalendar,
+  FiChevronRight,
+  FiLayers,
+} from "react-icons/fi";
 import { ExperienceMock } from "./mock";
 import { EducationMock } from "./education.mock";
-import { Badge } from "../../components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import FadeIn from "@/components/fade-in";
 import { useTranslations } from "@/lib/i18n";
 
 export default function Experience() {
-  const [mode, setMode] = React.useState<"work" | "freelance" | "study">("work");
+  const [mode, setMode] = React.useState<"work" | "freelance" | "study">(
+    "work",
+  );
   const t = useTranslations("experience");
   const tc = useTranslations("common");
   const te = useTranslations("experienceItems");
   const ted = useTranslations("educationItems");
 
-  // Agrupamento de itens por empresa
   const groupedWorkItems = React.useMemo(() => {
-    // Filtra pelo tipo selecionado (corporativo ou projetos/freelance)
     const filtered = ExperienceMock.Job.filter((item) => {
       if (mode === "freelance") {
         return item.type === "freelance_startup";
@@ -24,22 +35,17 @@ export default function Experience() {
       return item.type !== "freelance_startup";
     });
 
-    // Ordena pelo ID para manter a ordem cronológica/lógica original
     const sorted = [...filtered].sort(
       (a, b) => parseInt(a.id) - parseInt(b.id),
     );
 
-    // Agrupa por empresa
     const grouped: { company: string; items: typeof ExperienceMock.Job }[] = [];
 
     sorted.forEach((item) => {
       const lastGroup = grouped[grouped.length - 1];
-
-      // Se a última empresa adicionada for a mesma da atual, adiciona o item ao grupo existente
       if (lastGroup && lastGroup.company === item.Company) {
         lastGroup.items.push(item);
       } else {
-        // Se não, cria um novo grupo
         grouped.push({
           company: item.Company,
           items: [item],
@@ -51,205 +57,254 @@ export default function Experience() {
   }, [mode]);
 
   const studyItems = React.useMemo(() => {
-    return [...EducationMock.Studies].sort((a, b) => {
-      return parseInt(a.id) - parseInt(b.id);
-    });
+    return [...EducationMock.Studies].sort(
+      (a, b) => parseInt(a.id) - parseInt(b.id),
+    );
   }, []);
+
+  const currentHeading =
+    mode === "work"
+      ? t("title")
+      : mode === "freelance"
+        ? t("freelanceTitle")
+        : t("studentTitle");
 
   return (
     <main
       aria-labelledby="experiencia-heading"
-      className="mx-auto flex w-full max-w-5xl justify-center px-4 sm:px-6 lg:px-8"
+      className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
     >
-      <div className="w-full py-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <h1
-            id="experiencia-heading"
-            className="text-xl font-bold md:text-2xl lg:text-3xl"
-          >
-            {mode === "work"
-              ? t("title")
-              : mode === "freelance"
-                ? t("freelanceTitle")
-                : t("studentTitle")}
-          </h1>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant={mode === "work" ? "default" : "outline"}
-              size="sm"
-              aria-pressed={mode === "work"}
-              onClick={() => setMode("work")}
-            >
-              {t("work")}
-            </Button>
-            <Button
-              variant={mode === "freelance" ? "default" : "outline"}
-              size="sm"
-              aria-pressed={mode === "freelance"}
-              onClick={() => setMode("freelance")}
-            >
-              {t("freelance")}
-            </Button>
-            <Button
-              variant={mode === "study" ? "default" : "outline"}
-              size="sm"
-              aria-pressed={mode === "study"}
-              onClick={() => setMode("study")}
-            >
-              {t("studies")}
-            </Button>
-          </div>
-        </div>
+      {/* Page Header */}
+      <FadeIn direction="down" className="mb-8">
+        <Badge variant="outline" className="mb-3">
+          {t("badge")}
+        </Badge>
+        <h1
+          id="experiencia-heading"
+          className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl"
+        >
+          {currentHeading}
+        </h1>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          {t("subtitle")}
+        </p>
+      </FadeIn>
 
-        {/* Timeline */}
-        {mode === "work" || mode === "freelance" ? (
-          <ol className="relative mt-8 border-s border-border/40 pl-6 dark:border-border">
-            {groupedWorkItems.map((group, groupIndex) => (
-              <motion.li
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: groupIndex * 0.2 }}
-                key={`group-${groupIndex}`}
-                className="mb-10 ms-6"
-              >
-                <span className="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full border bg-background ring-4 ring-background dark:border-neutral-700" />
+      {/* Segmented Mode Switcher */}
+      <div className="mb-10 inline-flex w-full flex-wrap rounded-2xl border border-border/70 bg-muted/40 p-1.5 sm:w-auto">
+        <button
+          onClick={() => setMode("work")}
+          aria-pressed={mode === "work"}
+          className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all sm:flex-none ${
+            mode === "work"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <FiBriefcase className="h-4 w-4 text-primary" />
+          <span>{t("work")}</span>
+        </button>
 
-                <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
-                  {/* Cabeçalho da Empresa (Aparece apenas uma vez por grupo) */}
-                  <h2 className="mb-4 text-lg font-bold leading-snug md:text-xl">
-                    {te(`${group.items[0].translationKey}.company`)}
-                  </h2>
+        <button
+          onClick={() => setMode("freelance")}
+          aria-pressed={mode === "freelance"}
+          className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all sm:flex-none ${
+            mode === "freelance"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <FiLayers className="h-4 w-4 text-emerald-500" />
+          <span>{t("freelance")}</span>
+        </button>
 
-                  {/* Lista de Cargos dentro da Empresa */}
-                  <div className="flex flex-col gap-6">
-                    {group.items.map((item, index) => (
+        <button
+          onClick={() => setMode("study")}
+          aria-pressed={mode === "study"}
+          className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all sm:flex-none ${
+            mode === "study"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <FiBookOpen className="h-4 w-4 text-amber-500" />
+          <span>{t("studies")}</span>
+        </button>
+      </div>
+
+      {/* Timeline */}
+      {mode === "work" || mode === "freelance" ? (
+        <ol className="relative border-s-2 border-border/60 pl-6 sm:pl-8">
+          {groupedWorkItems.map((group, groupIndex) => (
+            <motion.li
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: groupIndex * 0.1 }}
+              key={`${mode}-group-${groupIndex}`}
+              className="mb-8 last:mb-0"
+            >
+              <span className="absolute -start-[11px] mt-6 flex h-5 w-5 items-center justify-center rounded-full border-2 border-primary bg-background ring-4 ring-background">
+                <span className="h-2 w-2 rounded-full bg-primary" />
+              </span>
+
+              <article className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md">
+                <h2 className="mb-5 text-lg font-extrabold leading-snug md:text-xl">
+                  {te(`${group.items[0].translationKey}.company`)}
+                </h2>
+
+                <div className="flex flex-col gap-6">
+                  {group.items.map((item, index) => {
+                    const isCurrent = item.Period.toLowerCase().includes("atual");
+                    return (
                       <div
                         key={item.id}
-                        className={`relative ${index !== group.items.length - 1 ? "ml-1 border-l-2 border-border/50 pb-6 pl-4" : "pl-1"}`}
+                        className={`relative ${
+                          index !== group.items.length - 1
+                            ? "ml-1 border-l-2 border-border/50 pb-6 pl-5"
+                            : group.items.length > 1
+                              ? "ml-1 pl-5"
+                              : ""
+                        }`}
                       >
-                        {/* Indicador de linha do tempo interna para múltiplos cargos */}
                         {group.items.length > 1 && (
-                          <span
-                            className={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border bg-muted-foreground/30 ${index !== group.items.length - 1 ? "" : "-left-[1px]"}`}
-                          />
+                          <span className="absolute -left-[6px] top-2 h-2.5 w-2.5 rounded-full border bg-muted-foreground/40" />
                         )}
 
-                        <header className="mb-2">
-                          <h3 className="text-base font-semibold leading-snug">
+                        <header className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                          <h3 className="text-base font-bold leading-snug text-foreground">
                             {te(`${item.translationKey}.role`)}
                           </h3>
-                          <time
-                            className="block text-xs text-muted-foreground"
-                            dateTime={item.Period.replace(/\s|\//g, "-")}
-                          >
-                            {item.Period}
-                          </time>
+
+                          <div className="flex items-center gap-2">
+                            {isCurrent && (
+                              <Badge variant="primary" className="text-xs">
+                                {t("currentBadge")}
+                              </Badge>
+                            )}
+                            <time
+                              className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground"
+                              dateTime={item.Period.replace(/\s|\//g, "-")}
+                            >
+                              <FiCalendar className="h-3.5 w-3.5" />
+                              {item.Period}
+                            </time>
+                          </div>
                         </header>
 
-                        <div className="prose prose-sm dark:prose-invert max-w-none text-sm text-foreground">
-                          <strong>{tc("description")}: </strong>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
                           {te(`${item.translationKey}.description`)}
-                        </div>
+                        </p>
 
                         {item.Description2 && (
-                          <details className="mt-2">
-                            <summary className="cursor-pointer select-none text-sm text-primary hover:underline">
+                          <details className="group/details mt-3 rounded-xl border border-border/50 bg-muted/20 p-3">
+                            <summary className="flex cursor-pointer list-none items-center gap-1.5 text-xs font-semibold text-primary select-none">
+                              <FiChevronRight className="h-4 w-4 transition-transform group-open/details:rotate-90" />
                               {tc("seeMore")}
                             </summary>
-                            <p className="prose prose-sm dark:prose-invert mt-2 max-w-none text-sm text-foreground">
+                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                               {te(`${item.translationKey}.description2`)}
                             </p>
                           </details>
                         )}
 
                         {item.Technologies?.length ? (
-                          <div className="mt-3 flex flex-wrap items-center gap-2">
-                            <span className="text-xs font-semibold">
-                              {tc("techs")}:
-                            </span>
-                            <ul className="flex flex-wrap gap-1">
-                              {item.Technologies.map((tech) => (
-                                <li key={`${item.id}-${tech}`}>
-                                  <Badge
-                                    variant="secondary"
-                                    aria-label={`Tecnologia: ${tech}`}
-                                    className="h-5 px-1 py-0 text-[10px]"
-                                  >
-                                    {tech}
-                                  </Badge>
-                                </li>
-                              ))}
-                            </ul>
+                          <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-border/50 pt-3">
+                            {item.Technologies.map((tech) => (
+                              <Badge
+                                key={`${item.id}-${tech}`}
+                                variant="secondary"
+                                aria-label={`Tecnologia: ${tech}`}
+                                className="text-xs"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
                           </div>
                         ) : null}
                       </div>
-                    ))}
-                  </div>
-                </article>
-              </motion.li>
-            ))}
-          </ol>
-        ) : (
-          <ol className="relative mt-8 border-s border-border/40 pl-6 dark:border-border">
+                    );
+                  })}
+                </div>
+              </article>
+            </motion.li>
+          ))}
+        </ol>
+      ) : (
+        <div>
+          <ol className="relative border-s-2 border-border/60 pl-6 sm:pl-8">
             {studyItems.map((study, index) => (
               <motion.li
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
                 key={study.id}
-                className="mb-10 ms-6"
+                className="mb-8 last:mb-0"
               >
-                <span className="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full border bg-background ring-4 ring-background dark:border-neutral-700" />
+                <span className="absolute -start-[11px] mt-6 flex h-5 w-5 items-center justify-center rounded-full border-2 border-amber-500 bg-background ring-4 ring-background">
+                  <span className="h-2 w-2 rounded-full bg-amber-500" />
+                </span>
 
-                <article className="rounded-lg border bg-card p-4 shadow-sm transition-colors">
-                  <header className="mb-2">
-                    <h2 className="text-lg font-semibold leading-snug md:text-xl">
-                      {ted(`${study.translationKey}.level`)} -{" "}
-                      {study.Institution}
-                    </h2>
-                    <p className="text-sm text-muted-foreground md:text-base">
-                      {ted(`${study.translationKey}.course`)}
-                    </p>
+                <article className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md">
+                  <header className="mb-3 flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <Badge variant="outline" className="mb-2 text-xs">
+                        {ted(`${study.translationKey}.level`)}
+                      </Badge>
+                      <h2 className="text-lg font-extrabold leading-snug md:text-xl">
+                        {ted(`${study.translationKey}.course`)}
+                      </h2>
+                      <p className="mt-0.5 text-sm font-medium text-primary">
+                        {study.Institution}
+                      </p>
+                    </div>
+
                     {study.Period ? (
                       <time
-                        className="block text-xs text-muted-foreground"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground"
                         dateTime={study.Period.replace(/\s|\//g, "-")}
                       >
+                        <FiCalendar className="h-3.5 w-3.5" />
                         {study.Period}
                       </time>
                     ) : null}
                   </header>
 
                   {study.Description ? (
-                    <p className="prose prose-sm dark:prose-invert max-w-none text-foreground">
+                    <p className="text-sm leading-relaxed text-muted-foreground">
                       {ted(`${study.translationKey}.description`)}
                     </p>
                   ) : null}
 
                   {study.Technologies?.length ? (
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
-                      <span className="text-sm font-semibold">
-                        {tc("focus")}:
-                      </span>
-                      <ul className="flex flex-wrap gap-2">
-                        {study.Technologies.map((tech) => (
-                          <li key={`${study.id}-${tech}`}>
-                            <Badge variant="secondary" className="text-xs">
-                              {tech}
-                            </Badge>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-border/50 pt-3">
+                      {study.Technologies.map((tech) => (
+                        <Badge
+                          key={`${study.id}-${tech}`}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   ) : null}
                 </article>
               </motion.li>
             ))}
           </ol>
-        )}
-      </div>
+
+          <div className="mt-10 flex justify-center">
+            <Button asChild variant="outline" className="gap-2">
+              <Link href="/certificates">
+                <FiAward className="h-4 w-4 text-primary" />
+                {t("viewCertificatesCta")}
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

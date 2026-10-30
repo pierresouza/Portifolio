@@ -12,10 +12,13 @@ import {
   FiDownload,
   FiExternalLink,
   FiMaximize2,
+  FiSearch,
   FiX,
 } from "react-icons/fi";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import FadeIn from "@/components/fade-in";
 import { useTranslations } from "@/lib/i18n";
 import { CertificateItem, certificatesMock } from "./mockCertificates";
 
@@ -35,6 +38,14 @@ export default function CertificatesPage() {
       cert.tags.forEach((tag) => set.add(tag)),
     );
     return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, []);
+
+  const totalHours = React.useMemo(() => {
+    const sum = certificatesMock.reduce((acc, item) => {
+      const numeric = parseFloat(item.workload.replace("h", ""));
+      return acc + (Number.isNaN(numeric) ? 0 : numeric);
+    }, 0);
+    return `${sum}h`;
   }, []);
 
   const filteredCertificates = React.useMemo(() => {
@@ -106,38 +117,87 @@ export default function CertificatesPage() {
       aria-labelledby="certificates-heading"
       className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
     >
-      <header className="mb-6">
+      {/* Header */}
+      <FadeIn direction="down" className="mb-8">
+        <Badge variant="outline" className="mb-3">
+          {t("badge")}
+        </Badge>
         <h1
           id="certificates-heading"
-          className="text-xl font-bold md:text-2xl lg:text-3xl"
+          className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl"
         >
           {t("title")}
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground md:text-base">
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
           {t("description")}
         </p>
-      </header>
+      </FadeIn>
 
-      {/* Controls */}
-      <div className="flex flex-col gap-4">
+      {/* Stats Strip */}
+      <FadeIn
+        delay={0.1}
+        className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3"
+      >
+        <Card className="border-border/60 bg-card/60 backdrop-blur">
+          <CardContent className="p-5">
+            <p className="text-2xl font-black text-primary">
+              {certificatesMock.length}
+            </p>
+            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
+              {t("statsTotal")}
+            </p>
+          </CardContent>
+        </Card>
+        <Card className="border-border/60 bg-card/60 backdrop-blur">
+          <CardContent className="p-5">
+            <p className="text-2xl font-black text-emerald-500">{totalHours}</p>
+            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
+              {t("statsHours")}
+            </p>
+          </CardContent>
+        </Card>
+        <Card className="border-border/60 bg-card/60 backdrop-blur">
+          <CardContent className="p-5">
+            <p className="text-lg font-extrabold text-foreground sm:text-xl">
+              {t("statsFocusValue")}
+            </p>
+            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
+              {t("statsFocus")}
+            </p>
+          </CardContent>
+        </Card>
+      </FadeIn>
+
+      {/* Search & Tag Filters */}
+      <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-card/50 p-4 sm:p-5">
         <div className="relative w-full">
+          <FiSearch className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t("searchPlaceholder")}
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
+            className="w-full rounded-xl border border-input bg-background py-2.5 pl-10 pr-10 text-sm outline-none ring-offset-background transition-all placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
             aria-label={t("searchLabel")}
           />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              aria-label={tc("clearFilter")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+            >
+              <FiX className="h-4 w-4" />
+            </button>
+          )}
         </div>
 
-        {/* Tag Filters */}
         <div className="flex flex-wrap items-center gap-2">
           <Button
             variant={selectedTag === null ? "default" : "outline"}
             size="sm"
             onClick={() => setSelectedTag(null)}
-            className="h-8 text-xs sm:text-sm"
+            className="h-8 rounded-full text-xs"
           >
             {tc("all")}
           </Button>
@@ -149,7 +209,7 @@ export default function CertificatesPage() {
               onClick={() =>
                 setSelectedTag((prev) => (prev === tag ? null : tag))
               }
-              className="h-8 text-xs sm:text-sm"
+              className="h-8 rounded-full text-xs"
             >
               {tag}
             </Button>
@@ -175,9 +235,9 @@ export default function CertificatesPage() {
                 initial={{ opacity: 0, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.25 }}
                 key={cert.id}
-                className="group flex h-full flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 {/* Certificate Image Preview */}
                 <div
@@ -197,7 +257,7 @@ export default function CertificatesPage() {
                     src={cert.image}
                     alt={`${title} - ${issuer}`}
                     fill
-                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                    className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
                     <span className="flex items-center gap-2 rounded-full bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-md">
@@ -211,7 +271,7 @@ export default function CertificatesPage() {
                 <div className="flex flex-1 flex-col gap-3 p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <Badge variant="outline" className="text-xs">
-                      <FiAward className="mr-1.5 h-3.5 w-3.5" />
+                      <FiAward className="mr-1.5 h-3.5 w-3.5 text-primary" />
                       {role}
                     </Badge>
 
@@ -228,15 +288,15 @@ export default function CertificatesPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-base font-semibold leading-snug md:text-lg">
+                    <h2 className="text-base font-bold leading-snug md:text-lg">
                       {title}
                     </h2>
-                    <p className="mt-1 text-xs font-medium text-muted-foreground sm:text-sm">
+                    <p className="mt-1 text-xs font-medium text-primary sm:text-sm">
                       {issuer}
                     </p>
                   </div>
 
-                  <p className="text-sm leading-relaxed text-foreground/90">
+                  <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
                     {description}
                   </p>
 
@@ -255,12 +315,12 @@ export default function CertificatesPage() {
                   )}
 
                   {/* Actions */}
-                  <div className="mt-3 flex flex-wrap gap-3 border-t pt-3">
+                  <div className="mt-3 flex flex-wrap gap-2.5 border-t pt-3">
                     <Button
                       variant="default"
                       size="sm"
                       onClick={() => setSelectedCert(cert)}
-                      className="gap-2 text-xs"
+                      className="gap-2 rounded-xl text-xs"
                     >
                       <FiMaximize2 size={14} />
                       {t("viewCertificate")}
@@ -270,7 +330,7 @@ export default function CertificatesPage() {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="gap-2 text-xs"
+                      className="gap-2 rounded-xl text-xs"
                     >
                       <a
                         href={encodeURI(cert.fileUrl)}
@@ -286,7 +346,7 @@ export default function CertificatesPage() {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="gap-2 text-xs"
+                      className="gap-2 rounded-xl text-xs"
                     >
                       <a href={encodeURI(cert.fileUrl)} download>
                         <FiDownload size={14} />
@@ -302,9 +362,22 @@ export default function CertificatesPage() {
       </motion.div>
 
       {filteredCertificates.length === 0 && (
-        <p className="mt-8 text-center text-sm text-muted-foreground">
-          {t("noCertificatesFound")}
-        </p>
+        <div className="mt-10 rounded-2xl border border-dashed p-10 text-center">
+          <p className="text-sm text-muted-foreground">
+            {t("noCertificatesFound")}
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              setQuery("");
+              setSelectedTag(null);
+            }}
+            className="mt-4"
+          >
+            {tc("clearFilter")}
+          </Button>
+        </div>
       )}
 
       {/* Lightbox Modal */}
@@ -326,12 +399,12 @@ export default function CertificatesPage() {
               exit={{ scale: 0.92, opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-xl border bg-card shadow-2xl"
+              className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b px-4 py-3 sm:px-6">
                 <div className="min-w-0 pr-4">
-                  <h3 className="truncate text-sm font-semibold sm:text-base">
+                  <h3 className="truncate text-sm font-bold sm:text-base">
                     {tItems(`${selectedCert.translationKey}.title`)}
                   </h3>
                   <p className="truncate text-xs text-muted-foreground">

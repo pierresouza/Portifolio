@@ -2,22 +2,21 @@ import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-const title = "Projetos";
+const title = "Projetos & Cases de Sites";
 const description =
-  "Portfólio de projetos de Pierre Souza: aplicações em React, Next.js, TypeScript e Node.js. Projetos de estudo e freelas com deploy e repositório.";
+  "Portfólio de sites institucionais, landing pages de alta conversão e sistemas web desenvolvidos por Pierre Souza para empresas reais.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
   description,
   path: "/projects",
   keywords: [
-    "projetos",
-    "portfólio",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "desenvolvimento web",
-    "freelance",
+    "portfólio de sites",
+    "cases de sites institucionais",
+    "exemplos de landing pages",
+    "criação de sites para empresas",
+    "desenvolvedor React Next.js",
+    "freelance front-end",
   ],
 });
 

@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-const title = "Contato";
+const title = "Solicitar Orçamento & Contato";
 const description =
-  "Entre em contato com Pierre Souza para propostas de freelas, sites institucionais, landing pages e projetos front-end. Resposta em breve.";
+  "Solicite um orçamento gratuito para criação de sites institucionais, landing pages de alta conversão ou projetos front-end com Pierre Souza.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
   description,
   path: "/contact",
   keywords: [
-    "contato",
-    "freelance",
-    "contratar desenvolvedor",
-    "orçamento",
-    "proposta",
-    "desenvolvedor front-end",
+    "orçamento criação de site",
+    "contratar desenvolvedor de sites",
+    "orçamento landing page",
+    "contato Pierre Souza",
+    "freelancer front-end São Paulo",
   ],
 });
 

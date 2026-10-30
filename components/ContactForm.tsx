@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FiAlertCircle, FiCheckCircle, FiSend } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/lib/i18n";
 import PhoneInput from "@/components/PhoneInput";
@@ -43,7 +45,6 @@ export default function ContactForm() {
     setStatus("idle");
     setErrorMessage("");
 
-    // Validação do telefone se preenchido
     if (phoneHasError || (!phoneState.isValid && phoneState.formatted)) {
       setStatus("error");
       setErrorMessage(t("phoneInvalid"));
@@ -63,10 +64,8 @@ export default function ContactForm() {
         );
       }
 
-      // Inicializar EmailJS com a chave pública configurada
       emailjs.init(publicKey);
 
-      // Enviar email
       await emailjs.send(serviceId, templateId, {
         to_email: "pierre.s3@hotmail.com",
         title: t(`subjectOptions.${formData.subject}`),
@@ -106,37 +105,51 @@ export default function ContactForm() {
     }
   };
 
+  const inputClasses =
+    "mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none ring-offset-background transition-all placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label className="block text-sm font-semibold">{t("nameLabel")}</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder={t("namePlaceholder")}
-        />
-      </div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="block text-sm font-semibold">
+            {t("nameLabel")}
+          </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className={inputClasses}
+            placeholder={t("namePlaceholder")}
+          />
+        </div>
 
-      <div>
-        <label className="block text-sm font-semibold">{t("emailLabel")}</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
-          placeholder={t("emailPlaceholder")}
-        />
+        <div>
+          <label htmlFor="email" className="block text-sm font-semibold">
+            {t("emailLabel")}
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className={inputClasses}
+            placeholder={t("emailPlaceholder")}
+          />
+        </div>
       </div>
 
       <div>
         <label htmlFor="phone" className="block text-sm font-semibold">
-          {t("phoneLabel")} <span className="text-xs font-normal text-muted-foreground">({t("optional")})</span>
+          {t("phoneLabel")}{" "}
+          <span className="text-xs font-normal text-muted-foreground">
+            ({t("optional")})
+          </span>
         </label>
         <PhoneInput
           id="phone"
@@ -153,12 +166,15 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">{t("subjectLabel")}</label>
+        <label htmlFor="subject" className="block text-sm font-semibold">
+          {t("subjectLabel")}
+        </label>
         <select
+          id="subject"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+          className={inputClasses}
         >
           <option value="proposal">{t("subjectOptions.proposal")}</option>
           <option value="partnership">{t("subjectOptions.partnership")}</option>
@@ -167,31 +183,42 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold">{t("messageLabel")}</label>
+        <label htmlFor="message" className="block text-sm font-semibold">
+          {t("messageLabel")}
+        </label>
         <textarea
+          id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
           rows={5}
-          className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition-all focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+          className={inputClasses}
           placeholder={t("messagePlaceholder")}
         />
       </div>
 
       {status === "success" && (
-        <div className="rounded-lg bg-green-100 p-4 text-sm text-green-800 dark:bg-green-900 dark:text-green-200">
-          ✓ {t("successMessage")}
+        <div className="flex items-start gap-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-700 dark:text-emerald-300">
+          <FiCheckCircle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{t("successMessage")}</span>
         </div>
       )}
 
       {status === "error" && (
-        <div className="rounded-lg bg-red-100 p-4 text-sm text-red-800 dark:bg-red-900 dark:text-red-200">
-          ✗ {errorMessage || t("errorMessage")}
+        <div className="flex items-start gap-2.5 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+          <FiAlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{errorMessage || t("errorMessage")}</span>
         </div>
       )}
 
-      <Button type="submit" disabled={loading} className="w-full">
+      <Button
+        type="submit"
+        size="md"
+        disabled={loading}
+        className="w-full gap-2 rounded-xl font-bold"
+      >
+        <FiSend className="h-4 w-4" />
         {loading ? t("sending") : t("submit")}
       </Button>
     </form>

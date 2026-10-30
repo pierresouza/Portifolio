@@ -2,22 +2,20 @@ import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-const title = "Experiência Profissional";
+const title = "Experiência & Trajetória";
 const description =
-  "Trajetória profissional e formação de Pierre Souza: experiência em desenvolvimento front-end, educação, certificações e tecnologias utilizadas.";
+  "Trajetória profissional, atuação em startups, projetos comerciais e formação acadêmica de Pierre Souza em desenvolvimento web, Next.js e TypeScript.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
   description,
   path: "/experience",
   keywords: [
-    "experiência",
-    "carreira",
-    "educação",
-    "formação",
-    "desenvolvedor",
-    "profissional",
-    "currículo",
+    "experiência Pierre Souza",
+    "carreira desenvolvedor front-end",
+    "desenvolvedor Next.js",
+    "freelancer web São Paulo",
+    "formação em TI",
   ],
 });
 
