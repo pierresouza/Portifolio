@@ -1,0 +1,44 @@
+name: Compile LaTeX Resumes
+
+on:
+  push:
+    paths:
+      - 'cv/**'
+      - '.github/workflows/compile-cv.yml'
+  workflow_dispatch:
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Portuguese LaTeX CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv_pt.tex
+          working_directory: cv
+          args: -pdf -interaction=nonstopmode
+
+      - name: Compile English LaTeX CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv_en.tex
+          working_directory: cv
+          args: -pdf -interaction=nonstopmode
+
+      - name: Copy and normalize PDFs in public directory
+        run: |
+          mkdir -p public
+          cp cv/cv_pt.pdf public/pierresouza_PTBR.pdf
+          cp cv/cv_pt.pdf public/Pierresouza_PTBR.pdf
+          cp cv/cv_en.pdf public/pierresouza_EN.pdf
+          cp cv/cv_en.pdf public/Pierresouza_EN.pdf
+
+      - name: Commit and push compiled PDFs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update compiled LaTeX resumes (PT/EN)"
+          file_pattern: "public/*.pdf cv/*.pdf"
+

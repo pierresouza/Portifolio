@@ -1,0 +1,140 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{top=0.9cm, bottom=0.9cm, left=1.1cm, right=1.1cm}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue!70!black,
+    pdfauthor={Pierre Aparecido de Souza},
+    pdftitle={Resume - Pierre Souza}
+}
+
+% Formatting section titles
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\small\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item[]
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\begin{document}
+\pagestyle{empty}
+
+%----------HEADER----------
+\begin{center}
+    {\LARGE \textbf{Pierre Aparecido de Souza}} \\ \vspace{2pt}
+    \small São Paulo, Brazil \ \textbar \ +55 (11) 97531-0001 \ \textbar \ \href{mailto:pierre.s3@hotmail.com}{pierre.s3@hotmail.com} \\ \vspace{1pt}
+    \href{https://pierresouza.dev.br}{pierresouza.dev.br} \ \textbar \ \href{https://linkedin.com/in/pierre-souza}{linkedin.com/in/pierre-souza} \ \textbar \ \href{https://github.com/pierresouza}{github.com/pierresouza}
+\end{center}
+\vspace{-6pt}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\small{
+Full Stack Software Engineer focused on modern, scalable, and high-performance web development. Hands-on expertise building applications with \textbf{Next.js}, \textbf{TypeScript}, \textbf{React.js}, and \textbf{Node.js}, from Design Systems to relational databases and cloud backends (\textbf{Supabase}, \textbf{Prisma}, \textbf{PostgreSQL}). Practical background in FinOps SaaS engineering, municipal workflow digitization, agile practices (Scrum/Kanban), test automation (\textbf{Cypress}), and payment integrations with Stripe.
+}
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+\begin{itemize}[leftmargin=0pt, label={}]
+
+  \resumeSubheading
+    {Municipal Department of Urban Planning and Licensing (SMUL)}{Feb 2026 -- Present}
+    {Full Stack Development Intern}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Engineered scalable web applications for municipal workflow automation with \textbf{Next.js}, \textbf{TypeScript}, \textbf{Node.js}, and \textbf{Prisma} with \textbf{NestJS}.}
+      \resumeItem{Created the SMUL Design System and shared UI component library (\textbf{Storybook}, \textbf{shadcn/ui}) to eliminate code duplication.}
+      \resumeItem{Digitalized municipal platforms: modernized the Subvenção 2026 system, restructured CAF, and built headless CMS architecture with \textbf{Payload CMS}.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Billink AI}{Feb 2026 -- Present}
+    {Web Developer / Full Stack}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Engineered FinOps SaaS for AI and cloud infrastructure cost auditing using \textbf{Next.js} and \textbf{Tailwind CSS}.}
+      \resumeItem{Built interactive dashboards for real-time cost savings breakdown, usage trends, and AI agent pipeline monitoring.}
+      \resumeItem{Full backend integration with \textbf{Supabase} (PostgreSQL, Auth, Storage) and monetization via \textbf{Stripe API} and \textbf{AbacatePay}.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Zanthus - Results Technology}{Nov 2024 -- Aug 2025}
+    {Software Development Intern}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Developed dynamic, accessible, and responsive user interfaces with \textbf{React.js} and CSS; authored stories in \textbf{Storybook}.}
+      \resumeItem{Version control with \textbf{GitLab} and agile sprint collaboration with Kanban in \textbf{Jira}; researched \textbf{Kotlin} integration.}
+    \end{itemize}
+
+  \resumeSubheading
+    {Selo ESG Pro Brazil}{Aug 2024 -- Aug 2024}
+    {Front-End Web Developer (Freelance)}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Architected front-end platform with \textbf{Next.js}, \textbf{Tailwind CSS}, and \textbf{Material UI}; managed state with React Hooks and consumed REST APIs.}
+    \end{itemize}
+
+  \resumeSubheading
+    {PicPay}{Apr 2023 -- Dec 2023}
+    {Front-End Web Developer (PicPay Invest)}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Built financial investment interfaces with \textbf{React} and Styled Components; authored automated end-to-end test suites with \textbf{Cypress} and \textbf{Capybara}.}
+    \end{itemize}
+
+  \resumeSubheading
+    {LionX}{Mar 2022 -- Apr 2023}
+    {Systems Analyst Assistant}{São Paulo, Brazil}
+    \begin{itemize}[leftmargin=12pt]
+      \resumeItem{Constructed UI components with HTML, CSS, JavaScript, and React; developed and verified cross-platform email marketing templates.}
+    \end{itemize}
+
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education \& Continuous Learning}
+\begin{itemize}[leftmargin=0pt, label={}]
+  \resumeSubheading
+    {UNINTER International University Center}{Jul 2025 -- Dec 2027 (Expected)}
+    {Associate Degree in Information Technology (CST)}{São Paulo, Brazil}
+
+  \resumeSubheading
+    {Federal Technological University of Paraná (UTFPR)}{Completed Jun 2026}
+    {Web Programming Course, Computer Programming, Specific Applications}{Curitiba, Brazil}
+
+  \resumeSubheading
+    {Generation Brazil}{Jun 2024 -- Sep 2024}
+    {Full Stack JavaScript Intensive Bootcamp (React, Node.js, NestJS, MySQL)}{São Paulo, Brazil}
+
+  \resumeSubheading
+    {EF International Language Campuses}{Sep 2024 -- Sep 2025}
+    {Integrated Technical Program, English Language and Literature (Professional B2)}{São Paulo, Brazil}
+\end{itemize}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=12pt]
+  \item \textbf{Front-End:} Next.js, React.js, TypeScript, JavaScript, Tailwind CSS, Shadcn UI, HTML5, CSS3, Styled Components, Storybook.
+  \item \textbf{Back-End \& Databases:} Node.js, Prisma ORM, NestJS, Supabase, PostgreSQL, MySQL, REST APIs, Axios.
+  \item \textbf{Tools \& Practices:} Git, GitHub, GitLab, Jira (Kanban/Scrum), Cypress, Docker, Payload CMS, Stripe API, CI/CD, Technical SEO.
+  \item \textbf{Languages:} Portuguese (Native), English (Full Professional Working Proficiency / B2).
+\end{itemize}
+
+\end{document}

@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-cv": "node scripts/build-cv.js",
     "start": "next start",
     "lint": "next lint"
   },
