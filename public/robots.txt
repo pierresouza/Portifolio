@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://pierresouza.dev.br/sitemap.xml
+Host: https://pierresouza.dev.br
+

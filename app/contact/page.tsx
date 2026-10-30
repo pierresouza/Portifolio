@@ -135,15 +135,15 @@ export default function ContactPage() {
             <h3 className="text-sm font-bold">{t("trustTitle")}</h3>
             <ul className="mt-3 space-y-2.5 text-xs text-muted-foreground sm:text-sm">
               <li className="flex items-center gap-2">
-                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-500" />
+                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                 <span>{t("trust1")}</span>
               </li>
               <li className="flex items-center gap-2">
-                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-500" />
+                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                 <span>{t("trust2")}</span>
               </li>
               <li className="flex items-center gap-2">
-                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-500" />
+                <FiCheckCircle className="h-4 w-4 shrink-0 text-emerald-700 dark:text-emerald-400" aria-hidden="true" />
                 <span>{t("trust3")}</span>
               </li>
             </ul>

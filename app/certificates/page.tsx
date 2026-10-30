@@ -150,7 +150,7 @@ export default function CertificatesPage() {
         </Card>
         <Card className="border-border/60 bg-card/60 backdrop-blur">
           <CardContent className="p-5">
-            <p className="text-2xl font-black text-emerald-500">{totalHours}</p>
+            <p className="text-2xl font-black text-emerald-700 dark:text-emerald-400">{totalHours}</p>
             <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
               {t("statsHours")}
             </p>
@@ -257,6 +257,7 @@ export default function CertificatesPage() {
                     src={cert.image}
                     alt={`${title} - ${issuer}`}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">

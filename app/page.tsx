@@ -47,21 +47,21 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="primary" className="gap-1.5 py-1">
-                <span className="relative flex h-2 w-2">
+                <span className="relative flex h-2 w-2" aria-hidden="true">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600"></span>
                 </span>
                 {t("availableBadge")}
               </Badge>
               <span className="flex items-center gap-1.5 text-xs text-muted-foreground sm:text-sm">
-                <TfiLocationPin className="text-primary" /> {tc("location")}
+                <TfiLocationPin className="text-primary" aria-hidden="true" /> {tc("location")}
               </span>
             </div>
 
             <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
               {t("role")}
             </h1>
-            <p className="text-sm font-medium text-primary sm:text-base">
+            <p className="text-sm font-semibold text-primary sm:text-base">
               {t("greeting")} {t("name")}
             </p>
           </div>
@@ -75,50 +75,53 @@ export default function Home() {
             <Button
               size="md"
               asChild
-              className="gap-2 bg-emerald-600 font-semibold text-white hover:bg-emerald-500 shadow-md shadow-emerald-600/20"
+              className="min-h-[44px] gap-2 bg-emerald-600 font-semibold text-white hover:bg-emerald-500 shadow-md shadow-emerald-600/20"
             >
               <a
                 href={whatsappQuoteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t("whatsappCta")}
               >
-                <FaWhatsapp className="h-4 w-4" />
+                <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
                 {t("whatsappCta")}
               </a>
             </Button>
 
-            <Button variant="outline" size="md" asChild>
+            <Button variant="outline" size="md" asChild className="min-h-[44px]">
               <Link href="/projects" className="gap-2">
                 {tc("viewProjects")}
-                <FiArrowRight className="h-4 w-4" />
+                <FiArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
 
-            {/* Social icons */}
+            {/* Social icons with 44px+ touch targets */}
             <div className="ml-1 flex items-center gap-2">
-              <Link
-                className="rounded-xl border border-border p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
+              <a
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://github.com/pierresouza"
-                aria-label="Github"
+                aria-label="Perfil do GitHub de Pierre Souza"
               >
-                <FiGithub size={18} />
-              </Link>
-              <Link
-                className="rounded-xl border border-border p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
+                <FiGithub size={18} aria-hidden="true" />
+              </a>
+              <a
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
                 href="mailto:pierre.s3@hotmail.com"
-                aria-label="Email"
+                aria-label="Enviar e-mail para pierre.s3@hotmail.com"
               >
-                <SiMicrosoftoutlook size={18} />
-              </Link>
-              <Link
-                className="rounded-xl border border-border p-2.5 text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
+                <SiMicrosoftoutlook size={18} aria-hidden="true" />
+              </a>
+              <a
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border text-muted-foreground transition-all duration-300 hover:scale-110 hover:text-foreground"
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/pierre-souza/"
-                aria-label="LinkedIn"
+                aria-label="Perfil do LinkedIn de Pierre Souza"
               >
-                <FaLinkedin size={18} />
-              </Link>
+                <FaLinkedin size={18} aria-hidden="true" />
+              </a>
             </div>
           </div>
         </FadeIn>
@@ -130,9 +133,10 @@ export default function Home() {
             <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96 overflow-hidden rounded-full border-4 border-background shadow-2xl">
               <Image
                 src={Profilephoto}
-                alt="Foto de perfil de Pierre Souza"
+                alt="Foto de perfil de Pierre Souza, Desenvolvedor Front-End e Especialista em Criação de Sites"
                 fill
                 priority
+                sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
                 className="object-cover"
               />
             </div>
@@ -158,7 +162,7 @@ export default function Home() {
 
         <Card className="border-border/60 bg-card/60 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:shadow-md">
           <CardContent className="p-6">
-            <p className="text-2xl font-black text-emerald-500 md:text-3xl">
+            <p className="text-2xl font-black text-emerald-700 dark:text-emerald-400 md:text-3xl">
               {t("metricsSpeed")}
             </p>
             <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
@@ -197,8 +201,8 @@ export default function Home() {
             className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
-                <FiTrendingUp className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+                <FiTrendingUp className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-base font-bold sm:text-lg">
                 {t("serviceLandingTitle")}
@@ -208,7 +212,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-primary">
-              <FiCheckCircle className="h-4 w-4" />
+              <FiCheckCircle className="h-4 w-4" aria-hidden="true" />
               <span>Mobile-First & Conversão</span>
             </div>
           </FadeIn>
@@ -219,8 +223,8 @@ export default function Home() {
             className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 transition-colors group-hover:bg-blue-500 group-hover:text-white">
-                <FiLayout className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-700 dark:text-blue-400 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <FiLayout className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-base font-bold sm:text-lg">
                 {t("serviceInstitutionalTitle")}
@@ -230,7 +234,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-primary">
-              <FiCheckCircle className="h-4 w-4" />
+              <FiCheckCircle className="h-4 w-4" aria-hidden="true" />
               <span>Autoridade & Design Único</span>
             </div>
           </FadeIn>
@@ -241,8 +245,8 @@ export default function Home() {
             className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500 transition-colors group-hover:bg-amber-500 group-hover:text-white">
-                <FiZap className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 transition-colors group-hover:bg-amber-600 group-hover:text-white">
+                <FiZap className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-base font-bold sm:text-lg">
                 {t("servicePerformanceTitle")}
@@ -252,7 +256,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-primary">
-              <FiCheckCircle className="h-4 w-4" />
+              <FiCheckCircle className="h-4 w-4" aria-hidden="true" />
               <span>PageSpeed 90+ & Google SEO</span>
             </div>
           </FadeIn>
@@ -263,8 +267,8 @@ export default function Home() {
             className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500 transition-colors group-hover:bg-violet-500 group-hover:text-white">
-                <FiCode className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 text-violet-700 dark:text-violet-400 transition-colors group-hover:bg-violet-600 group-hover:text-white">
+                <FiCode className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-base font-bold sm:text-lg">
                 {t("serviceCustomTitle")}
@@ -274,7 +278,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-6 flex items-center gap-1.5 text-xs font-semibold text-primary">
-              <FiCheckCircle className="h-4 w-4" />
+              <FiCheckCircle className="h-4 w-4" aria-hidden="true" />
               <span>Next.js & Integrações</span>
             </div>
           </FadeIn>
@@ -330,7 +334,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-2 rounded-xl border border-border/50 bg-background/80 p-5 shadow-sm">
-            <span className="text-xs font-bold tracking-wider text-emerald-500 uppercase">
+            <span className="text-xs font-bold tracking-wider text-emerald-700 dark:text-emerald-400 uppercase">
               {tc("step")} 4
             </span>
             <h3 className="text-base font-bold">
@@ -355,10 +359,10 @@ export default function Home() {
                 {t("featuredProjectsDescription")}
               </p>
             </div>
-            <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
+            <Button variant="outline" size="sm" asChild className="self-start sm:self-auto min-h-[40px]">
               <Link href="/projects" className="gap-1.5">
                 {tc("viewAllProjects")}
-                <FiArrowRight size={14} />
+                <FiArrowRight size={14} aria-hidden="true" />
               </Link>
             </Button>
           </header>
@@ -375,8 +379,9 @@ export default function Home() {
                 <div className="relative aspect-video overflow-hidden border-b bg-muted/40">
                   <Image
                     src={project.image}
-                    alt={`Captura do projeto ${tp(`${project.translationKey}.name`)}`}
+                    alt={`Captura da tela do site ${tp(`${project.translationKey}.name`)}`}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute top-3 left-3">
@@ -414,9 +419,10 @@ export default function Home() {
                         href={project.deployURL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-muted"
+                        aria-label={`Visitar site do projeto ${tp(`${project.translationKey}.name`)}`}
+                        className="inline-flex min-h-[38px] items-center gap-2 rounded-lg border border-border px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-muted"
                       >
-                        <FaGlobeEurope />
+                        <FaGlobeEurope aria-hidden="true" />
                         <span>{tc("visitSite")}</span>
                       </a>
                     )}
@@ -425,9 +431,10 @@ export default function Home() {
                         href={project.repoURL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-muted"
+                        aria-label={`Acessar código do repositório ${tp(`${project.translationKey}.name`)}`}
+                        className="inline-flex min-h-[38px] items-center gap-2 rounded-lg border border-border px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 hover:bg-muted"
                       >
-                        <FaGithub />
+                        <FaGithub aria-hidden="true" />
                         <span>{tc("repository")}</span>
                       </a>
                     )}
@@ -457,19 +464,20 @@ export default function Home() {
               <Button
                 size="md"
                 asChild
-                className="gap-2 bg-emerald-600 px-6 font-bold text-white hover:bg-emerald-500 shadow-lg shadow-emerald-600/30"
+                className="min-h-[48px] gap-2 bg-emerald-600 px-6 font-bold text-white hover:bg-emerald-500 shadow-lg shadow-emerald-600/30"
               >
                 <a
                   href={whatsappQuoteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={t("ctaWhatsAppButton")}
                 >
-                  <FaWhatsapp className="h-5 w-5" />
+                  <FaWhatsapp className="h-5 w-5" aria-hidden="true" />
                   {t("ctaWhatsAppButton")}
                 </a>
               </Button>
 
-              <Button size="md" variant="outline" asChild className="px-6 font-semibold">
+              <Button size="md" variant="outline" asChild className="min-h-[48px] px-6 font-semibold">
                 <Link href="/contact">{t("ctaContactButton")}</Link>
               </Button>
             </div>

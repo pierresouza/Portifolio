@@ -29,12 +29,12 @@ function Footer() {
   )}`;
 
   return (
-    <footer className="mt-16 border-t border-border/60 bg-muted/20 print:hidden">
+    <footer className="mt-16 border-t border-border/60 bg-muted/20 print:hidden" aria-label="Rodapé do site">
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Brand & Tagline */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 font-bold">
+            <Link href="/" className="flex items-center gap-2 font-bold" aria-label="Página inicial Pierre Souza">
               <Image src={Stars} alt="Logo Pierre Souza" width={22} height={22} />
               <span className="text-lg">Pierre Souza</span>
             </Link>
@@ -42,7 +42,7 @@ function Footer() {
               {t("tagline")}
             </p>
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <FiMapPin className="h-4 w-4 text-primary" />
+              <FiMapPin className="h-4 w-4 text-primary" aria-hidden="true" />
               <span>{tc("location")}</span>
             </div>
           </div>
@@ -57,7 +57,7 @@ function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-flex min-h-[40px] items-center text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -76,16 +76,16 @@ function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-medium text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400"
+                className="inline-flex min-h-[40px] items-center gap-2 font-medium text-emerald-700 transition-colors hover:text-emerald-600 dark:text-emerald-400"
               >
-                <FaWhatsapp className="h-4 w-4" />
+                <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
                 <span>{t("whatsappAction")} • (11) 97531-0001</span>
               </a>
               <a
                 href="mailto:pierre.s3@hotmail.com"
-                className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex min-h-[40px] items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               >
-                <FiMail className="h-4 w-4" />
+                <FiMail className="h-4 w-4" aria-hidden="true" />
                 <span>pierre.s3@hotmail.com</span>
               </a>
             </div>
@@ -95,28 +95,28 @@ function Footer() {
                 href="https://www.linkedin.com/in/pierre-souza/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="rounded-xl border border-border bg-background p-2.5 text-muted-foreground transition-all hover:scale-105 hover:text-foreground"
+                aria-label="Perfil do LinkedIn de Pierre Souza"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all hover:scale-105 hover:text-foreground"
               >
-                <FaLinkedin size={16} />
+                <FaLinkedin size={18} aria-hidden="true" />
               </a>
               <a
                 href="https://github.com/pierresouza"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="rounded-xl border border-border bg-background p-2.5 text-muted-foreground transition-all hover:scale-105 hover:text-foreground"
+                aria-label="Perfil do GitHub de Pierre Souza"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all hover:scale-105 hover:text-foreground"
               >
-                <FaGithub size={16} />
+                <FaGithub size={18} aria-hidden="true" />
               </a>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="rounded-xl border border-border bg-background p-2.5 text-muted-foreground transition-all hover:scale-105 hover:text-emerald-500"
+                aria-label="Conversar no WhatsApp com Pierre Souza"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-border bg-background text-muted-foreground transition-all hover:scale-105 hover:text-emerald-600"
               >
-                <FaWhatsapp size={16} />
+                <FaWhatsapp size={18} aria-hidden="true" />
               </a>
             </div>
           </div>

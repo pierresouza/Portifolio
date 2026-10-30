@@ -42,12 +42,6 @@ const Header = () => {
         title: "dark:text-foreground",
         closeButton: "dark:text-foreground hover:dark:text-primary",
       },
-      showClass: {
-        popup: `animate__animated animate__fadeInUp animate__faster`,
-      },
-      hideClass: {
-        popup: `animate__animated animate__fadeOutDown animate__faster`,
-      },
       html: `
         <div class="flex flex-col justify-center items-center space-y-4 p-4">
           <a
@@ -81,10 +75,10 @@ const Header = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="border-border"
-                aria-label={t("openMenu")}
+                className="min-h-[44px] min-w-[44px] border-border"
+                aria-label={t("openMenu") || "Abrir menu"}
               >
-                <FaList className="h-5 w-5" />
+                <FaList className="h-5 w-5" aria-hidden="true" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-56">
@@ -92,15 +86,17 @@ const Header = () => {
               <DropdownMenuSeparator />
               {navLinks.map((link) => (
                 <DropdownMenuItem key={link.href} asChild>
-                  <Link href={link.href}>{link.label}</Link>
+                  <Link href={link.href} className="min-h-[40px] flex items-center">
+                    {link.label}
+                  </Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" aria-label="Página inicial Pierre Souza">
             <Image
               src={Stars}
-              alt="Logo estrelas"
+              alt="Logo Pierre Souza"
               width={20}
               height={20}
               className="opacity-80"
@@ -115,13 +111,14 @@ const Header = () => {
         <Link
           href="/"
           className="hidden items-center gap-2 font-semibold transition-colors hover:text-foreground/80 md:flex"
+          aria-label="Página inicial Pierre Souza"
         >
-          <Image src={Stars} alt="Logo estrelas" width={22} height={22} />
+          <Image src={Stars} alt="Logo Pierre Souza" width={22} height={22} />
           <span className="text-base md:text-lg">Pierre Souza</span>
         </Link>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center">
+        <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center" aria-label="Navegação principal">
           <ul className="flex items-center gap-6 text-sm">
             {navLinks.map((link) => {
               const active =
@@ -148,16 +145,17 @@ const Header = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <ModeToggle />
           <div className="hidden h-6 w-px bg-border md:block" />
           <Button
             size="sm"
             variant="outline"
             onClick={handleDownloadCV}
-            className="gap-2"
+            className="min-h-[40px] gap-2"
+            aria-label={t("downloadCV") || "Baixar Currículo"}
           >
-            <MdFileDownload size={16} />
+            <MdFileDownload size={16} aria-hidden="true" />
             <span className="hidden sm:inline">{t("downloadCV")}</span>
           </Button>
           <LanguageSwitcher />

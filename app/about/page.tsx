@@ -118,6 +118,7 @@ export default function About() {
                 src="/profile_photo.jpeg"
                 alt="Foto de perfil de Pierre Souza, desenvolvedor front-end"
                 fill
+                sizes="(max-width: 640px) 224px, (max-width: 768px) 288px, 320px"
                 className="object-cover"
                 priority
               />

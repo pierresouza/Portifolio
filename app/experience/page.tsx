@@ -114,7 +114,7 @@ export default function Experience() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          <FiLayers className="h-4 w-4 text-emerald-500" />
+          <FiLayers className="h-4 w-4 text-emerald-700 dark:text-emerald-400" />
           <span>{t("freelance")}</span>
         </button>
 
@@ -127,7 +127,7 @@ export default function Experience() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          <FiBookOpen className="h-4 w-4 text-amber-500" />
+          <FiBookOpen className="h-4 w-4 text-amber-700 dark:text-amber-400" />
           <span>{t("studies")}</span>
         </button>
       </div>
