@@ -51,6 +51,7 @@ export const siteRoutes = [
   { path: "/projects", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/experience", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/certificates", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
 ];
 

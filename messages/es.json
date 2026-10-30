@@ -20,6 +20,7 @@
     "projects": "Proyectos",
     "about": "Sobre",
     "experience": "Experiencia",
+    "certificates": "Certificados",
     "navigation": "Navegación",
     "openMenu": "Abrir menú",
     "downloadCV": "CV",
@@ -69,6 +70,45 @@
     "searchPlaceholder": "Buscar proyectos...",
     "searchLabel": "Buscar proyectos",
     "noProjectsFound": "Ningún proyecto encontrado."
+  },
+  "certificates": {
+    "title": "Certificados y Participaciones",
+    "description": "Certificados de congresos y eventos de tecnología en los que he participado.",
+    "searchPlaceholder": "Buscar por certificado, institución o tema...",
+    "searchLabel": "Buscar certificados",
+    "noCertificatesFound": "Ningún certificado encontrado.",
+    "viewCertificate": "Ver",
+    "openOriginal": "Abrir original",
+    "downloadFile": "Descargar",
+    "closePreview": "Cerrar vista previa",
+    "previous": "Certificado anterior",
+    "next": "Siguiente certificado"
+  },
+  "certificateItems": {
+    "buildwithaiUsp": {
+      "title": "Build With AI Colab DASI USP",
+      "issuer": "Google Developer Groups (GDG Cloud São Paulo) & DASI USP",
+      "role": "Participante",
+      "description": "Participación en el Build With AI Colab DASI USP, un evento colaborativo enfocado en explorar el poder de la Inteligencia Artificial para construir el futuro, promoviendo aprendizaje, innovación y comunidad."
+    },
+    "fiapSummit": {
+      "title": "FIAP Connect Summit 2026 – Orquestación Humano-IA en el Trabajo",
+      "issuer": "FIAP",
+      "role": "Participante",
+      "description": "Participación en el evento híbrido organizado por FIAP enfocado en la orquestación Humano-IA en el entorno laboral, integrando transmisiones en vivo y encuentros presenciales en São Paulo."
+    },
+    "buildwithaiEsquenta": {
+      "title": "Esquenta Build With AI",
+      "issuer": "Google Developer Groups (GDG Cloud SP)",
+      "role": "Participante",
+      "description": "Inmersión colaborativa organizada por Google Developer Groups explorando aplicaciones prácticas de Inteligencia Artificial, innovación y soluciones en la nube."
+    },
+    "forumAbeinfo": {
+      "title": "Foro Abeinfo 2026",
+      "issuer": "IIMA & ABEINFO",
+      "role": "Congresista",
+      "description": "Participación como congresista en el evento dedicado a los desafíos de la Gestión de la Información y su integración con la Inteligencia Artificial en el entorno corporativo, abordando gobernanza, LGPD, compliance y preparación de datos para IA."
+    }
   },
   "contact": {
     "back": "← Volver",

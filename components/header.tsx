@@ -28,6 +28,7 @@ const Header = () => {
     { href: "/projects", label: t("projects") },
     { href: "/about", label: t("about") },
     { href: "/experience", label: t("experience") },
+    { href: "/certificates", label: t("certificates") },
     { href: "/contact", label: t("contact") },
   ];
 

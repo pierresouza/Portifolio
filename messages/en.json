@@ -20,6 +20,7 @@
     "projects": "Projects",
     "about": "About",
     "experience": "Experience",
+    "certificates": "Certificates",
     "navigation": "Navigation",
     "openMenu": "Open menu",
     "downloadCV": "CV",
@@ -69,6 +70,45 @@
     "searchPlaceholder": "Search projects...",
     "searchLabel": "Search projects",
     "noProjectsFound": "No projects found."
+  },
+  "certificates": {
+    "title": "Certificates & Events",
+    "description": "Certificates from conferences and technology events I have participated in.",
+    "searchPlaceholder": "Search by certificate, institution, or topic...",
+    "searchLabel": "Search certificates",
+    "noCertificatesFound": "No certificates found.",
+    "viewCertificate": "Preview",
+    "openOriginal": "Open original",
+    "downloadFile": "Download",
+    "closePreview": "Close preview",
+    "previous": "Previous certificate",
+    "next": "Next certificate"
+  },
+  "certificateItems": {
+    "buildwithaiUsp": {
+      "title": "Build With AI Colab DASI USP",
+      "issuer": "Google Developer Groups (GDG Cloud São Paulo) & DASI USP",
+      "role": "Attendee",
+      "description": "Participated in Build With AI Colab DASI USP, a collaborative event exploring the power of Artificial Intelligence to build the future, promoting learning, innovation, and community."
+    },
+    "fiapSummit": {
+      "title": "FIAP Connect Summit 2026 – Human-AI Orchestration at Work",
+      "issuer": "FIAP",
+      "role": "Attendee",
+      "description": "Participated in the hybrid event hosted by FIAP focused on Human-AI orchestration in the workplace, combining live streams and in-person sessions in São Paulo."
+    },
+    "buildwithaiEsquenta": {
+      "title": "Esquenta Build With AI",
+      "issuer": "Google Developer Groups (GDG Cloud SP)",
+      "role": "Attendee",
+      "description": "Collaborative immersion hosted by Google Developer Groups exploring practical applications of Artificial Intelligence, innovation, and cloud solutions."
+    },
+    "forumAbeinfo": {
+      "title": "Abeinfo Forum 2026",
+      "issuer": "IIMA & ABEINFO",
+      "role": "Congress Member",
+      "description": "Participated as a congress member in an event dedicated to Information Management challenges and AI integration in corporate environments, covering data governance, LGPD, compliance, and AI readiness."
+    }
   },
   "contact": {
     "back": "← Back",
